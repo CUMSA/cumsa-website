@@ -1,14 +1,24 @@
+import { defineConfig } from "eslint/config";
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import nextTypescript from "eslint-config-next/typescript";
 import prettier from "eslint-config-prettier/flat";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: [".next", "src/components/ui/**"],
   },
   ...nextCoreWebVitals,
   ...nextTypescript,
+  {
+    settings: {
+      "import/resolver": {
+        typescript: {
+          project: "./tsconfig.json",
+        },
+      },
+    },
+  },
   {
     files: ["**/*.ts", "**/*.tsx"],
     extends: [
