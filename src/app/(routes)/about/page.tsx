@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutPage() {
   return (
@@ -16,14 +15,14 @@ export default function AboutPage() {
               </p>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                  CUMSA's founding committee included former Minister Mentor Lee Kuan Yew (as President), and former Chief Justice Yong Pung How (as Secretary). Over 60 years since, many Malaysians and Singaporeans have contributed to the organisation – a list which includes Singapore's current Prime Minister Lee Hsien Loong, and former Minister for Foreign Affairs George Yeo.
+                  CUMSA&apos;s founding committee included former Minister Mentor Lee Kuan Yew (as President), and former Chief Justice Yong Pung How (as Secretary). Over 60 years since, many Malaysians and Singaporeans have contributed to the organisation – a list which includes Singapore&apos;s current Prime Minister Lee Hsien Loong, and former Minister for Foreign Affairs George Yeo.
               </p>
             </div>
             
             <div className="flex items-center">
               <div className="w-full h-80 relative overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/about-history.jpg" // Replace with actual image
+                  src="/about1.jpeg" // Replace with actual image
                   alt="CUMSA Historical Photo"
                   fill
                   className="object-cover"
@@ -37,7 +36,7 @@ export default function AboutPage() {
             <div className="order-2 lg:order-1 flex items-center">
               <div className="w-full h-80 relative overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/about-community.jpg" // Replace with actual image
+                  src="/about2.jpg" // Replace with actual image
                   alt="CUMSA Community"
                   fill
                   className="object-cover"
@@ -59,7 +58,7 @@ export default function AboutPage() {
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Join Our Community</h2>
             <p className="text-muted-foreground mb-6">
-              Whether you're a current student, recent graduate, or seasoned alumnus, 
+              Whether you&apos;re a current student, recent graduate, or seasoned alumnus, 
               CUMSA welcomes all members of the Malaysian and Singaporean community at Cambridge.
             </p>
           </div>

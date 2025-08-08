@@ -1,75 +1,65 @@
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link"
 
 export default function EventsPage() {
   const events = [
     {
       id: 1,
       title: "Annual Formal Dinner",
-      description: "Our flagship event bringing together current students and alumni for an elegant evening of networking and celebration.",
+      description: "Our signature event bringing together members of the vibrant CUMSA community. Held at one of Cambridge's historic college halls, the dinner strengthens bonds between CUMSA families—a longstanding tradition that pairs freshers with seniors to help them navigate Cambridge life.",
       category: "Social",
-      timing: "Michaelmas Term",
-      image: "/events/formal-dinner.jpg",
-      highlights: ["Black-tie event", "Alumni networking", "Traditional dinner", "Guest speakers"]
+      timing: "October",
+      image: "/events/formal.JPG",
+      highlights: ["Historic college venue", "CUMSA family bonding", "Formal attire", "Mentor-mentee meetings"]
     },
     {
       id: 2,
-      title: "Freshers' Welcome",
-      description: "A warm introduction to Cambridge life for new Malaysian and Singaporean students, featuring campus tours and meet-and-greets.",
+      title: "Orientation",
+      description: "CUMSA's annual 3D2N orientation welcoming new undergraduates to the CUMSA family. This year's 'Alice in Wonderland' themed orientation at Civil Service Club @ Changi included icebreakers, telematch, Amazing Race, and seniors' sharing sessions.",
       category: "Academic",
-      timing: "Beginning of Michaelmas",
-      image: "/events/freshers-welcome.jpg",
-      highlights: ["Campus orientation", "Mentorship program", "Social mixer", "Resource sharing"]
+      timing: "September",
+      image: "/events/ori.jpg",
+      highlights: ["94 new members", "Alice in Wonderland theme", "Team competitions", "Seniors' sharing"]
     },
     {
       id: 3,
-      title: "Career Networking Evening",
-      description: "Professional networking sessions connecting students with alumni across various industries and career paths.",
+      title: "KopiTalks",
+      description: "Our trademark speakers' event jointly organised with Oxford (OUMSSA), featuring productive dialogue on critical issues. This year's focus on social cohesion included Minister Chan Chun Sing and expert panelists discussing Singapore's social compact.",
       category: "Professional",
-      timing: "Lent Term",
-      image: "/events/career-networking.jpg",
-      highlights: ["Industry panels", "CV workshops", "One-on-one mentoring", "Job opportunities"]
+      timing: "September",
+      image: "/events/kopitalk.jpg",
+      highlights: ["Minister Chan Chun Sing", "Oxford collaboration", "100 attendees", "Panel discussions"]
     },
     {
       id: 4,
-      title: "Cultural Festival",
-      description: "Celebrating Malaysian and Singaporean heritage through food, performances, and cultural showcases.",
+      title: "Bridgemas Carnival",
+      description: "Our end-of-year festive celebration featuring carnival games, food stalls, Christmas carol performances, and a charity fundraiser. This year raised £1,889.26 for Beyond Social Services, with 140 attendees enjoying tiramisu, mulled wine, and festive activities.",
       category: "Cultural",
-      timing: "Easter Term",
-      image: "/events/cultural-festival.jpg",
-      highlights: ["Traditional performances", "Cultural food fair", "Art exhibitions", "Community celebration"]
+      timing: "November",
+      image: "/events/bridgemas.JPG",
+      highlights: ["140 attendees", "Charity fundraising", "Carnival games", "Christmas carols"]
     },
     {
       id: 5,
-      title: "Study Skills Workshop",
-      description: "Academic support sessions helping students excel in their Cambridge studies with peer-to-peer learning.",
-      category: "Academic",
-      timing: "Throughout the year",
-      image: "/events/study-workshop.jpg",
-      highlights: ["Peer tutoring", "Study groups", "Academic resources", "Exam preparation"]
+      title: "Ski Trip",
+      description: "Our largest ski trip to date with 100 participants taking a week-long adventure to La Plagne, France. Offering slopes for all skill levels, stunning Alpine views, and après-ski experiences including poker and werewolf games.",
+      category: "Sports",
+      timing: "Winter Break",
+      image: "/events/ski.png",
+      highlights: ["100 participants", "La Plagne, France", "100+ pistes", "Après-ski activities"]
     },
     {
       id: 6,
-      title: "Sports Day",
-      description: "Annual sporting competition fostering friendly rivalry and team spirit among CUMSA members.",
-      category: "Sports",
-      timing: "Easter Term",
-      image: "/events/sports-day.jpg",
-      highlights: ["Inter-college competition", "Team building", "Various sports", "Awards ceremony"]
+      title: "Garden Party",
+      description: "Annual farewell celebration for our graduating class held at Churchill College. This year's event featured light food, desserts, milk tea, card games, polaroid photobooth, and special enamel pin graduation gifts for the Class of 2024.",
+      category: "Social",
+      timing: "June",
+      image: "/events/garden-party.jpg",
+      highlights: ["Churchill College venue", "Graduation gifts", "Polaroid photobooth", "Class of 2024 farewell"]
     }
   ];
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "Social": return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
-      case "Academic": return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
-      case "Professional": return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300";
-      case "Cultural": return "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300";
-      case "Sports": return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300";
-      default: return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300";
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -98,6 +88,7 @@ export default function EventsPage() {
           </div>
 
           {/* Events Grid */}
+          <h3 className="text-center text-4xl font-bold mb-4 text-foreground">Featured Events</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event) => (
               <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -133,10 +124,9 @@ export default function EventsPage() {
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Badge variant="outline" className="px-4 py-2">
-                Follow our social media for updates
-              </Badge>
-              <Badge variant="outline" className="px-4 py-2">
-                Join our mailing list
+                <Link href="https://membership.cumsa.org/">
+                  Sign up for membership
+                </Link>
               </Badge>
             </div>
           </div>

@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
-import { forwardRef } from "react";
 
 export default function Navbar() {
   return (
@@ -59,20 +58,27 @@ export default function Navbar() {
                   <ListItem href="/resources/prospective-students" title="Prospective Applicants">
                     Information for prospective applicants
                   </ListItem>
+                  <ListItem href="/resources/publications" title="Past Publications">
+                    Read our annual publications here
+                  </ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <Link href="/sponsors">Sponsors</Link>
-                </NavigationMenuLink>
+              <NavigationMenuLink asChild>
+                <Link href="/sponsors" className={navigationMenuTriggerStyle()}>
+                  Sponsors
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <Link href="/committee">Committee</Link>
-                </NavigationMenuLink>
+              <NavigationMenuLink asChild>
+                <Link href="/committee" className={navigationMenuTriggerStyle()}>
+                  Committee
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

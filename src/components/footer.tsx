@@ -75,7 +75,7 @@ export default function Footer() {
                 className="p-2 text-white hover:text-gray-300 transition-colors"
                 asChild
               >
-                <a href="mailto:contact@cumsa.org.uk">
+                <a href="mailto:secretary@cumsa.org.uk">
                   <span className="sr-only">Email</span>
                   <EmailIcon />
                 </a>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function HomePage() {
   return (
@@ -59,16 +58,16 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <section className="py-16 bg-muted/50">
-        <div className="container max-w-4xl mx-auto">
+        <div className="container max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6 text-foreground">Find out more</h2>
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Link href="/about">
-              <Card className="cursor-pointer transition-transform hover:scale-105 hover:shadow-lg h-96 flex flex-col">
+              <Card className="cursor-pointer transition-transform hover:scale-105 hover:shadow-lg h-[26rem] flex flex-col">
                 <CardHeader className="flex-shrink-0">
-                  <div className="w-full h-48 bg-orange-100 rounded-lg mb-4 relative overflow-hidden">
+                  <div className="w-full h-64 bg-orange-100 rounded-lg mb-4 relative overflow-hidden">
                     <Image
-                      src="/about-image.jpg" // Replace with actual image
+                      src="/dinner.jpg" // Replace with actual image
                       alt="About us"
                       fill
                       className="object-cover"
@@ -84,12 +83,12 @@ export default function HomePage() {
               </Card>
             </Link>
 
-            <Link href="/resources">
-              <Card className="cursor-pointer transition-transform hover:scale-105 hover:shadow-lg h-96 flex flex-col">
+            <Link href="/resources/freshers">
+              <Card className="cursor-pointer transition-transform hover:scale-105 hover:shadow-lg h-[26rem] flex flex-col">
                 <CardHeader className="flex-shrink-0">
-                  <div className="w-full h-48 bg-amber-100 rounded-lg mb-4 relative overflow-hidden">
+                  <div className="w-full h-64 bg-amber-100 rounded-lg mb-4 relative overflow-hidden">
                     <Image
-                      src="/prospective-students.jpg" // Replace with actual image
+                      src="/resources.png" // Replace with actual image
                       alt="Resources"
                       fill
                       className="object-cover"
@@ -106,11 +105,11 @@ export default function HomePage() {
             </Link>
 
             <Link href="/sponsors">
-              <Card className="cursor-pointer transition-transform hover:scale-105 hover:shadow-lg h-96 flex flex-col">
+              <Card className="cursor-pointer transition-transform hover:scale-105 hover:shadow-lg h-[26rem] flex flex-col">
                 <CardHeader className="flex-shrink-0">
-                  <div className="w-full h-48 bg-yellow-100 rounded-lg mb-4 relative overflow-hidden">
+                  <div className="w-full h-64 bg-yellow-100 rounded-lg mb-4 relative overflow-hidden">
                     <Image
-                      src="/incoming-freshers.jpg" // Replace with actual image
+                      src="/sponsors.jpg" // Replace with actual image
                       alt="Sponsors"
                       fill
                       className="object-cover"

@@ -1,6 +1,3 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { SponsorCard, type Sponsor } from "@/components/sponsor-card";
 
 // Sponsors data
@@ -10,39 +7,39 @@ const sponsorsData: Sponsor[] = [
     name: "Mitsui Bussan Commodities",
     description: "An energy derivative market maker based in London with over 25 years of experience providing hedging solutions for energy producers, refiners, and utilities.",
     tier: "platinum",
-    picture: "/logo_header.png",
+    picture: "/sponsors/mitsui-bussan-logo.png",
     slug: "mitsui-bussan-commodities"
   },
   {
     id: "mapletree",
     name: "Mapletree",
-    description: "Supporting CUMSA events and providing valuable opportunities for our members.",
+    description: "Global real estate development, investment, capital and property management company committed to sustainability",
     tier: "gold",
-    picture: "/logo_header.png",
+    picture: "/sponsors/mapletree-logo.png",
     slug: "mapletree"
   },
   {
     id: "imda",
-    name: "Infocomm Media Development Authority (IMDA)",
-    description: "Supporting CUMSA events and providing valuable opportunities for our members.",
+    name: "Infocomm Media Development Authority",
+    description: "Learn how we as the Infocomm Media Development Authority (IMDA) drive Singapore’s digital transformation by building a vibrant digital economy and an inclusive digital society.",
     tier: "gold",
-    picture: "/logo_header.png",
+    picture: "/sponsors/imda-logo.png",
     slug: "imda"
   },
   {
     id: "setia",
     name: "Setia Law LLC",
-    description: "Supporting CUMSA events and providing valuable opportunities for our members.",
+    description: "A specialist high-stakes dispute resolution and crisis management team, built on formidable experience, driven by ingenuity, and rooted in integrity.",
     tier: "gold",
-    picture: "/logo_header.png",
+    picture: "/sponsors/setia-logo.jpg",
     slug: "setia"
   },
   {
     id: "mha",
     name: "Ministry of Home Affairs (MHA)",
-    description: "Valued partner supporting our community initiatives.",
+    description: "The Home Team keeps Singapore safe and secure.",
     tier: "silver",
-    picture: "/logo_header.png",
+    picture: "/sponsors/mha-logo.png",
     slug: "mha"
   },
 ];

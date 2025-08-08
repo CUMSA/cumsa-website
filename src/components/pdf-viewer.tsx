@@ -38,7 +38,7 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
         src={src}
         className="w-full rounded border border-border"
         style={{ height }}
-        title={title || "PDF Document"}
+        title={title ?? "PDF Document"}
       />
     </div>
   );
