@@ -12,7 +12,6 @@ export default function EventsPage() {
       category: "Social",
       timing: "October",
       image: "/events/formal.JPG",
-      highlights: ["Historic college venue", "CUMSA family bonding", "Formal attire", "Mentor-mentee meetings"]
     },
     {
       id: 2,
@@ -21,7 +20,6 @@ export default function EventsPage() {
       category: "Academic",
       timing: "September",
       image: "/events/ori.jpg",
-      highlights: ["94 new members", "Alice in Wonderland theme", "Team competitions", "Seniors' sharing"]
     },
     {
       id: 3,
@@ -30,7 +28,6 @@ export default function EventsPage() {
       category: "Professional",
       timing: "September",
       image: "/events/kopitalk.jpg",
-      highlights: ["Minister Chan Chun Sing", "Oxford collaboration", "100 attendees", "Panel discussions"]
     },
     {
       id: 4,
@@ -39,7 +36,6 @@ export default function EventsPage() {
       category: "Cultural",
       timing: "November",
       image: "/events/bridgemas.JPG",
-      highlights: ["140 attendees", "Charity fundraising", "Carnival games", "Christmas carols"]
     },
     {
       id: 5,
@@ -48,7 +44,6 @@ export default function EventsPage() {
       category: "Sports",
       timing: "Winter Break",
       image: "/events/ski.png",
-      highlights: ["100 participants", "La Plagne, France", "100+ pistes", "Après-ski activities"]
     },
     {
       id: 6,
@@ -57,7 +52,6 @@ export default function EventsPage() {
       category: "Social",
       timing: "June",
       image: "/events/garden-party.jpg",
-      highlights: ["Churchill College venue", "Graduation gifts", "Polaroid photobooth", "Class of 2024 farewell"]
     }
   ];
 

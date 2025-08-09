@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PDFViewer } from "@/components/pdf-viewer";
+import { AdmissionGraphs } from "@/components/admission-graphs";
 import { ChevronRight, Home } from "lucide-react";
 
 export default function ResourcesPage() {
@@ -60,10 +61,10 @@ export default function ResourcesPage() {
             </div>
           </section>
 
-          {/* Additional Resources Grid */}
+          {/* Application Statistics */}
           <section className="mb-12">
             <h2 className="text-3xl font-bold mb-8 text-center">Application Statistics</h2>
-            <p> Grpah placeholder </p>
+            <AdmissionGraphs />
           </section>
 
         </div>

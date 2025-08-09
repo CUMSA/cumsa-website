@@ -11,8 +11,20 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -91,9 +103,82 @@ export default function Navbar() {
               Membership 
             </Link>
           </Button>
-          <Button variant="outline" className="sm:hidden">
-            Menu
-          </Button>
+          
+          {/* Mobile Menu */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon" className="md:hidden">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-64">
+              <DropdownMenuLabel className="font-semibold">Navigation</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              
+              {/* About submenu */}
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger className="cursor-pointer">
+                  About
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem asChild>
+                    <Link href="/about" className="cursor-pointer">
+                      About CUMSA
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/about/events" className="cursor-pointer">
+                      Events
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+
+              {/* Resources submenu */}
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger className="cursor-pointer">
+                  Resources
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem asChild>
+                    <Link href="/resources/freshers" className="cursor-pointer">
+                      Freshers
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/resources/prospective-students" className="cursor-pointer">
+                      Prospective Applicants
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/resources/publications" className="cursor-pointer">
+                      Past Publications
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+
+              {/* Direct links */}
+              <DropdownMenuItem asChild>
+                <Link href="/sponsors" className="cursor-pointer">
+                  Sponsors
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/committee" className="cursor-pointer">
+                  Committee
+                </Link>
+              </DropdownMenuItem>
+              
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild className="sm:hidden">
+                <Link href="https://membership.cumsa.org/" className="cursor-pointer font-medium">
+                  Membership
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </nav>
