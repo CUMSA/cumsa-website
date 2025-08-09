@@ -62,7 +62,7 @@ const sponsors: Record<string, Sponsor> = {
   'setia': {
     name: 'Setia Law LLC',
     tier: 'Gold',
-    logo: '/sponsors/setia-logo.png',
+    logo: '/sponsors/setia-logo.jpg',
     description: ['Setia Law is a specialist high-stakes dispute resolution and crisis management team in Singapore, built on formidable experience, driven by ingenuity, and rooted in integrity', 'Setia draws on its experience and knowledge to deliver expert legal advice and representation to clients in high-stakes commercial dispute and crisis situations, whilst remaining rooted to its core values of respect, resilience and reliability.', 'Setia is helmed by deeply experienced lawyers who have been at the forefront of major global crises and are specialists in Dispute Resolution, Fraud and Financial Crimes, Restructuring & Insolvency, and International Enforcement.', 'Valuing talent, and passionate about nurturing potential, the firm is always on the lookout for like-minded talents to complement the team.'],
     website: 'https://www.setialaw.com',
     industry: 'Legal Services',
