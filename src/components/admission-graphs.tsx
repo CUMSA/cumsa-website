@@ -235,7 +235,9 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
             </p>
           </div>
           <p className="text-xs text-muted-foreground mt-2">
-            Please note: For data protection purposes, where a final figure on any visualisation is 5 or less, it is reported as &quot;5&quot;. If the figure is 0, it will be reported as &quot;0&quot;
+            Please note:  <br/>
+            • For data protection purposes, where a final figure on any visualisation is 5 or less, it is reported as &quot;5&quot;. If the figure is 0, it will be reported as &quot;0&quot;. <br/>
+            • For most statistics in the dashboard, data is given for multiple admissions cycles (shown by apply year). Apply year refers to the UCAS cycle in which applications were considered. For example, the &apos;2025 apply year&apos; refers to applications made from September 2024 onwards, for courses starting in October 2025 or deferred entry in 2026. <br/>
           </p>
         </div>
       </CardContent>

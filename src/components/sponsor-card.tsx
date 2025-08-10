@@ -2,15 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image"
-
-export interface Sponsor {
-  id: string;
-  name: string;
-  description: string;
-  tier: "platinum" | "gold" | "silver";
-  picture: string;
-  slug: string;
-}
+import type { Sponsor } from "@/data/sponsors";
 
 interface SponsorCardProps {
   sponsor: Sponsor;

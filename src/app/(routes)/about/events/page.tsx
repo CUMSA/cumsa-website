@@ -7,14 +7,6 @@ export default function EventsPage() {
   const events = [
     {
       id: 1,
-      title: "Annual Formal Dinner",
-      description: "Our signature event bringing together members of the vibrant CUMSA community. Held at one of Cambridge's historic college halls, the dinner strengthens bonds between CUMSA families—a longstanding tradition that pairs freshers with seniors to help them navigate Cambridge life.",
-      category: "Social",
-      timing: "October",
-      image: "/events/formal.JPG",
-    },
-    {
-      id: 2,
       title: "Orientation",
       description: "CUMSA's annual 3D2N orientation welcoming new undergraduates to the CUMSA family. This year's 'Alice in Wonderland' themed orientation at Civil Service Club @ Changi included icebreakers, telematch, Amazing Race, and seniors' sharing sessions.",
       category: "Academic",
@@ -22,12 +14,20 @@ export default function EventsPage() {
       image: "/events/ori.jpg",
     },
     {
-      id: 3,
+      id: 2,
       title: "KopiTalks",
       description: "Our trademark speakers' event jointly organised with Oxford (OUMSSA), featuring productive dialogue on critical issues. This year's focus on social cohesion included Minister Chan Chun Sing and expert panelists discussing Singapore's social compact.",
       category: "Professional",
       timing: "September",
       image: "/events/kopitalk.jpg",
+    },
+    {
+      id: 3,
+      title: "Annual Formal Dinner",
+      description: "Our signature event bringing together members of the vibrant CUMSA community. Held at one of Cambridge's historic college halls, the dinner strengthens bonds between CUMSA families—a longstanding tradition that pairs freshers with seniors to help them navigate Cambridge life.",
+      category: "Social",
+      timing: "October",
+      image: "/events/formal.JPG",
     },
     {
       id: 4,
@@ -63,7 +63,7 @@ export default function EventsPage() {
           <div className="mb-16">
             <h1 className="text-center text-4xl font-bold mb-4 text-foreground">CUMSA Events</h1>
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 The organisation continues to bring together members of the Malaysian and Singaporean communities, albeit on a slightly larger scale. From 12 students at our founding, the organisation has grown to over 400. With this, we have adapted, and our service to the Malaysian and Singaporean community is now multi-faceted.
               </p>
               

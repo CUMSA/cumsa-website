@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image"
+import Link from "next/link"
+import { getPlatinumSponsors, getGoldSponsors } from "@/data/sponsors";
 
 // Custom social media icons since Heroicons doesn't have specific social media icons
 const FacebookIcon = () => (
@@ -28,29 +30,28 @@ const InstagramIcon = () => (
 );
 
 export default function Footer() {
+  const platinumSponsors = getPlatinumSponsors();
+  const goldSponsors = getGoldSponsors();
+
   return (
-    <footer className="bg-slate-950 text-white py-6">
+    <footer className="bg-slate-950 text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start">
-          <div className="mb-8 md:mb-0 flex">
-            <div className="flex items-center justify-center space-x-2">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-8">
+          <div className="items-center mb-6 md:mb-0">
+            <div className="flex items-center space-x-4">
               <Image
                 src="/favicon.ico"
                 alt="CUMSA Logo"
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 className="rounded"
               />
+              <div>
+                <h3 className="text-lg font-medium">Cambridge University Singapore</h3>
+                <h3 className="text-lg font-medium">and Malaysia Association</h3>
+              </div>
             </div>
-            <div className="items-center justify-center mx-4"> 
-              <h3>
-                Cambridge University Singapore
-              </h3>
-              <h3>
-                and Malaysia Association
-              </h3>
-            </div>
-            <div className="flex items-center justify-center space-x-2 gap-4 ml-5">
+            <div className="flex items-center space-x-4 mt-4">
               <Button variant="ghost" size="sm" className="p-2 text-white hover:text-gray-300 transition-colors">
                 <a href="https://www.instagram.com/cumsa_">
                   <span className="sr-only">Instagram</span>
@@ -80,14 +81,63 @@ export default function Footer() {
                   <EmailIcon />
                 </a>
               </Button>
+            </div> 
+          </div>
+
+
+        {/* Sponsors Section */}
+          <div>
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+              
+              {/* Platinum Sponsors */}
+              {platinumSponsors.length > 0 && (
+                <div className="text-center">
+                  <h4 className="text-sm font-medium text-gray-300 mb-3">Platinum Sponsors</h4>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    {platinumSponsors.map((sponsor) => (
+                      <Link key={sponsor.id} href={`/sponsors/${sponsor.slug}`}>
+                        <Image
+                          src={sponsor.picture}
+                          alt={sponsor.name}
+                          width={100}
+                          height={50}
+                          className="object-contain hover:opacity-80 transition-opacity bg-white rounded p-2"
+                        />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+ 
+              {/* Gold Sponsors */}
+              {goldSponsors.length > 0 && (
+                <div className="text-center">
+                  <h4 className="text-sm font-medium text-gray-300 mb-3">Gold Sponsors</h4>
+                  <div className="flex flex-wrap justify-center gap-4 bg-white rounded items-center">
+                    {goldSponsors.map((sponsor) => (
+                      <Link key={sponsor.id} href={`/sponsors/${sponsor.slug}`}>
+                        <Image
+                          src={sponsor.picture}
+                          alt={sponsor.name}
+                          width={100}
+                          height={50}
+                          className="object-contain hover:opacity-80 transition-opacity bg-white rounded p-2"
+                        />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
             </div>
           </div>
-          
-          <div className="mt-4 text-center">
-            <div className="text-sm text-gray-400">
-              <p>© Copyright 2025 CUMSA.</p>
-              <p>All rights reserved</p>
-            </div>
+
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-700 pt-4 mt-6 text-center">
+          <div className="text-sm text-gray-400">
+            <p>© Copyright 2025 CUMSA. All rights reserved</p>
           </div>
         </div>
         

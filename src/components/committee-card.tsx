@@ -2,17 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-
-export interface CommitteeMember {
-  id: string;
-  name: string;
-  position: string;
-  subject: string;
-  college: string;
-  year: string;
-  photo: string;
-  email?: string;
-}
+import type { CommitteeMember } from "@/data/committee";
 
 interface CommitteeCardProps {
   member: CommitteeMember;

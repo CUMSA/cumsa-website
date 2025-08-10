@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -55,12 +57,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="text-center">
+
+          <div className="text-center mt-16 p-8 bg-muted/50 rounded-lg">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Join Our Community</h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Whether you&apos;re a current student, recent graduate, or seasoned alumnus, 
               CUMSA welcomes all members of the Malaysian and Singaporean community at Cambridge.
             </p>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <Badge variant="outline" className="px-4 py-2">
+                <Link href="https://membership.cumsa.org/">
+                  Sign up for membership
+                </Link>
+              </Badge>
+            </div>
           </div>
         </div>
       </div>
