@@ -42,6 +42,14 @@ const sponsorsData: Sponsor[] = [
     picture: "/sponsors/mha-logo.png",
     slug: "mha"
   },
+  {
+    id: "nomura",
+    name: "Nomura",
+    description: "Nomura is a financial services group with an integrated global network.",
+    tier: "gold",
+    picture: "/sponsors/nomura-logo.jpg",
+    slug: "nomura"
+  },
 ];
 
 export default function SponsorsPage() {

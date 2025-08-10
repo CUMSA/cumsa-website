@@ -84,6 +84,16 @@ const sponsors: Record<string, Sponsor> = {
       { title: 'Internships', url: 'https://www.mha.gov.sg/careers/internships' },
       { title: 'Linkedin', url: 'http://www.linkedin.com/company/mhasingapore'}
     ]
+  },
+  'nomura': {
+    name: 'Nomura',
+    tier: 'Gold',
+    logo: '/sponsors/nomura-logo.jpg',
+    description: ['Nomura is a global financial services group with an integrated network spanning approximately 30 countries and regions. By connecting markets East & West, we service the needs of individuals, institutions, corporates and governments through our three business divisions: Wealth Management, Investment Management and Wholesale (Global Markets and Investment Banking).', 'Driven by the insights of some 26,000 people worldwide, we put our clients at the center of everything we do, delivering unparalleled access to, from and within Asia.'],
+    website: 'https://www.nomura.com/',
+    industry: 'Banking',
+    partnershipSince: '2025',
+    headquarters: 'Japan',
   }
 };
 
