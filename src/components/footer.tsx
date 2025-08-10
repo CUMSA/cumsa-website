@@ -34,7 +34,7 @@ export default function Footer() {
   const goldSponsors = getGoldSponsors();
 
   return (
-    <footer className="bg-slate-950 text-white py-8">
+    <footer className="border-t border-gray-700 bg-slate-950 text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">
           <div className="items-center mb-6 md:mb-0">
