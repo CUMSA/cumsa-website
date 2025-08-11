@@ -83,7 +83,7 @@ export const sponsorsData: Sponsor[] = [
     name: "Setia Law LLC",
     description: "A specialist high-stakes dispute resolution and crisis management team, built on formidable experience, driven by ingenuity, and rooted in integrity.",
     tier: "gold",
-    picture: "/sponsors/setia-logo.jpg",
+    picture: "/sponsors/setia-logo.png",
     slug: "setia",
     detailedDescription: [
       'Setia Law is a specialist high-stakes dispute resolution and crisis management team in Singapore, built on formidable experience, driven by ingenuity, and rooted in integrity',
@@ -126,7 +126,7 @@ export const sponsorsData: Sponsor[] = [
     name: "Nomura",
     description: "Nomura is a financial services group with an integrated global network.",
     tier: "gold",
-    picture: "/sponsors/nomura-logo.jpg",
+    picture: "/sponsors/nomura-logo.png",
     slug: "nomura",
     detailedDescription: [
       'Nomura is a global financial services group with an integrated network spanning approximately 30 countries and regions. By connecting markets East & West, we service the needs of individuals, institutions, corporates and governments through our three business divisions: Wealth Management, Investment Management and Wholesale (Global Markets and Investment Banking).',

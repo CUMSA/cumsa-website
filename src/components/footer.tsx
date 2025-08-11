@@ -32,26 +32,101 @@ const InstagramIcon = () => (
 export default function Footer() {
   const platinumSponsors = getPlatinumSponsors();
   const goldSponsors = getGoldSponsors();
+  const allPremiumSponsors = [...platinumSponsors, ...goldSponsors];
 
   return (
-    <footer className="border-t border-gray-700 bg-slate-950 text-white py-8">
+    <>
+      {/* Sponsor Carousel Section */}
+      {allPremiumSponsors.length > 0 && (
+        <div className="bg-muted border-t border-border py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              {/* Platinum Sponsors */}
+              {platinumSponsors.length > 0 && (
+                <div className="flex flex-col">
+                  <h3 className="text-lg font-semibold text-foreground mb-6">Platinum Sponsors</h3>
+                  <div className="relative overflow-hidden">
+                    <div className="flex space-x-8">
+                      {/* Duplicate sponsors for seamless loop */}
+                      {[...platinumSponsors].map((sponsor, index) => (
+                        <Link 
+                          key={`${sponsor.id}-${index}`} 
+                          href={`/sponsors/${sponsor.slug}`}
+                          className="flex-shrink-0"
+                        >
+                          <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow w-32 h-20 flex items-center justify-center">
+                            <Image
+                              src={sponsor.picture}
+                              alt={sponsor.name}
+                              width={100}
+                              height={60}
+                              className="object-contain max-w-full max-h-full"
+                            />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Gold Sponsors */}
+              {goldSponsors.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-6">Gold Sponsors</h3>
+                  <div className="relative overflow-hidden">
+                    <div className="flex space-x-8 animate-scroll">
+                      {/* Duplicate sponsors for seamless loop */}
+                      {[...goldSponsors, ...goldSponsors].map((sponsor, index) => (
+                        <Link 
+                          key={`${sponsor.id}-${index}`} 
+                          href={`/sponsors/${sponsor.slug}`}
+                          className="flex-shrink-0"
+                        >
+                          <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow w-32 h-20 flex items-center justify-center">
+                            <Image
+                              src={sponsor.picture}
+                              alt={sponsor.name}
+                              width={100}
+                              height={60}
+                              className="object-contain max-w-full max-h-full"
+                            />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+            </div>
+          </div>
+        </div>
+      )}
+    
+    <footer className="bg-slate-950 text-white py-6">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-          <div className="items-center mb-6 md:mb-0">
-            <div className="flex items-center space-x-4">
+        <div className="flex flex-col md:flex-row justify-between items-start">
+          <div className="mb-8 md:mb-0 flex">
+            <div className="flex items-center justify-center space-x-2">
               <Image
                 src="/favicon.ico"
                 alt="CUMSA Logo"
-                width={48}
-                height={48}
+                width={40}
+                height={40}
                 className="rounded"
               />
-              <div>
-                <h3 className="text-lg font-medium">Cambridge University Singapore</h3>
-                <h3 className="text-lg font-medium">and Malaysia Association</h3>
-              </div>
             </div>
-            <div className="flex items-center space-x-4 mt-4">
+            <div className="items-center justify-center mx-4"> 
+              <h3>
+                Cambridge University Singapore
+              </h3>
+              <h3>
+                and Malaysia Association
+              </h3>
+            </div>
+            <div className="flex items-center justify-center space-x-2 gap-4 ml-5">
               <Button variant="ghost" size="sm" className="p-2 text-white hover:text-gray-300 transition-colors">
                 <a href="https://www.instagram.com/cumsa_">
                   <span className="sr-only">Instagram</span>
@@ -81,67 +156,19 @@ export default function Footer() {
                   <EmailIcon />
                 </a>
               </Button>
-            </div> 
-          </div>
-
-
-        {/* Sponsors Section */}
-          <div>
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
-              
-              {/* Platinum Sponsors */}
-              {platinumSponsors.length > 0 && (
-                <div className="text-center">
-                  <h4 className="text-sm font-medium text-gray-300 mb-3">Platinum Sponsors</h4>
-                  <div className="flex flex-wrap justify-center gap-4">
-                    {platinumSponsors.map((sponsor) => (
-                      <Link key={sponsor.id} href={`/sponsors/${sponsor.slug}`}>
-                        <Image
-                          src={sponsor.picture}
-                          alt={sponsor.name}
-                          width={100}
-                          height={50}
-                          className="object-contain hover:opacity-80 transition-opacity bg-white rounded p-2"
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
- 
-              {/* Gold Sponsors */}
-              {goldSponsors.length > 0 && (
-                <div className="text-center">
-                  <h4 className="text-sm font-medium text-gray-300 mb-3">Gold Sponsors</h4>
-                  <div className="flex flex-wrap justify-center gap-4 bg-white rounded items-center">
-                    {goldSponsors.map((sponsor) => (
-                      <Link key={sponsor.id} href={`/sponsors/${sponsor.slug}`}>
-                        <Image
-                          src={sponsor.picture}
-                          alt={sponsor.name}
-                          width={100}
-                          height={50}
-                          className="object-contain hover:opacity-80 transition-opacity bg-white rounded p-2"
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-
             </div>
           </div>
-
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-700 pt-4 mt-6 text-center">
-          <div className="text-sm text-gray-400">
-            <p>© Copyright 2025 CUMSA. All rights reserved</p>
+          
+          <div className=" text-center">
+            <div className="text-sm text-gray-400">
+              <p>© Copyright 2025 CUMSA.</p>
+              <p>All rights reserved</p>
+            </div>
           </div>
         </div>
         
       </div>
     </footer>
+    </>
   );
 }
