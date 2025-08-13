@@ -9,11 +9,6 @@ interface CommitteeCardProps {
 }
 
 export function CommitteeCard({ member }: CommitteeCardProps) {
-  const getBadgeVariant = (position: string) => {
-    if (position === 'President') return 'default';
-    return 'secondary';
-  };
-
   return (
     <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
@@ -28,7 +23,7 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
           </div>
         </div>
         <CardTitle className="text-xl">{member.name}</CardTitle>
-        <Badge variant={getBadgeVariant(member.position)} className="mx-auto">
+        <Badge variant='secondary' className="mx-auto">
           {member.position}
         </Badge>
       </CardHeader>
