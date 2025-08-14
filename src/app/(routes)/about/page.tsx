@@ -17,7 +17,7 @@ export default function AboutPage() {
               </p>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                  CUMSA&apos;s founding committee included former Minister Mentor Lee Kuan Yew (as President), and former Chief Justice Yong Pung How (as Secretary). Over 60 years since, many Malaysians and Singaporeans have contributed to the organisation – a list which includes Singapore&apos;s current Prime Minister Lee Hsien Loong, and former Minister for Foreign Affairs George Yeo.
+                Its founding committee included former Prime Minister Lee Kuan Yew (as President), and former Chief Justice Yong Pung How (as Secretary). Over 77 years since, many Malaysians and Singaporeans alike have contributed to the growth of the organisation. Famous alumni from Singapore include SM Lee Hsien Loong, three current cabinet ministers, and several Supreme Court justices. 
               </p>
             </div>
             
