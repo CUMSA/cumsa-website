@@ -32,7 +32,7 @@ export const sponsorsData: Sponsor[] = [
       'Mitsui Bussan Commodities Ltd ("MBCL") is an energy derivative market maker based in London with offices in Singapore and New York. We are 100% owned by Mitsui & Co of Japan. We have over 25 years of experience to provide hedging solutions for our clients, with range from energy producers, refiners, utilities and trading houses. Our coverage spans Financial Services in Oil, Refined Products, Gas, Power, Coal and TTFs in addition to Emissions Allowances.'
     ],
     website: 'https://www.mbcl.com/',
-    industry: 'Energy Trading & Commodities',
+    industry: 'Commodities derivatives brokerage / risk management',
     partnershipSince: '2024',
     headquarters: 'London, UK',
   },
@@ -50,7 +50,7 @@ export const sponsorsData: Sponsor[] = [
       'Mapletree\'s overall student housing portfolio comprises a total of 85 Purpose-Built Student Accommodation assets with close to 33,000 beds located across 46 cities in the UK, the US, Germany and Canada. These include Student Castle Cambridge, a premium 220-bed student accommodation located just a short distance to the University of Cambridge, with access to plenty of amenities. Find out more at the links below'
     ],
     website: 'https://www.mapletree.com.sg',
-    industry: 'Real Estate Investment & Development',
+    industry: 'Real Estate Investment & Management',
     partnershipSince: '2025',
     headquarters: 'Singapore',
     videoUrl: 'https://player.vimeo.com/video/1058191364?h=70997f302f&badge=0&autopause=0&player_id=0&app_id=58479',
@@ -71,7 +71,7 @@ export const sponsorsData: Sponsor[] = [
       'The Infocomm Media Development Authority (IMDA) leads Singapore\'s digital transformation by developing a vibrant digital economy and an inclusive digital society. IMDA supports the growth of Singapore\'s infocomm technology and media sectors through policy formulation, industry development, and capability building.'
     ],
     website: 'https://www.imda.gov.sg',
-    industry: 'Digital Technology & Media Development',
+    industry: 'Government - Infocomm & Media Sector Regulator',
     partnershipSince: '2024',
     headquarters: 'Singapore',
     footerLinks: [
@@ -111,7 +111,7 @@ export const sponsorsData: Sponsor[] = [
       'The Ministry of Home Affairs (MHA) is responsible for maintaining law and order, safeguarding internal security, and managing immigration and citizenship matters in Singapore. MHA works to ensure Singapore remains a safe and secure nation for all residents and visitors.'
     ],
     website: 'https://www.mha.gov.sg',
-    industry: 'Government & Public Safety',
+    industry: 'Government - Home Affairs & Security',
     partnershipSince: '2024',
     headquarters: 'Singapore',
     footerLinks: [
@@ -133,7 +133,7 @@ export const sponsorsData: Sponsor[] = [
       'Driven by the insights of some 26,000 people worldwide, we put our clients at the center of everything we do, delivering unparalleled access to, from and within Asia.'
     ],
     website: 'https://www.nomura.com/',
-    industry: 'Banking',
+    industry: 'Financial Services',
     partnershipSince: '2025',
     headquarters: 'Japan',
   }

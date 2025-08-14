@@ -97,7 +97,7 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
                   )}
                   {sponsor.industry && (
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Industry:</span>
+                      <span className="text-muted-foreground mr-1">Industry: </span>
                       <span className="font-medium text-right">{sponsor.industry}</span>
                     </div>
                   )}
