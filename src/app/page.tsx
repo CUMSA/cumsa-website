@@ -19,12 +19,12 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl mb-6">
-            Cambridge University Singapore
+            Cambridge University Malaysia
             <br />
-            <span className="text-blue-600">and Malaysia Association</span>
+            <span className="text-blue-600">and Singapore Association</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
-            Welcome to the Cambridge University Singapore and Malaysia Association (CUMSA).
+            Welcome to the Cambridge University Malaysia and Singapore Association (CUMSA).
           </p>
           <div className="flex justify-center gap-4">
             <Button size="lg">
@@ -41,7 +41,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-foreground mb-6">
-              Welcome to the Cambridge University Singapore and Malaysia Association (CUMSA).
+              Welcome to the Cambridge University Malaysia and Singapore Association (CUMSA).
             </p>
             <p className="text-muted-foreground mb-8">
               Founded in 1948, CUMSA aims to bring together members of the Malaysian and Singaporean communities in Cambridge, fostering
