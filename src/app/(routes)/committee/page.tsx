@@ -8,7 +8,7 @@ export default function CommitteePage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-8">CUMSA Committee 2024-2025</h1>
+          <h1 className="text-4xl font-bold text-center mb-8">CUMSA Committee 2025-2026</h1>
           <p className="text-lg text-muted-foreground text-center mb-12">
             Meet the dedicated team working to serve the Malaysian and Singaporean community at Cambridge.
           </p>
