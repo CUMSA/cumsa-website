@@ -120,10 +120,10 @@ export default function Footer() {
             </div>
             <div className="items-center justify-center mx-4"> 
               <h3>
-                Cambridge University Singapore
+                Cambridge University Malaysia
               </h3>
               <h3>
-                and Malaysia Association
+                and Singapore Association
               </h3>
             </div>
             <div className="flex items-center justify-center space-x-2 gap-4 ml-5">
