@@ -1,0 +1,126 @@
+export interface Partner {
+  id: string;
+  name: string;
+  discount: string;
+  picture: string;
+  location?: string;
+  description?: string;
+  mapsUrl?: string;
+}
+
+export const partnersData: Partner[] = [
+  {
+    id: "seven-days",
+    name: "Seven Days",
+    discount: "10% off",
+    picture: "/partners/seven-days.jpg",
+    location: "Cambridge",
+    description: "Asian supermarket and convenience store",
+    mapsUrl: "https://maps.app.goo.gl/vvKCnbEXZfN2VZox6"
+  },
+  {
+    id: "hk-fusion",
+    name: "HK Fusion",
+    discount: "10% off",
+    picture: "/partners/hk-fusion.jpg",
+    location: "Cambridge",
+    description: "Hong Kong style restaurant",
+    mapsUrl: "https://maps.app.goo.gl/uUpMpGDePzkQJWqTA"
+  },
+  {
+    id: "chinese-canteen",
+    name: "Chinese Canteen",
+    discount: "20% off",
+    picture: "/partners/chinese-canteen.jpg",
+    location: "Cambridge",
+    description: "Authentic Chinese cuisine",
+    mapsUrl: "https://maps.app.goo.gl/Utd6hnqa2Hb4R3gf7"
+  },
+  {
+    id: "1-1-rgm",
+    name: "1-1 RGM",
+    discount: "10% off",
+    picture: "/partners/1-1-rgm.jpg",
+    location: "Cambridge",
+    description: "Asian grocery store",
+    mapsUrl: "https://maps.app.goo.gl/MdHqApDRjJJsm4u16"
+  },
+  {
+    id: "mr-wang",
+    name: "Mr Wang",
+    discount: "10% off",
+    picture: "/partners/mr-wang.jpg",
+    location: "Cambridge",
+    description: "Traditional Chinese restaurant",
+    mapsUrl: "https://maps.app.goo.gl/CwRM6N9jXeb5HHp39"
+  },
+  {
+    id: "jiamart",
+    name: "Jiamart",
+    discount: "10% off",
+    picture: "/partners/jiamart.jpg",
+    location: "Cambridge",
+    description: "Asian supermarket",
+    mapsUrl: "https://maps.app.goo.gl/tVEEay7avMqh9JU59"
+  },
+  {
+    id: "tiffin-truck",
+    name: "Tiffin Truck",
+    discount: "15% off",
+    picture: "/partners/tiffin-truck.jpg",
+    location: "Cambridge",
+    description: "Indian street food",
+    mapsUrl: "https://maps.app.goo.gl/A9XMvuyz5Z2sYwC67"
+  },
+  {
+    id: "bridges",
+    name: "Bridges",
+    discount: "10% off",
+    picture: "/partners/bridges.jpg",
+    location: "Cambridge",
+    description: "Local restaurant",
+    mapsUrl: "https://maps.app.goo.gl/SVvobmcfsrW9jCG39"
+  },
+  {
+    id: "crepeaffaire",
+    name: "Crepeaffaire",
+    discount: "10% off",
+    picture: "/partners/crepeaffaire.jpg",
+    location: "Cambridge",
+    description: "Crepes and galettes",
+    mapsUrl: "https://maps.app.goo.gl/LcB2Y2Bc9AJBKjcZ9"
+  },
+  {
+    id: "crepes",
+    name: "Crepes",
+    discount: "10% off",
+    picture: "/partners/crepes.jpg",
+    location: "Cambridge",
+    description: "Traditional French crepes",
+    mapsUrl: "https://maps.app.goo.gl/gQhzDwpUHGXafMSY9"
+  },
+  {
+    id: "kings-dough",
+    name: "Kings Dough",
+    discount: "15% off",
+    picture: "/partners/kings-dough.jpg",
+    location: "Cambridge",
+    description: "Artisan bakery and sandwiches",
+    mapsUrl: "https://maps.app.goo.gl/zPn7haFSrHXZdLEA8"
+  },
+  {
+    id: "the-redbull",
+    name: "The Redbull",
+    discount: "10% off",
+    picture: "/partners/the-redbull.jpg",
+    location: "Cambridge",
+    description: "Traditional British pub",
+    mapsUrl: "https://maps.app.goo.gl/Rhzkmnk3spPTUdqu7"
+  }
+];
+
+// Helper function to get all partners
+export const getAllPartners = () => partnersData;
+
+// Helper function to find partner by id
+export const getPartnerById = (id: string) => partnersData.find(partner => partner.id === id);

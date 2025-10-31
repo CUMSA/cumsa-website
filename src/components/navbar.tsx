@@ -78,11 +78,17 @@ export default function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/sponsors" className={navigationMenuTriggerStyle()}>
-                  Sponsors
-                </Link>
-              </NavigationMenuLink>
+              <NavigationMenuTrigger>Sponsors & Partners</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px]">
+                  <ListItem href="/sponsors" title="Sponsors">
+                    Our sponsors and supporters
+                  </ListItem>
+                  <ListItem href="/partners" title="Partners">
+                    Enjoy discounts with our partners
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
@@ -159,12 +165,26 @@ export default function Navbar() {
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
 
+              {/* Sponsors & Partners submenu */}
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger className="cursor-pointer">
+                  Sponsors & Partners
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem asChild>
+                    <Link href="/sponsors" className="cursor-pointer">
+                      Sponsors
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/partners" className="cursor-pointer">
+                      Partners
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+
               {/* Direct links */}
-              <DropdownMenuItem asChild>
-                <Link href="/sponsors" className="cursor-pointer">
-                  Sponsors
-                </Link>
-              </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/committee" className="cursor-pointer">
                   Committee
