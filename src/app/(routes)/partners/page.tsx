@@ -27,7 +27,7 @@ export default function PartnersPage() {
             {partners.map((partner) => (
               <Link
                 key={partner.id}
-                href={partner.mapsUrl || "#"}
+                href={partner.mapsUrl ?? "#"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full max-w-xs sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)]"
