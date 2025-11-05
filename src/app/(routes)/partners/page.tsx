@@ -33,10 +33,10 @@ export default function PartnersPage() {
                 className="block w-full max-w-xs sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)]"
               >
                 <Card 
-                  className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+                  className="h-[360px] overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 >
                   <CardContent className="p-0">
-                    <div className="flex flex-col items-center text-center p-6">
+                    <div className="flex h-full flex-col items-center justify-between text-center p-6">
                       {/* Partner Image */}
                       <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-border">
                         <Image
@@ -56,13 +56,12 @@ export default function PartnersPage() {
                       <p className="text-2xl font-bold text-primary">
                         {partner.discount}
                       </p>
-                      
-                      {/* Optional Description
+
                       {partner.description && (
-                        <p className="text-sm text-muted-foreground mt-2">
+                        <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
                           {partner.description}
                         </p>
-                      )} */}
+                      )}
                     </div>
                   </CardContent>
                 </Card>
