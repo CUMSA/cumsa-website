@@ -15,7 +15,7 @@ export const partnersData: Partner[] = [
     discount: "10% off",
     picture: "/partners/seven-days.jpg",
     location: "Cambridge",
-    description: "10% discount",
+    // description: "10% discount",
     mapsUrl: "https://maps.app.goo.gl/vvKCnbEXZfN2VZox6"
   },
   {
@@ -24,7 +24,7 @@ export const partnersData: Partner[] = [
     discount: "10% off",
     picture: "/partners/hk-fusion.jpg",
     location: "Cambridge",
-    description: "10% off (dine-in only)",
+    description: "Dine-in only",
     mapsUrl: "https://maps.app.goo.gl/uUpMpGDePzkQJWqTA"
   },
   {
@@ -33,25 +33,25 @@ export const partnersData: Partner[] = [
     discount: "20% off",
     picture: "/partners/chinese-canteen.jpg",
     location: "Cambridge",
-    description: "20% off for cash payments (10% off on top of the existing 10% offered for cash payments)",
+    description: "Cash payments only (10% off in addition to 10% cash discount)",
     mapsUrl: "https://maps.app.goo.gl/Utd6hnqa2Hb4R3gf7"
   },
   {
     id: "1-1-rgm",
     name: "1-1 RGM",
-    discount: "10% off",
+    discount: "20% off",
     picture: "/partners/1-1-rgm.jpg",
     location: "Cambridge",
-    description: "10% off for card payments, 20% off for cash payments (10% off on top of the existing 10% offered for cash payments)",
+    description: "10% off for card payments, 20% off for cash payments",
     mapsUrl: "https://maps.app.goo.gl/MdHqApDRjJJsm4u16"
   },
   {
     id: "mr-wang",
     name: "Mr Wang",
-    discount: "10% off",
+    discount: "20% off",
     picture: "/partners/mr-wang.jpg",
     location: "Cambridge",
-    description: "20% for cash payment (10% Service Fee waived, additional 10% discount, 1 bowl per pax)",
+    description: "Cash payment only (1 bowl per pax)",
     mapsUrl: "https://maps.app.goo.gl/CwRM6N9jXeb5HHp39"
   },
   {
@@ -60,7 +60,7 @@ export const partnersData: Partner[] = [
     discount: "10% off",
     picture: "/partners/jiamart.jpg",
     location: "Cambridge",
-    description: "10% off in-store orders",
+    description: "In-store orders only",
     mapsUrl: "https://maps.app.goo.gl/tVEEay7avMqh9JU59"
   },
   {
@@ -69,7 +69,7 @@ export const partnersData: Partner[] = [
     discount: "15% off",
     picture: "/partners/tiffin-truck.jpg",
     location: "Cambridge",
-    description: "15% off (270 vouchers for CUMSA formal)",
+    // description: "15% off (270 vouchers for CUMSA formal)",
     mapsUrl: "https://maps.app.goo.gl/A9XMvuyz5Z2sYwC67"
   },
   {
@@ -78,22 +78,22 @@ export const partnersData: Partner[] = [
     discount: "10% off",
     picture: "/partners/bridges.jpg",
     location: "Cambridge",
-    description: "10% discount (eat-in or takeaway)",
+    // description: "10% discount (eat-in or takeaway)",
     mapsUrl: "https://maps.app.goo.gl/SVvobmcfsrW9jCG39"
   },
   {
     id: "crepeaffaire",
     name: "Crepeaffaire",
-    discount: "10% off",
+    discount: "15% off",
     picture: "/partners/crepeaffaire.jpg",
     location: "Cambridge",
-    description: "15% discount; 30% discount on Thursdays",
+    description: "30% discount on Thursdays",
     mapsUrl: "https://maps.app.goo.gl/LcB2Y2Bc9AJBKjcZ9"
   },
   {
     id: "crepes",
     name: "Crepes",
-    discount: "10% off",
+    discount: "£2 off",
     picture: "/partners/crepes.jpg",
     location: "Cambridge",
     description: "£2 off each crepe; 50p off each hot drink",
@@ -105,7 +105,7 @@ export const partnersData: Partner[] = [
     discount: "15% off",
     picture: "/partners/kings-dough.jpg",
     location: "Cambridge",
-    description: "15% off panini (10% offered to students)",
+    description: "15% off panini",
     mapsUrl: "https://maps.app.goo.gl/zPn7haFSrHXZdLEA8"
   },
   {
@@ -114,7 +114,7 @@ export const partnersData: Partner[] = [
     discount: "10% off",
     picture: "/partners/the-redbull.jpg",
     location: "Cambridge",
-    description: "10% on Thursdays",
+    description: "Thursdays only",
     mapsUrl: "https://maps.app.goo.gl/Rhzkmnk3spPTUdqu7"
   }, 
   {
@@ -132,7 +132,7 @@ export const partnersData: Partner[] = [
     discount: "15% off",
     picture: "/partners/moana-poke.jpg",
     location: "Cambridge",
-    description: "15% off 2 items",
+    description: "With minimum order of 2 items",
     mapsUrl: "https://maps.app.goo.gl/xjLpwQbpMhTweA8bA"
   }, 
 ];
