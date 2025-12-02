@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image'
 import { getSponsorBySlug } from '@/data/sponsors';
 import type { FooterLink } from '@/data/sponsors';
+import { ZoomableImage } from '@/components/zoomable-image';
 
 export default async function SponsorPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -138,12 +139,12 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
             <div className="my-8">
               <h3 className="text-xl font-semibold mb-4">Corporate Brochure</h3>
               <div className="relative w-full aspect-video bg-transparent rounded-lg overflow-hidden">
-                  <Image
+                  <ZoomableImage
                     src={sponsor.images}
-                    alt={`${sponsor.name} logo`}
+                    alt={`${sponsor.name} Corporate Brochure`}
                     width={400}
                     height={800}
-                    className="object-contain max-h-full max-w-full"
+                    className="w-full h-full"
                   />
               </div>
             </div>
