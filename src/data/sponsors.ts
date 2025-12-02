@@ -18,6 +18,7 @@ export interface Sponsor {
   headquarters?: string;
   footerLinks?: FooterLink[];
   videoUrl?: string;
+  images?: string;
 }
 
 export const sponsorsData: Sponsor[] = [
@@ -136,6 +137,22 @@ export const sponsorsData: Sponsor[] = [
     industry: 'Financial Services',
     partnershipSince: '2025',
     headquarters: 'Japan',
+  }, 
+  {
+    id: "st-engineering",
+    name: "ST Engineering",
+    description: "ST Engineering is a global technology, defence and engineering group with a diverse portfolio of businesses across the aerospace, smart city, defence and public security segments.",
+    tier: "gold",
+    picture: "/sponsors/st-engineering-logo.png",
+    slug: "st-engineering",
+    detailedDescription: [
+      'ST Engineering is a global technology, defence and engineering group with a diverse portfolio of businesses across the aerospace, smart city, defence and public security segments. The Group harnesses technology and innovation to solve real-world problems, enabling a more secure and sustainable world. Headquartered in Singapore, it has operations spanning Asia, Europe, the Middle East and the U.S., serving customers in more than 100 countries. ST Engineering reported a revenue of over $11 billion in 2024 and ranks among the largest companies listed on the Singapore Exchange. It is a component stock of MSCI Singapore, FTSE Straits Times Index and Dow Jones Best-in-Class Asia Pacific Index'
+    ],
+    website: 'https://www.stengg.com/',
+    industry: 'Technology',
+    partnershipSince: '2025',
+    headquarters: 'Singapore',
+    images: '/sponsors/st-engineering-brochure.png'
   }
 ];
 

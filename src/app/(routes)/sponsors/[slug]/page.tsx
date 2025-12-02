@@ -133,6 +133,22 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
               </div>
             </div>
           )}
+
+          {sponsor.images && (
+            <div className="my-8">
+              <h3 className="text-xl font-semibold mb-4">Corporate Brochure</h3>
+              <div className="relative w-full aspect-video bg-transparent rounded-lg overflow-hidden">
+                  <Image
+                    src={sponsor.images}
+                    alt={`${sponsor.name} logo`}
+                    width={400}
+                    height={800}
+                    className="object-contain max-h-full max-w-full"
+                  />
+              </div>
+            </div>
+          ) 
+          }
         </div>
       </div>
     </div>
