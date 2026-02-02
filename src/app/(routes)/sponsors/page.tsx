@@ -13,21 +13,20 @@ export default function SponsorsPage() {
           <h1 className="text-4xl font-bold text-center mb-8">Our Sponsors</h1>
 
           {/* Platinum Sponsors */}
-          {
-            platinumSponsors.length && 
-              <section id="platinum" className="mb-16">
-                <div className="flex items-center justify-center gap-3 mb-8">
-                  <h2 className="text-3xl font-bold">Platinum Sponsors</h2>
-                </div>
-                <div className="flex flex-wrap justify-center gap-6">
-                  {platinumSponsors.map((sponsor) => (
-                    <div key={sponsor.id} className="w-full max-w-xs">
-                      <SponsorCard sponsor={sponsor} />
-                    </div>
-                  ))}
-                </div>
-              </section>
-          }
+          {platinumSponsors.length > 0 && (
+            <section id="platinum" className="mb-16">
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <h2 className="text-3xl font-bold">Platinum Sponsors</h2>
+              </div>
+              <div className="flex flex-wrap justify-center gap-6">
+                {platinumSponsors.map((sponsor) => (
+                  <div key={sponsor.id} className="w-full max-w-xs">
+                    <SponsorCard sponsor={sponsor} />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Gold Sponsors */}
           <section id="gold" className="mb-16">
