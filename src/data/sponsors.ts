@@ -22,21 +22,21 @@ export interface Sponsor {
 }
 
 export const sponsorsData: Sponsor[] = [
-  {
-    id: "mitsui-bussan-commodities",
-    name: "Mitsui Bussan Commodities",
-    description: "An energy derivative market maker based in London with over 25 years of experience providing hedging solutions for energy producers, refiners, and utilities.",
-    tier: "platinum",
-    picture: "/sponsors/mitsui-bussan-logo.png",
-    slug: "mitsui-bussan-commodities",
-    detailedDescription: [
-      'Mitsui Bussan Commodities Ltd ("MBCL") is an energy derivative market maker based in London with offices in Singapore and New York. We are 100% owned by Mitsui & Co of Japan. We have over 25 years of experience to provide hedging solutions for our clients, with range from energy producers, refiners, utilities and trading houses. Our coverage spans Financial Services in Oil, Refined Products, Gas, Power, Coal and TTFs in addition to Emissions Allowances.'
-    ],
-    website: 'https://www.mbcl.com/',
-    industry: 'Commodities derivatives brokerage / risk management',
-    partnershipSince: '2024',
-    headquarters: 'London, UK',
-  },
+  // {
+  //   id: "mitsui-bussan-commodities",
+  //   name: "Mitsui Bussan Commodities",
+  //   description: "An energy derivative market maker based in London with over 25 years of experience providing hedging solutions for energy producers, refiners, and utilities.",
+  //   tier: "platinum",
+  //   picture: "/sponsors/mitsui-bussan-logo.png",
+  //   slug: "mitsui-bussan-commodities",
+  //   detailedDescription: [
+  //     'Mitsui Bussan Commodities Ltd ("MBCL") is an energy derivative market maker based in London with offices in Singapore and New York. We are 100% owned by Mitsui & Co of Japan. We have over 25 years of experience to provide hedging solutions for our clients, with range from energy producers, refiners, utilities and trading houses. Our coverage spans Financial Services in Oil, Refined Products, Gas, Power, Coal and TTFs in addition to Emissions Allowances.'
+  //   ],
+  //   website: 'https://www.mbcl.com/',
+  //   industry: 'Commodities derivatives brokerage / risk management',
+  //   partnershipSince: '2024',
+  //   headquarters: 'London, UK',
+  // },
   {
     id: "mapletree",
     name: "Mapletree",
