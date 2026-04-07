@@ -33,16 +33,16 @@ export const partnersData: Partner[] = [
     discount: "20% off",
     picture: "/partners/chinese-canteen.jpg",
     location: "Cambridge",
-    description: "Cash payments only (10% off in addition to 10% cash discount)",
+    description: "Cash payments only",
     mapsUrl: "https://maps.app.goo.gl/Utd6hnqa2Hb4R3gf7"
   },
   {
     id: "1-1-rgm",
-    name: "1-1 RGM",
+    name: "1-1 Rougamo",
     discount: "20% off",
     picture: "/partners/1-1-rgm.jpg",
     location: "Cambridge",
-    description: "10% off for card payments, 20% off for cash payments",
+    description: "10% off card payments, 20% off for cash payments",
     mapsUrl: "https://maps.app.goo.gl/MdHqApDRjJJsm4u16"
   },
   {
@@ -51,7 +51,7 @@ export const partnersData: Partner[] = [
     discount: "20% off",
     picture: "/partners/mr-wang.jpg",
     location: "Cambridge",
-    description: "Cash payment only (1 bowl per pax)",
+    description: "Cash payment only (1 bowl/pax)",
     mapsUrl: "https://maps.app.goo.gl/CwRM6N9jXeb5HHp39"
   },
   {
@@ -100,15 +100,6 @@ export const partnersData: Partner[] = [
     mapsUrl: "https://maps.app.goo.gl/gQhzDwpUHGXafMSY9"
   },
   {
-    id: "kings-dough",
-    name: "Kings Dough",
-    discount: "15% off",
-    picture: "/partners/kings-dough.jpg",
-    location: "Cambridge",
-    description: "15% off panini",
-    mapsUrl: "https://maps.app.goo.gl/zPn7haFSrHXZdLEA8"
-  },
-  {
     id: "the-redbull",
     name: "The Redbull",
     discount: "10% off",
@@ -116,23 +107,14 @@ export const partnersData: Partner[] = [
     location: "Cambridge",
     description: "Thursdays only",
     mapsUrl: "https://maps.app.goo.gl/Rhzkmnk3spPTUdqu7"
-  }, 
-  {
-    id: "T4", 
-    name: "T4", 
-    discount: "10% off", 
-    picture: "/partners/t4.jpg", 
-    location: "Cambridge",
-    description: "10% off (online/app order), from 3-9 November",
-    mapsUrl: "https://maps.app.goo.gl/GWEUYwbktBQ4WfyB6"
-  }, 
+  },
   {
     id: "Moana-Poke",
     name: "Moana Poke",
     discount: "15% off",
     picture: "/partners/moana-poke.jpg",
     location: "Cambridge",
-    description: "With minimum order of 2 items",
+    description: "Min. 2 items",
     mapsUrl: "https://maps.app.goo.gl/xjLpwQbpMhTweA8bA"
   }, 
 ];
