@@ -6,7 +6,7 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", "Consolas", 
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", "Consolas",
     "Liberation Mono", "Menlo", monospace;
 }
 
@@ -121,6 +121,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -130,6 +131,7 @@
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -142,4 +144,29 @@
 /* Pause animation on hover */
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Link styles */
+a.color-link:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.color-link:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.color-link:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a.color-link:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }
