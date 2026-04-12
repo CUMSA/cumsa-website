@@ -19,22 +19,25 @@ export default function ResourcesPage() {
           </nav>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          
+
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-6">Prospective Applicants</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              For pre-university students who are intending on applying to Cambridge for entry in 2026, CUMSA offers application workshops and assistance such as:
+              For pre-university students who are intending on applying to Cambridge for entry in 2027, CUMSA offers application workshops and assistance such as:
             </p>
-            <ul className="text-muted-foreground mb-8 leading-relaxed list-disc list-inside space-y-2">
+            <ul className="text-muted-foreground mb-4 leading-relaxed list-disc list-inside space-y-2">
               <li>Personal statement and supercurriculars workshops</li>
               <li>Admissions tests workshops</li>
               <li>Mock interviews</li>
               <li>In-person school visits</li>
               <li>Mentorship programs</li>
             </ul>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Follow us on <a href="https://www.instagram.com/cumsa_" class="color-link" target="_blank">Instagram</a> for sign-up details!
+            </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               <div className="h-fit">
