@@ -22,6 +22,30 @@ export default function PartnersPage() {
             </p>
           </div>
 
+          {/* Google Maps */}
+          <div className="mb-12">
+            <p className="text-center text-muted-foreground mb-4">
+              Subscribe to our <a
+                href="https://www.google.com/maps/d/u/0/viewer?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI"
+                className="color-link"
+                target="_blank"
+              >Google Maps</a> to view CUMSA discounts on your own device! FAQ/help <a
+                href="https://drive.google.com/file/d/1IL1KYgPo8ZyPgvx9UU7tBOnoRzx5Ez_t/view"
+                className="color-link"
+                target="_blank"
+              >here</a>.
+            </p>
+            <div className="fill-container" style={{ height: "600px" }}>
+              <iframe
+                src="https://www.google.com/maps/d/u/0/embed?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI&ehbc=2E312F&noprof=1"
+                height="650px"
+                className="fill-iframe"
+                style={{ marginTop: "-50px" }}
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
           {/* Partners Grid */}
           <div className="flex flex-wrap justify-center gap-8">
             {partners.map((partner) => (
@@ -32,7 +56,7 @@ export default function PartnersPage() {
                 rel="noopener noreferrer"
                 className="block w-full max-w-xs sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)]"
               >
-                <Card 
+                <Card
                   className="h-[360px] overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 >
                   <CardContent className="p-0">
@@ -46,12 +70,12 @@ export default function PartnersPage() {
                           className="object-cover"
                         />
                       </div>
-                      
+
                       {/* Partner Name */}
                       <h3 className="text-xl font-bold mb-2 tracking-wide">
                         {partner.name}
                       </h3>
-                      
+
                       {/* Discount */}
                       <p className="text-2xl font-bold text-primary">
                         {partner.discount}
@@ -71,6 +95,6 @@ export default function PartnersPage() {
 
         </div>
       </div>
-    </div>
+    </div >
   );
 }
