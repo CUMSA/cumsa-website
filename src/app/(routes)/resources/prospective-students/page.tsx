@@ -36,7 +36,11 @@ export default function ResourcesPage() {
               <li>Mentorship programs</li>
             </ul>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Follow us on <a href="https://www.instagram.com/cumsa_" className="color-link" target="_blank">Instagram</a> for sign-up details!
+              Follow us on <a
+                href="https://www.instagram.com/cumsa_"
+                className="color-link"
+                target="_blank"
+              >Instagram</a> for sign-up details!
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
