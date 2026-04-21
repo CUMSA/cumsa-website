@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: "CUMSA - Cambridge University Singapore and Malaysia Society",
@@ -36,9 +37,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <TooltipProvider delayDuration={100}>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

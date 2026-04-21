@@ -2,6 +2,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image"
 import Link from "next/link"
 import { getPlatinumSponsors, getGoldSponsors } from "@/data/sponsors";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 // Custom social media icons since Heroicons doesn't have specific social media icons
 const FacebookIcon = () => (
@@ -57,6 +62,7 @@ export default function Footer() {
   const platinumSponsors = getPlatinumSponsors();
   const goldSponsors = getGoldSponsors();
   const allPremiumSponsors = [...platinumSponsors, ...goldSponsors];
+  const numCarousel = (platinumSponsors.length > 0 ? 1 : 0) + (goldSponsors.length > 0 ? 1 : 0);
 
   return (
     <>
@@ -64,7 +70,7 @@ export default function Footer() {
       {allPremiumSponsors.length > 0 && (
         <div className="bg-muted border-t border-border py-12">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className={`grid grid-cols-1 md:grid-cols-${numCarousel} gap-8`}>
 
               {/* Platinum Sponsors */}
               {platinumSponsors.length > 0 && (
@@ -74,22 +80,25 @@ export default function Footer() {
                     <div className="flex space-x-8">
                       {/* Duplicate sponsors for seamless loop */}
                       {[...platinumSponsors].map((sponsor, index) => (
-                        <Link
-                          key={`${sponsor.id}-${index}`}
-                          href={`/sponsors/${sponsor.slug}`}
-                          className="flex-shrink-0"
-                          title={sponsor.name}
-                        >
-                          <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow w-32 h-20 flex items-center justify-center">
-                            <Image
-                              src={sponsor.picture}
-                              alt={sponsor.name}
-                              width={100}
-                              height={60}
-                              className="object-contain max-w-full max-h-full"
-                            />
-                          </div>
-                        </Link>
+                        <Tooltip key={`${sponsor.id}-${index}`}>
+                          <TooltipTrigger asChild>
+                            <Link
+                              href={`/sponsors/${sponsor.slug}`}
+                              className="flex-shrink-0"
+                            >
+                              <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow w-32 h-20 flex items-center justify-center">
+                                <Image
+                                  src={sponsor.picture}
+                                  alt={sponsor.name}
+                                  width={100}
+                                  height={60}
+                                  className="object-contain max-w-full max-h-full"
+                                />
+                              </div>
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent>{sponsor.name}</TooltipContent>
+                        </Tooltip>
                       ))}
                     </div>
                   </div>
@@ -104,22 +113,25 @@ export default function Footer() {
                     <div className="flex space-x-8 animate-scroll">
                       {/* Duplicate sponsors for seamless loop */}
                       {[...goldSponsors, ...goldSponsors].map((sponsor, index) => (
-                        <Link
-                          key={`${sponsor.id}-${index}`}
-                          href={`/sponsors/${sponsor.slug}`}
-                          className="flex-shrink-0"
-                          title={sponsor.name}
-                        >
-                          <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow w-32 h-20 flex items-center justify-center">
-                            <Image
-                              src={sponsor.picture}
-                              alt={sponsor.name}
-                              width={100}
-                              height={60}
-                              className="object-contain max-w-full max-h-full"
-                            />
-                          </div>
-                        </Link>
+                        <Tooltip key={`${sponsor.id}-${index}`}>
+                          <TooltipTrigger asChild>
+                            <Link
+                              href={`/sponsors/${sponsor.slug}`}
+                              className="flex-shrink-0"
+                            >
+                              <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow w-32 h-20 flex items-center justify-center">
+                                <Image
+                                  src={sponsor.picture}
+                                  alt={sponsor.name}
+                                  width={100}
+                                  height={60}
+                                  className="object-contain max-w-full max-h-full"
+                                />
+                              </div>
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent>{sponsor.name}</TooltipContent>
+                        </Tooltip>
                       ))}
                     </div>
                   </div>
@@ -153,90 +165,124 @@ export default function Footer() {
                 </h3>
               </div>
               <div className="flex items-center justify-center space-x-2 gap-4 ml-5">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="LinkTree"
-                >
-                  <a href="https://linktr.ee/cumsa_">
-                    <span className="sr-only">LinkTree</span>
-                    <LinkTreeIcon />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="Instagram"
-                >
-                  <a href="https://www.instagram.com/cumsa_">
-                    <span className="sr-only">Instagram</span>
-                    <InstagramIcon />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="Telegram Broadcast Channel"
-                >
-                  <a href="https://t.me/+OS3sabCChl1mMTU9">
-                    <span className="sr-only">Telegram Broadcast Channel</span>
-                    <TelegramIcon />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="Telegram Community"
-                >
-                  <a href="https://t.me/+bO_f4fB-adM4ZDQ1">
-                    <span className="sr-only">Telegram Community</span>
-                    <TelegramIcon />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="Facebook"
-                >
-                  <a href="https://www.facebook.com/cumsapage">
-                    <span className="sr-only">Facebook</span>
-                    <FacebookIcon />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="LinkedIn"
-                >
-                  <a href="https://www.linkedin.com/company/alumnicambridge/">
-                    <span className="sr-only">Linkedin</span>
-                    <LinkedInIcon />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
-                  asChild
-                  title="Email"
-                >
-                  <a href="mailto:secretary@cumsa.org.uk">
-                    <span className="sr-only">Email</span>
-                    <EmailIcon />
-                  </a>
-                </Button>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="https://linktr.ee/cumsa_">
+                        <span className="sr-only">LinkTree</span>
+                        <LinkTreeIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>LinkTree</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="https://www.instagram.com/cumsa_">
+                        <span className="sr-only">Instagram</span>
+                        <InstagramIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Instagram</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="https://t.me/+OS3sabCChl1mMTU9">
+                        <span className="sr-only">Telegram Broadcast Channel</span>
+                        <TelegramIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Telegram Broadcast Channel</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="https://t.me/+bO_f4fB-adM4ZDQ1">
+                        <span className="sr-only">Telegram Community</span>
+                        <TelegramIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Telegram Community</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="https://www.facebook.com/cumsapage">
+                        <span className="sr-only">Facebook</span>
+                        <FacebookIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Facebook</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="https://www.linkedin.com/company/alumnicambridge/">
+                        <span className="sr-only">Linkedin</span>
+                        <LinkedInIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>LinkedIn</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 text-white hover:text-gray-300 transition-colors"
+                      asChild
+                    >
+                      <a href="mailto:secretary@cumsa.org" target="_blank">
+                        <span className="sr-only">Email</span>
+                        <EmailIcon />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Email</TooltipContent>
+                </Tooltip>
               </div>
             </div>
 
