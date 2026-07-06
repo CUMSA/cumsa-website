@@ -21,6 +21,7 @@ export const overallStats: YearlyStats = {
   2022: { applications: 574, offers: 141, acceptances: 114 },
   2023: { applications: 601, offers: 154, acceptances: 116 },
   2024: { applications: 578, offers: 176, acceptances: 153 },
+  2025: { applications: 575, offers: 155, acceptances: 133 },
 };
 
 export const collegeStats: CollegeStats = {
