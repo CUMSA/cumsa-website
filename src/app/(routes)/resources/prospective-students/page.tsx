@@ -42,7 +42,7 @@ export default function ResourcesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               <div className="h-fit">
                 <PDFViewer
-                  src="/resources/cumsa_admission_guide_2026-c2.pdf"
+                  src={["/resources/cumsa_admission_guide_2026-c2.pdf", "/resources/cumsa_admission_guide_2026.pdf"]}
                   title="Application Guide 2026"
                   height="500px"
                 />
