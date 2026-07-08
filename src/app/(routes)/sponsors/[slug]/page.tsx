@@ -9,7 +9,7 @@ import { ZoomableImage } from '@/components/zoomable-image';
 export default async function SponsorPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const sponsor = getSponsorBySlug(slug);
-  
+
   if (!sponsor) {
     notFound();
   }
@@ -30,11 +30,10 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <div className="inline-block">
-              <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                sponsor.tier === 'platinum' ? 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' :
-                sponsor.tier === 'gold' ? 'bg-yellow-200 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200' :
-                'bg-muted text-muted-foreground'
-              }`}>
+              <span className={`px-3 py-1 rounded-full text-sm font-medium ${sponsor.tier === 'platinum' ? 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' :
+                  sponsor.tier === 'gold' ? 'bg-yellow-200 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200' :
+                    'bg-muted text-muted-foreground'
+                }`}>
                 {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)} Sponsors
               </span>
             </div>
@@ -43,13 +42,13 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <h1 className="text-4xl font-bold mb-8">{sponsor.name}</h1>
-              
+
               <div className="prose prose-lg max-w-none mb-8">
-                  {sponsor.detailedDescription?.map((description, index) => (
-                      <p key={index} className="text-muted-foreground leading-relaxed mb-4">
-                          {description}
-                      </p>
-                  ))}
+                {sponsor.detailedDescription?.map((description, index) => (
+                  <p key={index} className="text-muted-foreground leading-relaxed mb-4">
+                    {description}
+                  </p>
+                ))}
               </div>
 
               {sponsor.footerLinks && sponsor.footerLinks.length > 0 && (
@@ -57,9 +56,9 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
                   <h4 className="font-semibold mb-3">Links</h4>
                   <div className="space-y-2">
                     {sponsor.footerLinks.map((link: FooterLink, index: number) => (
-                      <Link 
+                      <Link
                         key={index}
-                        href={link.url} 
+                        href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm"
@@ -111,7 +110,7 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
                   {sponsor.website && (
                     <Button variant="outline" className="w-full mb-3" size="sm">
                       <Link href={sponsor.website}>
-                        Visit Website 
+                        Visit Website
                       </Link>
                     </Button>
                   )}
@@ -119,13 +118,13 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
               </div>
             </div>
           </div>
-          
+
           {/* Video Section */}
           {sponsor.videoUrl && (
             <div className="my-8">
               <h3 className="text-xl font-semibold mb-4">Corporate Video</h3>
               <div className="relative w-full aspect-video bg-transparent rounded-lg overflow-hidden">
-                <iframe 
+                <iframe
                   src={sponsor.videoUrl}
                   title={`${sponsor.name} Corporate Video`}
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
@@ -139,16 +138,16 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
             <div className="my-8">
               <h3 className="text-xl font-semibold mb-4">Corporate Brochure</h3>
               <div className="relative w-full aspect-video bg-transparent rounded-lg overflow-hidden">
-                  <ZoomableImage
-                    src={sponsor.images}
-                    alt={`${sponsor.name} Corporate Brochure`}
-                    width={400}
-                    height={800}
-                    className="w-full h-full"
-                  />
+                <ZoomableImage
+                  src={sponsor.images}
+                  alt={`${sponsor.name} Corporate Brochure`}
+                  width={400}
+                  height={800}
+                  className="w-full h-full"
+                />
               </div>
             </div>
-          ) 
+          )
           }
         </div>
       </div>
