@@ -46,9 +46,9 @@ export const sponsorsData: Sponsor[] = [
     slug: "mapletree",
     detailedDescription: [
       'Headquartered in Singapore, Mapletree is a global real estate development, investment, capital and property management company committed to sustainability. Its strategic focus is to invest in markets and real estate sectors with good growth potential. By combining its key strengths, the Group has established a track record of award-winning projects, and delivers consistently attractive returns across real estate asset classes.',
-      'The Group manages three Singapore-listed real estate investment trusts ("REITs") and nine private equity real estate funds, which hold a diverse portfolio of assets in Asia Pacific, Europe, the United Kingdom ("UK") and the United States ("US"). As at 31 March 2024, Mapletree owns and manages S$77.5 billion of office, retail, logistics, industrial, data centre, residential and student accommodation properties.',
-      'The Group\'s assets are located across 13 markets globally, namely Singapore, Australia, Canada, China, Europe, Hong Kong SAR, India, Japan, Malaysia, South Korea, the UK, the US and Vietnam. To support its global operations, Mapletree has established an extensive network of offices in these countries. For more information, please visit the link below',
-      'Mapletree\'s overall student housing portfolio comprises a total of 85 Purpose-Built Student Accommodation assets with close to 33,000 beds located across 46 cities in the UK, the US, Germany and Canada. These include Student Castle Cambridge, a premium 220-bed student accommodation located just a short distance to the University of Cambridge, with access to plenty of amenities. Find out more at the links below'
+      'The Group manages three Singapore-listed real estate investment trusts ("REITs") and nine private equity real estate funds, which hold a diverse portfolio of assets in Asia Pacific, Europe, the United Kingdom ("UK") and the United States ("US"). As at 31 March 2026, Mapletree owns and manages S$76.2 billion of logistics, office, data centre, student housing and other properties.',
+      'The Group\'s assets are located across 13 markets globally, namely Singapore, Australia, Canada, China, Europe, Hong Kong SAR, India, Japan, Malaysia, South Korea, the UK, the US and Vietnam. To support its global operations, Mapletree has established an extensive network of offices in these countries. For more information, please visit the link below.',
+      'Mapletree\'s student housing portfolio comprises a total of 76 Purpose-Built Student Accommodation assets offering over 25,000 beds, located across 40 cities in the US, the UK, Canada, Germany and Australia. These include Student Castle Cambridge, a premium 220-bed student accommodation located just a short distance to the University of Cambridge, with access to plenty of amenities. Find out more below.'
     ],
     website: 'https://www.mapletree.com.sg',
     industry: 'Real Estate Investment & Management',
@@ -56,7 +56,7 @@ export const sponsorsData: Sponsor[] = [
     headquarters: 'Singapore',
     videoUrl: 'https://player.vimeo.com/video/1058191364?h=70997f302f&badge=0&autopause=0&player_id=0&app_id=58479',
     footerLinks: [
-      { title: 'Student Castle Accommodation', url: 'https://studentcastle.co.uk/locations/cambridge-student-accommodation' },
+      { title: 'Student Castle Accommodation', url: 'https://www.studentcastle.co.uk/locations/cambridge-student-accommodation' },
     ]
   },
   {
@@ -119,7 +119,7 @@ export const sponsorsData: Sponsor[] = [
       { title: 'Scholarships', url: 'http://www.go.gov.sg/mhascholarships' },
       { title: 'Careers', url: 'http://www.mha.gov.sg/careers' },
       { title: 'Internships', url: 'https://www.mha.gov.sg/careers/internships' },
-      { title: 'LinkedIn', url: 'http://www.linkedin.com/company/mhasingapore'}
+      { title: 'LinkedIn', url: 'http://www.linkedin.com/company/mhasingapore' }
     ]
   },
   {
@@ -137,7 +137,7 @@ export const sponsorsData: Sponsor[] = [
     industry: 'Financial Services',
     partnershipSince: '2025',
     headquarters: 'Japan',
-  }, 
+  },
   {
     id: "st-engineering",
     name: "ST Engineering",
