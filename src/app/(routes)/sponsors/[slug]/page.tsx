@@ -31,8 +31,8 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
           <div className="mb-6">
             <div className="inline-block">
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${sponsor.tier === 'platinum' ? 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' :
-                  sponsor.tier === 'gold' ? 'bg-yellow-200 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200' :
-                    'bg-muted text-muted-foreground'
+                sponsor.tier === 'gold' ? 'bg-yellow-200 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200' :
+                  'bg-muted text-muted-foreground'
                 }`}>
                 {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)} Sponsors
               </span>
@@ -122,7 +122,16 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
           {/* Video Section */}
           {sponsor.videoUrl && (
             <div className="my-8">
-              <h3 className="text-xl font-semibold mb-4">Corporate Video</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                <Link
+                  href={sponsor.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  Corporate Video
+                </Link>
+              </h3>
               <div className="relative w-full aspect-video bg-transparent rounded-lg overflow-hidden">
                 <iframe
                   src={sponsor.videoUrl}
