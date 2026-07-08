@@ -39,7 +39,7 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
           className="flex items-center gap-2"
         >
           <ExternalLink className="h-4 w-4" />
-          Open PDF
+          {Array.isArray(src) ? "Full PDF" : "PDF"}
         </Button>
       </div>
 
