@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image";
 import { CommitteeCard } from "@/components/committee-card";
 import { getCommitteeMembers } from "@/data/committee-fmt";
 
@@ -37,13 +38,19 @@ export default async function CommitteePage() {
     items.push(await Committee(year));
   }
 
-  // return <div>{items}</div>;
-
-
   return <div className="min-h-screen bg-background">
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-8">CUMSA Committee</h1>
+        <div className="w-full relative">
+          <Image
+            src="/committee/26-0.jpg"
+            alt="CUMSA 26-27 Committee"
+            width={6969}
+            height={3649}
+            className="object-contain rounded-3xl"
+          />
+        </div>
         <p className="text-lg text-muted-foreground text-center mb-12">
           Meet the dedicated team working to serve the Malaysian and Singaporean community at Cambridge.
         </p>
