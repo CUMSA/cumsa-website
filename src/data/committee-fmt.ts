@@ -29,6 +29,7 @@ const positionMap: Record<string, string> = {
 function generateFields(memberList: PartialCommitteeMember[], year: number): CommitteeMember[] {
 	return memberList.map((member, i) => ({
 		...member,
+		id: member.id + i.toString(),
 		position: positionMap[member.id] ?? "UNKNOWN",
 		photo: `/committee/${year}-${i + 1}.jpg`,
 		email: member.id + "@cumsa.org",

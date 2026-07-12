@@ -18,6 +18,7 @@ export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
             src={member.photo}
             alt={member.position}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1350px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 hover:scale-105 rounded-lg"
           />
         </div>
