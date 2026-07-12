@@ -6,9 +6,10 @@ import type { CommitteeMember } from "@/data/committee-fmt";
 
 interface CommitteeCardProps {
   member: CommitteeMember;
+  includeEmail: boolean;
 }
 
-export function CommitteeCard({ member }: CommitteeCardProps) {
+export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
   return (
     <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
@@ -31,11 +32,13 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
           College: {member.college}<br />
           Year: {member.year}
         </p>
-        <Button variant="outline" size="sm" asChild>
-          <a href={`mailto:${member.email}`}>
-            Contact
-          </a>
-        </Button>
+        {
+          includeEmail && <Button variant="outline" size="sm" asChild>
+            <a href={`mailto:${member.email}`}>
+              Contact
+            </a>
+          </Button>
+        }
       </CardContent>
     </Card>
   );
