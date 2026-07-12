@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image";
 import { CommitteeCard } from "@/components/committee-card";
 import { getCommitteeMembers } from "@/data/committee-fmt";
 
@@ -41,10 +42,19 @@ export default async function CommitteePage() {
 
 
   return <div className="min-h-screen">
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8">CUMSA Committee</h1>
-        <p className="text-lg text-muted-foreground text-center mb-12">
+        <h1 className="text-4xl font-bold text-center mb-12">CUMSA Committee</h1>
+        <div className="w-full relative">
+          <Image
+            src={`/committee/${currentYear}-0.jpg`}
+            alt={`CUMSA ${currentYear}-${currentYear + 1} Committee`}
+            width={6969}
+            height={3649}
+            className="object-contain transition-transform duration-300 hover:scale-102 rounded-3xl my-4"
+          />
+        </div>
+        <p className="text-lg text-muted-foreground text-center mb-20">
           Meet the dedicated team working to serve the Malaysian and Singaporean community at Cambridge.
         </p>
         {items}
