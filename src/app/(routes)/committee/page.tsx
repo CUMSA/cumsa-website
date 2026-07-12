@@ -3,6 +3,9 @@ import Image from "next/image";
 import { CommitteeCard } from "@/components/committee-card";
 import { getCommitteeMembers } from "@/data/committee-fmt";
 
+const currentYear = 26;
+const startYear = 25;
+
 async function Committee(year: number) {
   const members = await getCommitteeMembers(year);
 
@@ -21,7 +24,7 @@ async function Committee(year: number) {
       <div className="flex flex-wrap justify-center gap-6">
         {members.map((member) => (
           <div key={member.id} className="w-full max-w-xs">
-            <CommitteeCard member={member} />
+            <CommitteeCard member={member} includeEmail={year === currentYear} />
           </div>
         ))}
       </div>
@@ -30,8 +33,6 @@ async function Committee(year: number) {
 }
 
 export default async function CommitteePage() {
-  const currentYear = 26;
-  const startYear = 25;
   const items: React.JSX.Element[] = [];
 
   for (let year = currentYear; year >= startYear; year--) {
