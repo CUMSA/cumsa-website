@@ -9,6 +9,11 @@ Past maintainers:
 
 Currently being maintained by Ethan Kuai (2026-27 Database Officer)
 
+## Dependencies
+
+- `npm install`
+- `fuser` from `psmisc` - kills port in dev mode
+
 ## About
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`. Help at [Discord](https://t3.gg/discord).

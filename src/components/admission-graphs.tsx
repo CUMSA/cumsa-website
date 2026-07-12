@@ -48,7 +48,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
   const renderGraph = () => {
     let data: YearlyStats;
     let title = "";
-    
+
     switch (activeGraph) {
       case 'overall':
         data = overallStats;
@@ -70,14 +70,14 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
     const chartData = convertToGroupedChartData(data);
 
     // Calculate the maximum value to set proper Y-axis domain (since they're not stacked, use the max individual value)
-    const maxValue = Math.max(...chartData.map((d: { applications: number; offers: number; acceptances: number }) => 
+    const maxValue = Math.max(...chartData.map((d: { applications: number; offers: number; acceptances: number }) =>
       Math.max(d.applications, d.offers, d.acceptances)
     ));
-    
+
     // Smart scaling based on data range
     let tickInterval: number;
     let yAxisMax: number;
-    
+
     if (maxValue <= 50) {
       // For small values (0-50), use intervals of 5
       tickInterval = 5;
@@ -112,11 +112,11 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
                 bottom: 5,
               }}
             >
-              <CartesianGrid 
+              <CartesianGrid
                 stroke="var(--border)"
                 vertical={false}
               />
-              <XAxis 
+              <XAxis
                 dataKey="year"
                 type="category"
                 tickLine={false}
@@ -161,7 +161,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
         <div className="grid flex-1 gap-1">
           <CardTitle>Cambridge Admission Statistics</CardTitle>
           <CardDescription>
-            Singapore student admission data from 2015-2024
+            Singapore student admission data from 2015-2025
           </CardDescription>
         </div>
         <Select value={activeGraph} onValueChange={(value) => setActiveGraph(value as GraphType)}>
@@ -223,21 +223,22 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
         <div className="min-h-[300px]">
           {renderGraph()}
         </div>
-        
+
         {/* Legend/Summary */}
         <div className="mt-8 p-4 bg-muted/50 rounded-lg">
           <div className="mb-2">
             <p className="text-sm font-medium text-foreground">Legend:</p>
             <p className="text-xs text-muted-foreground">
-              • <strong>Applications</strong>: Total number of applications submitted<br/>
-              • <strong>Offers</strong>: Number of applications that received offers<br/>
+              • <strong>Applications</strong>: Total number of applications submitted<br />
+              • <strong>Offers</strong>: Number of applications that received offers<br />
               • <strong>Acceptances</strong>: Number of offers that were accepted
             </p>
           </div>
           <p className="text-xs text-muted-foreground mt-2">
-            Please note:  <br/>
-            • For data protection purposes, where a final figure on any visualisation is 5 or less, it is reported as &quot;5&quot;. If the figure is 0, it will be reported as &quot;0&quot;. <br/>
-            • For most statistics in the dashboard, data is given for multiple admissions cycles (shown by apply year). Apply year refers to the UCAS cycle in which applications were considered. For example, the &apos;2025 apply year&apos; refers to applications made from September 2024 onwards, for courses starting in October 2025 or deferred entry in 2026. <br/>
+            Please note:  <br />
+            • For data protection purposes, where a final figure on any visualisation is 5 or less, it is reported as &quot;5&quot;. If the figure is 0, it will be reported as &quot;0&quot;. <br />
+            • For most statistics in the dashboard, data is given for multiple admissions cycles (shown by apply year). Apply year refers to the UCAS cycle in which applications were considered. For example, the &apos;2025 apply year&apos; refers to applications made from September 2024 onwards, for courses starting in October 2025 or deferred entry in 2026. <br />
+            • Course and college breakdowns are no longer published from 2025 onwards.
           </p>
         </div>
       </CardContent>

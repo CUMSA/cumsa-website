@@ -1,0 +1,102 @@
+import type { PartialCommitteeMember } from "@/data/committee-fmt";
+
+export default [
+	{
+		id: "president",
+		name: "",
+		subject: "",
+		college: "",
+		year: "3rd Year"
+	},
+	{
+		id: "vice-president",
+		name: "",
+		subject: "",
+		college: "",
+		year: "3rd Year"
+	},
+	{
+		id: "secretary",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "treasurer",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "sports",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "publicity",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "access",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "sponsorship",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "database",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "events",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "events",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "events",
+		name: "",
+		subject: "",
+		college: "",
+		year: "2nd Year"
+	},
+	{
+		id: "gradrep",
+		name: "",
+		subject: "",
+		college: "",
+		year: ""
+	},
+	{
+		id: "gradrep",
+		name: "",
+		subject: "",
+		college: "",
+		year: ""
+	},
+] satisfies PartialCommitteeMember[];
