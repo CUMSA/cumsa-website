@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import type { CommitteeMember } from "@/data/committee";
+import type { CommitteeMember } from "@/data/committee-fmt";
 
 interface CommitteeCardProps {
   member: CommitteeMember;
@@ -29,8 +29,8 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground mb-6">
-          Subject: {member.subject}<br/>
-          College: {member.college}<br/>
+          Subject: {member.subject}<br />
+          College: {member.college}<br />
           Year: {member.year}
         </p>
         <Button variant="outline" size="sm" asChild>
