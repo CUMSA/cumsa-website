@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       <SponsorCarousel />
-      <footer className="bg-slate-950 text-white py-6">
+      <footer className="backdrop-blur-xl bg-slate-950/70 text-white py-6">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start">
 

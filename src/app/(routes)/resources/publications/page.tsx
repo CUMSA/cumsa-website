@@ -41,7 +41,7 @@ const publicationsData: Publication[] = [
 export default function ResourcesPage() {
   return (
     <div className="min-h-screen text-foreground">
-      <div className="bg-muted border-b border-border">
+      <div className="backdrop-blur-xl bg-slate-950/60 border-b border-border">
         <div className="container mx-auto px-4 py-8">
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="flex items-center hover:text-foreground transition-colors">

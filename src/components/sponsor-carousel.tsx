@@ -10,7 +10,7 @@ export default function SponsorCarousel() {
 	return (
 		<div>
 			{allPremiumSponsors.length > 0 && (
-				<div className="bg-muted border-t border-border py-12">
+				<div className="backdrop-blur-xl bg-slate-950/50 border-t border-border py-12">
 					<div className="container mx-auto px-4">
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 

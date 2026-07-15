@@ -24,7 +24,7 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
   };
 
   return (
-    <div className="bg-muted rounded-lg p-4 shadow-lg">
+    <div className="backdrop-blur-xl bg-slate-950/50 rounded-lg p-4 shadow-lg">
       <div className="flex justify-between items-start mb-4">
         {title && (
           <div>

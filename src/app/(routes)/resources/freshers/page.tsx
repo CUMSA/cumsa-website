@@ -5,7 +5,7 @@ import { ChevronRight, Home } from "lucide-react";
 export default function ResourcesPage() {
   return (
     <div className="min-h-screen text-foreground">
-      <div className="bg-muted border-b border-border">
+      <div className="backdrop-blur-xl bg-slate-950/60 border-b border-border">
         <div className="container mx-auto px-4 py-8">
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="flex items-center hover:text-foreground transition-colors">
@@ -55,7 +55,7 @@ export default function ResourcesPage() {
                   </div>
                 </div>
 
-                <div className="bg-muted rounded-lg p-6">
+                <div className="backdrop-blur-xl bg-slate-950/50 rounded-lg p-6">
                   <h4 className="font-semibold mb-3">Quick Access</h4>
                   <div className="space-y-2">
                     <a href="/resources/cumsa_freshers_tea_2025.pdf" className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm">

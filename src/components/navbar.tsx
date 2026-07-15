@@ -28,7 +28,7 @@ import { Menu } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40">
+    <nav className="sticky top-0 z-50 w-full backdrop-blur-xl bg-slate-950/50">
       <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -106,10 +106,10 @@ export default function Navbar() {
           <ThemeToggle />
           <Button variant="default" className="hidden sm:inline-flex">
             <Link href="https://membership.cumsa.org/">
-              Membership 
+              Membership
             </Link>
           </Button>
-          
+
           {/* Mobile Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -121,7 +121,7 @@ export default function Navbar() {
             <DropdownMenuContent align="end" className="w-64">
               <DropdownMenuLabel className="font-semibold">Navigation</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              
+
               {/* About submenu */}
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger className="cursor-pointer">
@@ -190,7 +190,7 @@ export default function Navbar() {
                   Committee
                 </Link>
               </DropdownMenuItem>
-              
+
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild className="sm:hidden">
                 <Link href="https://membership.cumsa.org/" className="cursor-pointer font-medium">
