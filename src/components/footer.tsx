@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start">
 
-            <div className="mb-8 md:mb-0 flex">
+            <div className="flex">
               <div className="flex items-center justify-center space-x-2">
                 <Image
                   src="/favicon.ico"
@@ -23,19 +23,14 @@ export default function Footer() {
               </div>
 
               <div className="mx-1">
-                <h6>
-                  Cambridge University Malaysia
-                </h6>
-                <h6>
-                  and Singapore Association
-                </h6>
+                <p className="max-w-[230px]"><h6>Cambridge University Malaysia and Singapore Association</h6></p>
               </div>
             </div>
 
             <div className="flex items-center space-x-2 gap-4">
               {
                 socials.map((s: Social) => (
-                  <a key={s.name} href={s.href} title={s.name} target="_blank" rel="external" className="p-2 text-white hover:text-gray-300 transition-colors">
+                  <a key={s.name} href={s.href} title={s.name} target="_blank" rel="external" className="p-3 text-white hover:text-gray-300 transition-colors">
                     {s.icon}
                   </a>
                 ))
