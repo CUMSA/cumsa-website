@@ -232,7 +232,7 @@ export default function Footer() {
                   asChild
                   title="Email"
                 >
-                  <a href="mailto:secretary@cumsa.org.uk">
+                  <a href="mailto:secretary@cumsa.org">
                     <span className="sr-only">Email</span>
                     <EmailIcon />
                   </a>
