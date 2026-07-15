@@ -37,7 +37,7 @@ export default function HomePage() {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-foreground mb-6">
@@ -57,7 +57,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16">
         <div className="container max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6 text-foreground">Find out more</h2>
           {/* Feature Cards */}

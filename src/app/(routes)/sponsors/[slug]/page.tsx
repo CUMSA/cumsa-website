@@ -15,7 +15,7 @@ export default async function SponsorPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="bg-muted border-b border-border py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-muted-foreground">

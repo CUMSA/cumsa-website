@@ -40,7 +40,7 @@ const publicationsData: Publication[] = [
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="bg-muted border-b border-border">
         <div className="container mx-auto px-4 py-8">
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -54,10 +54,10 @@ export default function ResourcesPage() {
           </nav>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          
+
           <section className="mb-12">
             <h2 className="text-3xl font-bold mb-8 text-center">Past Publications</h2>
             <div className="flex flex-wrap justify-center gap-5">
