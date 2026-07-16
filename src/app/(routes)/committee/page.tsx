@@ -52,6 +52,7 @@ export default async function CommitteePage() {
             alt={`CUMSA ${currentYear}-${currentYear + 1} Committee`}
             width={6969}
             height={3649}
+            sizes="(max-width: 768px) 100vw, (max-width: 1350px) 70vw, 50vw"
             className="object-contain transition-transform duration-300 hover:scale-102 rounded-3xl my-4"
           />
         </div>
