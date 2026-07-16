@@ -7,7 +7,7 @@ export default function PartnersPage() {
   const partners = getAllPartners();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -35,7 +35,7 @@ export default function PartnersPage() {
                 target="_blank"
               >here</a>.
             </p>
-            <div className="fill-container" style={{ height: "600px" }}>
+            <div className="fill-container rounded-3xl" style={{ height: "600px" }}>
               <iframe
                 src="https://www.google.com/maps/d/u/0/embed?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI&ehbc=2E312F&noprof=1"
                 height="650px"

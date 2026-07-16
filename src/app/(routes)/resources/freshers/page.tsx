@@ -4,8 +4,8 @@ import { ChevronRight, Home } from "lucide-react";
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="bg-muted border-b border-border">
+    <div className="min-h-screen text-foreground">
+      <div className="backdrop-blur-xl bg-slate-950/60 border-b border-border">
         <div className="container mx-auto px-4 py-8">
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="flex items-center hover:text-foreground transition-colors">
@@ -22,12 +22,12 @@ export default function ResourcesPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* Incoming Freshers Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-6">Incoming Freshers</h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              These resources shed more light on life in Cambridge, including key information you should know before 
+              These resources shed more light on life in Cambridge, including key information you should know before
               arriving, and everything there is to know about Cambridge as a city
             </p>
 
@@ -54,8 +54,8 @@ export default function ResourcesPage() {
                     </p>
                   </div>
                 </div>
-                
-                <div className="bg-muted rounded-lg p-6">
+
+                <div className="backdrop-blur-xl bg-slate-950/50 rounded-lg p-6">
                   <h4 className="font-semibold mb-3">Quick Access</h4>
                   <div className="space-y-2">
                     <a href="/resources/cumsa_freshers_tea_2025.pdf" className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm">

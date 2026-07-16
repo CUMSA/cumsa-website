@@ -56,7 +56,7 @@ export default function EventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -66,7 +66,7 @@ export default function EventsPage() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 The organisation continues to bring together members of the Malaysian and Singaporean communities, albeit on a slightly larger scale. From 12 students at our founding, the organisation has grown to over 400. With this, we have adapted, and our service to the Malaysian and Singaporean community is now multi-faceted.
               </p>
-              
+
               <p className="text-muted-foreground leading-relaxed mb-6">
                 We hold a number of events throughout the year with the intention of creating a social environment with a familiar Southeast Asian air. Events include the annual Freshers’ Orientation, Singapore Festival and Ski Trip, amongst many others.
               </p>
@@ -94,7 +94,7 @@ export default function EventsPage() {
                     className="object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                
+
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <CardTitle className="text-xl">{event.title}</CardTitle>

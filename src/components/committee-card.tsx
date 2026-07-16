@@ -12,15 +12,13 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
   return (
     <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
-        <div className="relative h-72 overflow-hidden p-2 mb-4">
-          <div className="relative h-full w-full rounded-lg overflow-hidden py-2">
-            <Image
-              src={member.photo}
-              alt={member.position}
-              fill
-              className="object-contain transition-transform duration-300 hover:scale-105"
-            />
-          </div>
+        <div className="relative w-full h-90 rounded-lg p-2 mb-2">
+          <Image
+            src={member.photo}
+            alt={member.position}
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-105 rounded-lg"
+          />
         </div>
         <CardTitle className="text-xl">{member.name}</CardTitle>
         <Badge variant='secondary' className="mx-auto">
@@ -28,9 +26,9 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
         </Badge>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground mb-6">
-          Subject: {member.subject}<br/>
-          College: {member.college}<br/>
+        <p className="text-muted-foreground mb-2">
+          Subject: {member.subject}<br />
+          College: {member.college}<br />
           Year: {member.year}
         </p>
         <Button variant="outline" size="sm" asChild>

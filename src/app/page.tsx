@@ -18,12 +18,12 @@ export default function HomePage() {
           />
         </div>
         <div className="relative z-10 container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl mb-6">
+          <h1 className="text-4xl font-bold tracking-tight text-blue-500 sm:text-6xl mb-6">
             Cambridge University Malaysia
             <br />
-            <span className="text-blue-600">and Singapore Association</span>
+            <span className="text-red-600">and Singapore Association</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
+          <p className="mx-auto max-w-2xl text-lg text-foreground mb-8">
             Welcome to the Cambridge University Malaysia and Singapore Association (CUMSA).
           </p>
           <div className="flex justify-center gap-4">
@@ -37,27 +37,23 @@ export default function HomePage() {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-foreground mb-6">
-              Welcome to the Cambridge University Malaysia and Singapore Association (CUMSA).
-            </p>
-            <p className="text-muted-foreground mb-8">
-              Founded in 1948, CUMSA aims to bring together members of the Malaysian and Singaporean communities in Cambridge, fostering
-              friendships and connections with those from both Malaysia and Singapore alike. Over the years, CUMSA has built a strong
-              network of current students and alumni in Singapore, the United Kingdom and globally.
-            </p>
-            <p className="text-muted-foreground mb-12">
-              CUMSA holds a number of events throughout the year for its members and alumni with the intention of creating a social environment
-              with a South-East Asian flair. We also hold career-focused events for our members in a wide variety of industries.
-            </p>
-          </div>
-        </div>
+      <section className="py-16 max-w-4xl mx-auto px-4">
+        <p className="text-lg mb-6">
+          Welcome to the Cambridge University Malaysia and Singapore Association (CUMSA).
+        </p>
+        <p className="text-muted-foreground mb-8">
+          Founded in 1948, CUMSA aims to bring together members of the Malaysian and Singaporean communities in Cambridge, fostering
+          friendships and connections with those from both Malaysia and Singapore alike. Over the years, CUMSA has built a strong
+          network of current students and alumni in Singapore, the United Kingdom and globally.
+        </p>
+        <p className="text-muted-foreground mb-12">
+          CUMSA holds a number of events throughout the year for its members and alumni with the intention of creating a social environment
+          with a South-East Asian flair. We also hold career-focused events for our members in a wide variety of industries.
+        </p>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16">
         <div className="container max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6 text-foreground">Find out more</h2>
           {/* Feature Cards */}

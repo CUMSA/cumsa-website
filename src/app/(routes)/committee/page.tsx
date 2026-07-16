@@ -5,7 +5,7 @@ export default function CommitteePage() {
   const members = getCommitteeMembers();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-8">CUMSA Committee 2025-2026</h1>
@@ -26,6 +26,6 @@ export default function CommitteePage() {
 
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
