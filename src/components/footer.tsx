@@ -20,7 +20,7 @@ export default function Footer() {
               />
             </div>
 
-            <div className="mx-1 max-w-[200px] text-sm">
+            <div className="text-foreground mx-1 max-w-[200px] text-sm">
               Cambridge University Malaysia and Singapore Association
             </div>
           </span>
@@ -28,14 +28,14 @@ export default function Footer() {
           <div className="flex items-center space-x-2 gap-4">
             {
               socials.map((s: Social) => (
-                <a key={s.name} href={s.href} title={s.name} target="_blank" rel="external" className="p-3 text-white hover:text-gray-300 transition-colors">
+                <a key={s.name} href={s.href} title={s.name} target="_blank" rel="external" className="p-3 text-foreground hover:text-muted-foreground transition-colors">
                   {s.icon}
                 </a>
               ))
             }
           </div>
 
-          <span className="min-w-0 flex-1 text-sm text-gray-400 text-right">
+          <span className="text-muted-foreground min-w-0 flex-1 text-sm text-gray-400 text-right">
             <p>© Copyright 2026 CUMSA.</p>
             <p>All rights reserved</p>
           </span>

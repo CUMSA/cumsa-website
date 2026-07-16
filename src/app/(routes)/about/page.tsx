@@ -58,7 +58,7 @@ export default function AboutPage() {
           </div>
 
 
-          <div className="text-center mt-16 p-8 bg-muted/50 rounded-lg">
+          <div className="text-center mt-16 p-8 backdrop-blur-xl bg-slate-950/50 rounded-lg">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Join Our Community</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Whether you&apos;re a current student, recent graduate, or seasoned alumnus,
