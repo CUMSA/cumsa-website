@@ -85,7 +85,7 @@ export default function ResourcesPage() {
 
               <div className="h-fit">
                 <PDFViewer
-                  src="/resources/cumsa_leisure_guide_2024.pdf"
+                  src={["/resources/cumsa_leisure_guide_2024_full.pdf", "/resources/cumsa_leisure_guide_2024.pdf"]}
                   title="CUMSA Leisure Guide 2024"
                   height="500px"
                 />
