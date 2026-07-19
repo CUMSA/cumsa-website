@@ -10,8 +10,8 @@ export default function SponsorCarousel() {
 	return (
 		<>
 			{n > 0 && (
-				<div className="backdrop-blur-xl bg-slate-950/50 border-t border-border py-12">
-					<div className={`container mx-auto px-6 grid grid-cols-1 md:grid-cols-${n} gap-8`}>
+				<div className="backdrop-blur-xl bg-slate-950/50 border-t border-border py-6 px-[5%]">
+					<div className={`mx-auto grid grid-cols-${n} gap-8`}>
 
 						{/* Platinum Sponsors */}
 						{platinumSponsors.length > 0 && (
