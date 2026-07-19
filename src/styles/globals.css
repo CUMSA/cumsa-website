@@ -203,3 +203,19 @@ html {
   flex: 1;
   border: none;
 }
+
+.bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+@media (max-width: 55rem) {
+  .bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .middle {
+    grid-area: 1 / 1 / 2 / -1;
+  }
+}

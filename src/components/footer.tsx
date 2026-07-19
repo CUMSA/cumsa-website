@@ -7,11 +7,11 @@ export default function Footer() {
   return (
     <>
       <SponsorCarousel />
-      <footer className="backdrop-blur-xl bg-slate-950/70 text-white py-6">
-        <div className="container mx-auto px-6 grid grid-cols-[1fr_auto_1fr] items-center">
+      <footer className="backdrop-blur-xl bg-slate-950/70 text-white pb-6 px-[5%]">
+        <div className="bar">
 
-          <span className="flex items-center">
-            <div>
+          <span className="left flex items-center">
+            <div className="min-w-[20px]">
               <Image
                 src="/favicon.ico"
                 alt="CUMSA Logo"
@@ -20,12 +20,12 @@ export default function Footer() {
               />
             </div>
 
-            <div className="text-foreground mx-1 max-w-[200px] text-sm">
+            <div className="text-foreground mx-1 min-w-[17ch] max-w-[22ch] text-sm">
               Cambridge University Malaysia and Singapore Association
             </div>
           </span>
 
-          <div className="flex items-center space-x-2 gap-4">
+          <div className="middle flex flex-wrap items-center justify-center gap-2">
             {
               socials.map((s: Social) => (
                 <a key={s.name} href={s.href} title={s.name} target="_blank" rel="external" className="p-3 text-foreground hover:text-muted-foreground transition-colors">
@@ -35,9 +35,8 @@ export default function Footer() {
             }
           </div>
 
-          <span className="text-muted-foreground min-w-0 flex-1 text-sm text-gray-400 text-right">
-            <p>© Copyright 2026 CUMSA.</p>
-            <p>All rights reserved</p>
+          <span className="right min-w-[13ch] text-muted-foreground text-sm text-gray-400 text-right">
+            © 2026 CUMSA <br />All rights reserved
           </span>
 
         </div>
