@@ -12,7 +12,8 @@ interface PDFViewerProps {
 export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
   let srcOuter: string;
   let srcFull: string;
-  if (Array.isArray(src)) {
+  const doubleLinks = Array.isArray(src);
+  if (doubleLinks) {
     [srcOuter, srcFull] = src;
   } else {
     srcOuter = src;
@@ -39,7 +40,7 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
           className="flex items-center gap-2"
         >
           <ExternalLink className="h-4 w-4" />
-          {Array.isArray(src) ? "Full PDF" : "PDF"}
+          {doubleLinks ? "Open Full PDF" : "Open PDF"}
         </Button>
       </div>
 

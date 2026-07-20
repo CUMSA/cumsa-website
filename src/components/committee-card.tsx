@@ -2,13 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import type { CommitteeMember } from "@/data/committee";
+import type { CommitteeMember } from "@/data/committee-fmt";
 
 interface CommitteeCardProps {
   member: CommitteeMember;
+  includeEmail: boolean;
 }
 
-export function CommitteeCard({ member }: CommitteeCardProps) {
+export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
   return (
     <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
@@ -17,6 +18,7 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
             src={member.photo}
             alt={member.position}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1350px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 hover:scale-105 rounded-lg"
           />
         </div>
@@ -31,11 +33,13 @@ export function CommitteeCard({ member }: CommitteeCardProps) {
           College: {member.college}<br />
           Year: {member.year}
         </p>
-        <Button variant="outline" size="sm" asChild>
-          <a href={`mailto:${member.email}`}>
-            Contact
-          </a>
-        </Button>
+        {
+          includeEmail && <Button variant="outline" size="sm" asChild>
+            <a href={`mailto:${member.email}`}>
+              Contact
+            </a>
+          </Button>
+        }
       </CardContent>
     </Card>
   );
