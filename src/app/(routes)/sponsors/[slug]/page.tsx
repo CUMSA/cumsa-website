@@ -20,7 +20,7 @@ export default async function SponsorPage({
 
   return (
     <div className="min-h-screen">
-      <div className="bg-muted border-border border-b py-4">
+      <div className="border-border border-b bg-slate-950/60 py-4 backdrop-blur-xl">
         <div className="container mx-auto px-4">
           <div className="text-muted-foreground flex items-center text-sm">
             <Link href="/sponsors" className="hover:text-foreground">
@@ -67,7 +67,7 @@ export default async function SponsorPage({
               </div>
 
               {sponsor.footerLinks && sponsor.footerLinks.length > 0 && (
-                <div className="bg-muted rounded-lg p-6">
+                <div className="mt-16 rounded-lg bg-slate-950/50 p-6 backdrop-blur-xl">
                   <h4 className="mb-3 font-semibold">Links</h4>
                   <div className="space-y-2">
                     {sponsor.footerLinks.map(
@@ -144,7 +144,7 @@ export default async function SponsorPage({
 
           {/* Video Section */}
           {sponsor.videoUrl && (
-            <div className="my-8">
+            <div className="my-8 rounded-lg bg-slate-950/50 p-8 backdrop-blur-xl">
               <h3 className="mb-4 text-xl font-semibold">
                 <Link
                   href={sponsor.videoUrl}
@@ -167,7 +167,7 @@ export default async function SponsorPage({
           )}
 
           {sponsor.images && (
-            <div className="my-8">
+            <div className="my-8 rounded-lg bg-slate-950/50 p-8 backdrop-blur-xl">
               <h3 className="mb-4 text-xl font-semibold">Corporate Brochure</h3>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-transparent">
                 <ZoomableImage
