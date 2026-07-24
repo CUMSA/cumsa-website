@@ -1,30 +1,34 @@
 "use client";
 
+import { createPortal } from "react-dom";
 import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 
-interface ZoomableImageProps {
+interface ImageProps {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   className?: string;
 }
+
+const x_size = 32;
+const default_size = 1600;
 
 export function ZoomableImage({
   src,
   alt,
-  width,
-  height,
+  width = default_size,
+  height = default_size,
   className,
-}: ZoomableImageProps) {
+}: ImageProps) {
   const [isZoomed, setIsZoomed] = useState(false);
 
   return (
     <>
       <div
-        className={`cursor-zoom-in ${className}`}
+        className={`flex cursor-zoom-in items-center justify-center ${className}`}
         onClick={() => setIsZoomed(true)}
       >
         <Image
@@ -32,34 +36,36 @@ export function ZoomableImage({
           alt={alt}
           width={width}
           height={height}
-          className="max-h-full max-w-full object-contain"
+          className="max-h-[70vh] rounded-lg object-contain"
         />
       </div>
 
-      {isZoomed && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={() => setIsZoomed(false)}
-        >
-          <button
-            className="absolute top-4 right-4 text-white transition-colors hover:text-gray-300"
+      {isZoomed &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
             onClick={() => setIsZoomed(false)}
-            aria-label="Close"
           >
-            <X size={32} />
-          </button>
-          <div className="relative max-h-full max-w-7xl cursor-zoom-out">
-            <Image
-              src={src}
-              alt={alt}
-              width={1200}
-              height={1600}
-              className="max-h-[90vh] w-auto object-contain"
-              quality={100}
-            />
-          </div>
-        </div>
-      )}
+            <button
+              className="absolute top-4 right-4 text-white transition-colors hover:text-gray-300"
+              onClick={() => setIsZoomed(false)}
+              aria-label="Close"
+            >
+              <X size={x_size} />
+            </button>
+            <div className="relative cursor-zoom-out">
+              <Image
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                className="max-h-[90vh] object-contain"
+                quality={100}
+              />
+            </div>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }

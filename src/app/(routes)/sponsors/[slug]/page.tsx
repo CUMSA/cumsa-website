@@ -144,8 +144,8 @@ export default async function SponsorPage({
 
           {/* Video Section */}
           {sponsor.videoUrl && (
-            <div className="my-8 rounded-lg bg-slate-950/50 p-8 backdrop-blur-xl">
-              <h3 className="mb-4 text-xl font-semibold">
+            <div className="my-8 rounded-lg bg-slate-950/50 p-2 backdrop-blur-xl sm:p-8">
+              <h3 className="mb-2 text-xl font-semibold sm:mb-4">
                 <Link
                   href={sponsor.videoUrl}
                   target="_blank"
@@ -167,17 +167,14 @@ export default async function SponsorPage({
           )}
 
           {sponsor.images && (
-            <div className="my-8 rounded-lg bg-slate-950/50 p-8 backdrop-blur-xl">
-              <h3 className="mb-4 text-xl font-semibold">Corporate Brochure</h3>
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-transparent">
-                <ZoomableImage
-                  src={sponsor.images}
-                  alt={`${sponsor.name} Corporate Brochure`}
-                  width={400}
-                  height={800}
-                  className="h-full w-full"
-                />
-              </div>
+            <div className="my-8 rounded-lg bg-slate-950/50 p-2 backdrop-blur-xl sm:p-8">
+              <h3 className="mb-2 text-xl font-semibold sm:mb-4">
+                Corporate Brochure
+              </h3>
+              <ZoomableImage
+                src={sponsor.images}
+                alt={`${sponsor.name} Corporate Brochure`}
+              />
             </div>
           )}
         </div>
