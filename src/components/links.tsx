@@ -1,4 +1,4 @@
-interface Ref {
+export interface Ref {
   href: string;
   title: string;
 }

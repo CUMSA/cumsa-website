@@ -2,9 +2,22 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { getSponsorBySlug } from "@/data/sponsors";
-import type { FooterLink } from "@/data/sponsors";
+import { slugMap } from "@/data/sponsors";
+import { type Ref } from "@/components/links";
 import { ZoomableImage } from "@/components/zoomable-image";
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const sponsorVariants = cva("rounded-full px-3 py-1 text-sm font-medium", {
+  variants: {
+    tier: {
+      Platinum: "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200",
+      Gold: "bg-yellow-200 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-200",
+      Silver: "bg-muted text-muted-foreground",
+    },
+  },
+});
 
 export default async function SponsorPage({
   params,
@@ -12,7 +25,7 @@ export default async function SponsorPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const sponsor = getSponsorBySlug(slug);
+  const sponsor = slugMap[slug];
 
   if (!sponsor) {
     notFound();
@@ -36,15 +49,7 @@ export default async function SponsorPage({
         <div className="mx-auto max-w-4xl">
           <div className="mb-6">
             <div className="inline-block">
-              <span
-                className={`rounded-full px-3 py-1 text-sm font-medium ${
-                  sponsor.tier === "platinum"
-                    ? "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-                    : sponsor.tier === "gold"
-                      ? "bg-yellow-200 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-200"
-                      : "bg-muted text-muted-foreground"
-                }`}
-              >
+              <span className={cn(sponsorVariants({ tier: sponsor.tier }))}>
                 {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)}{" "}
                 Sponsors
               </span>
@@ -66,23 +71,21 @@ export default async function SponsorPage({
                 ))}
               </div>
 
-              {sponsor.footerLinks && sponsor.footerLinks.length > 0 && (
+              {sponsor.links && sponsor.links.length > 0 && (
                 <div className="mt-16 rounded-lg bg-slate-950/50 p-6 backdrop-blur-xl">
                   <h4 className="mb-3 font-semibold">Links</h4>
                   <div className="space-y-2">
-                    {sponsor.footerLinks.map(
-                      (link: FooterLink, index: number) => (
-                        <Link
-                          key={index}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                        >
-                          → {link.title}
-                        </Link>
-                      ),
-                    )}
+                    {sponsor.links.map((link: Ref, index: number) => (
+                      <Link
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                      >
+                        → {link.title}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
@@ -134,6 +137,7 @@ export default async function SponsorPage({
                   <h4 className="mb-3 font-semibold">Connect</h4>
                   {sponsor.website && (
                     <Badge
+                      asChild
                       variant="outline"
                       className="mb-3 w-full py-1.5 text-sm"
                     >
