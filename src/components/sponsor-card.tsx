@@ -16,10 +16,10 @@ const sponsorVariants = cva(
     variants: {
       tier: {
         Platinum:
-          "border-gray-300 dark:border-gray-600 from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800",
-        Gold: "border-yellow-300 dark:border-yellow-600 from-yellow-50 to-amber-50 dark:from-yellow-950/30 dark:to-amber-950/30",
+          "border-purple-400 dark:border-purple-600 from-purple-200/50 to-pink-200/50 dark:from-pink-900/50 dark:to-purple-900/50",
+        Gold: "border-yellow-300 dark:border-yellow-600 from-yellow-100/50 to-amber-100/50 dark:from-yellow-950/50 dark:to-amber-950/50",
         Silver:
-          "border-gray-200 dark:border-gray-700 from-gray-50 to-zinc-50 dark:from-gray-900 dark:to-zinc-900",
+          "border-gray-400 dark:border-gray-450 from-gray-100/50 to-zinc-200/50 dark:from-gray-900/50 dark:to-zinc-900/50",
       },
     },
   },

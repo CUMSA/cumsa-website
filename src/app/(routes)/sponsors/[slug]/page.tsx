@@ -12,9 +12,10 @@ import { cn } from "@/lib/utils";
 const sponsorVariants = cva("rounded-full px-3 py-1 text-sm font-medium", {
   variants: {
     tier: {
-      Platinum: "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200",
-      Gold: "bg-yellow-200 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-200",
-      Silver: "bg-muted text-muted-foreground",
+      Platinum:
+        "bg-purple-300 text-purple-900 dark:bg-purple-700 dark:text-purple-200",
+      Gold: "bg-yellow-200 text-black/95 dark:bg-yellow-400",
+      Silver: "bg-muted",
     },
   },
 });
