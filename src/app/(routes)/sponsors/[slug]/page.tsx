@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { getSponsorBySlug } from "@/data/sponsors";
 import type { FooterLink } from "@/data/sponsors";
@@ -89,7 +89,7 @@ export default async function SponsorPage({
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-card border-border sticky top-6 rounded-lg border p-6">
+              <div className="sticky top-6 rounded-lg bg-slate-950/50 p-6 backdrop-blur-xl">
                 <div className="mb-6 flex h-32 w-full items-center justify-center rounded-lg bg-white">
                   <Image
                     src={sponsor.picture}
@@ -133,9 +133,12 @@ export default async function SponsorPage({
                 <div>
                   <h4 className="mb-3 font-semibold">Connect</h4>
                   {sponsor.website && (
-                    <Button variant="outline" className="mb-3 w-full" size="sm">
+                    <Badge
+                      variant="outline"
+                      className="mb-3 w-full py-1.5 text-sm"
+                    >
                       <Link href={sponsor.website}>Visit Website</Link>
-                    </Button>
+                    </Badge>
                   )}
                 </div>
               </div>
