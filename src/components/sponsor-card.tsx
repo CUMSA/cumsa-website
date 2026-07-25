@@ -41,7 +41,7 @@ export function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
         <CardTitle className="text-xl">{sponsor.name}</CardTitle>
       </CardHeader>
       <CardContent className="flex h-full flex-col">
-        <p className="text-muted-foreground mb-4 flex-grow text-sm">
+        <p className="text-muted-foreground mb-6 flex-grow text-center text-sm">
           {sponsor.description}
         </p>
         <Link href={`/sponsors/${sponsor.slug}`} className="mt-auto">
