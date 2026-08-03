@@ -1,4 +1,6 @@
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
+import prettier from "eslint-config-prettier/flat";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
@@ -6,6 +8,7 @@ export default tseslint.config(
     ignores: [".next", "src/components/ui/**"],
   },
   ...nextCoreWebVitals,
+  ...nextTypescript,
   {
     files: ["**/*.ts", "**/*.tsx"],
     extends: [
@@ -32,6 +35,7 @@ export default tseslint.config(
     },
   },
   {
+    files: ["**/*.ts", "**/*.tsx"],
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
@@ -41,4 +45,5 @@ export default tseslint.config(
       },
     },
   },
+  prettier,
 );
