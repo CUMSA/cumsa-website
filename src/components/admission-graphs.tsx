@@ -1,24 +1,57 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from "recharts"
-import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import type { ChartConfig } from "@/components/ui/chart"
-import { overallStats, collegeStats, courseStats } from "@/data/admission-statistics"
-import type { YearlyStats } from "@/data/admission-statistics"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+} from "recharts";
+import {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+import type { ChartConfig } from "@/components/ui/chart";
+import {
+  overallStats,
+  collegeStats,
+  courseStats,
+} from "@/data/admission-statistics";
+import type { YearlyStats } from "@/data/admission-statistics";
 
-type GraphType = 'overall' | 'college' | 'course'
+type GraphType = "overall" | "college" | "course";
 
 interface AdmissionGraphsProps {
-  className?: string
+  className?: string;
 }
 
 export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
-  const [activeGraph, setActiveGraph] = useState<GraphType>('overall')
-  const [selectedCollege, setSelectedCollege] = useState<string>(Object.keys(collegeStats)[0] ?? '')
-  const [selectedCourse, setSelectedCourse] = useState<string>(Object.keys(courseStats)[0] ?? '')
+  const [activeGraph, setActiveGraph] = useState<GraphType>("overall");
+  const [selectedCollege, setSelectedCollege] = useState<string>(
+    Object.keys(collegeStats)[0] ?? "",
+  );
+  const [selectedCourse, setSelectedCourse] = useState<string>(
+    Object.keys(courseStats)[0] ?? "",
+  );
 
   // Helper function to convert YearlyStats to chart data for grouped bars
   const convertToGroupedChartData = (data: YearlyStats) => {
@@ -26,7 +59,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
       year,
       applications: stats.applications,
       offers: stats.offers,
-      acceptances: stats.acceptances
+      acceptances: stats.acceptances,
     }));
   };
 
@@ -50,15 +83,15 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
     let title = "";
 
     switch (activeGraph) {
-      case 'overall':
+      case "overall":
         data = overallStats;
         title = "Overall Admission Statistics";
         break;
-      case 'college':
+      case "college":
         data = collegeStats[selectedCollege] ?? overallStats;
         title = `${selectedCollege} - Admission Statistics`;
         break;
-      case 'course':
+      case "course":
         data = courseStats[selectedCourse] ?? overallStats;
         title = `${selectedCourse} - Admission Statistics`;
         break;
@@ -70,9 +103,12 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
     const chartData = convertToGroupedChartData(data);
 
     // Calculate the maximum value to set proper Y-axis domain (since they're not stacked, use the max individual value)
-    const maxValue = Math.max(...chartData.map((d: { applications: number; offers: number; acceptances: number }) =>
-      Math.max(d.applications, d.offers, d.acceptances)
-    ));
+    const maxValue = Math.max(
+      ...chartData.map(
+        (d: { applications: number; offers: number; acceptances: number }) =>
+          Math.max(d.applications, d.offers, d.acceptances),
+      ),
+    );
 
     // Smart scaling based on data range
     let tickInterval: number;
@@ -98,7 +134,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
 
     return (
       <div>
-        <div className="text-center mb-4">
+        <div className="mb-4 text-center">
           <h3 className="text-lg font-semibold">{title}</h3>
         </div>
         <ChartContainer config={chartConfig}>
@@ -112,10 +148,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
                 bottom: 5,
               }}
             >
-              <CartesianGrid
-                stroke="var(--border)"
-                vertical={false}
-              />
+              <CartesianGrid stroke="var(--border)" vertical={false} />
               <XAxis
                 dataKey="year"
                 type="category"
@@ -125,7 +158,10 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
               <YAxis
                 domain={[0, yAxisMax]}
                 interval={0}
-                ticks={Array.from({ length: Math.floor(yAxisMax / tickInterval) + 1 }, (_, i) => i * tickInterval)}
+                ticks={Array.from(
+                  { length: Math.floor(yAxisMax / tickInterval) + 1 },
+                  (_, i) => i * tickInterval,
+                )}
                 axisLine={false}
                 tickLine={false}
                 tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
@@ -164,7 +200,10 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
             Singapore student admission data from 2015-2025
           </CardDescription>
         </div>
-        <Select value={activeGraph} onValueChange={(value) => setActiveGraph(value as GraphType)}>
+        <Select
+          value={activeGraph}
+          onValueChange={(value) => setActiveGraph(value as GraphType)}
+        >
           <SelectTrigger
             className="w-[160px] rounded-lg sm:ml-auto sm:flex"
             aria-label="Select a value"
@@ -186,7 +225,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
       </CardHeader>
       <CardContent>
         {/* Secondary dropdowns for college/course selection */}
-        {activeGraph === 'college' && (
+        {activeGraph === "college" && (
           <div className="mb-4">
             <Select value={selectedCollege} onValueChange={setSelectedCollege}>
               <SelectTrigger className="w-[250px]">
@@ -203,7 +242,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
           </div>
         )}
 
-        {activeGraph === 'course' && (
+        {activeGraph === "course" && (
           <div className="mb-4">
             <Select value={selectedCourse} onValueChange={setSelectedCourse}>
               <SelectTrigger className="w-[250px]">
@@ -220,25 +259,33 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
           </div>
         )}
 
-        <div className="min-h-[300px]">
-          {renderGraph()}
-        </div>
+        <div className="min-h-[300px]">{renderGraph()}</div>
 
         {/* Legend/Summary */}
-        <div className="mt-8 p-4 bg-muted/50 rounded-lg">
+        <div className="bg-muted/50 mt-8 rounded-lg p-4">
           <div className="mb-2">
-            <p className="text-sm font-medium text-foreground">Legend:</p>
-            <p className="text-xs text-muted-foreground">
-              • <strong>Applications</strong>: Total number of applications submitted<br />
-              • <strong>Offers</strong>: Number of applications that received offers<br />
-              • <strong>Acceptances</strong>: Number of offers that were accepted
+            <p className="text-foreground text-sm font-medium">Legend:</p>
+            <p className="text-muted-foreground text-xs">
+              • <strong>Applications</strong>: Total number of applications
+              submitted
+              <br />• <strong>Offers</strong>: Number of applications that
+              received offers
+              <br />• <strong>Acceptances</strong>: Number of offers that were
+              accepted
             </p>
           </div>
-          <p className="text-xs text-muted-foreground mt-2">
-            Please note:  <br />
-            • For data protection purposes, where a final figure on any visualisation is 5 or less, it is reported as &quot;5&quot;. If the figure is 0, it will be reported as &quot;0&quot;. <br />
-            • For most statistics in the dashboard, data is given for multiple admissions cycles (shown by apply year). Apply year refers to the UCAS cycle in which applications were considered. For example, the &apos;2025 apply year&apos; refers to applications made from September 2024 onwards, for courses starting in October 2025 or deferred entry in 2026. <br />
-            • Course and college breakdowns are no longer published from 2025 onwards.
+          <p className="text-muted-foreground mt-2 text-xs">
+            Please note: <br />
+            • For data protection purposes, where a final figure on any
+            visualisation is 5 or less, it is reported as &quot;5&quot;. If the
+            figure is 0, it will be reported as &quot;0&quot;. <br />
+            • For most statistics in the dashboard, data is given for multiple
+            admissions cycles (shown by apply year). Apply year refers to the
+            UCAS cycle in which applications were considered. For example, the
+            &apos;2025 apply year&apos; refers to applications made from
+            September 2024 onwards, for courses starting in October 2025 or
+            deferred entry in 2026. <br />• Course and college breakdowns are no
+            longer published from 2025 onwards.
           </p>
         </div>
       </CardContent>

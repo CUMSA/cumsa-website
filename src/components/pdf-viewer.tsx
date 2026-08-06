@@ -21,12 +21,12 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
   }
 
   const openInNewTab = () => {
-    window.open(srcFull, '_blank', 'noopener,noreferrer');
+    window.open(srcFull, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className="backdrop-blur-xl bg-slate-950/50 rounded-lg p-4 shadow-lg">
-      <div className="flex justify-between items-start mb-4">
+    <div className="rounded-lg bg-slate-950/50 p-4 shadow-lg backdrop-blur-xl">
+      <div className="mb-4 flex items-start justify-between">
         {title && (
           <div>
             <h3 className="text-lg font-semibold">{title}</h3>
@@ -46,7 +46,7 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
 
       <iframe
         src={srcOuter}
-        className="w-full rounded border border-border"
+        className="border-border w-full rounded border"
         style={{ height }}
         title={title ?? "PDF Document"}
       />

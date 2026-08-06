@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { X } from 'lucide-react';
+import { useState } from "react";
+import Image from "next/image";
+import { X } from "lucide-react";
 
 interface ZoomableImageProps {
   src: string;
@@ -12,12 +12,18 @@ interface ZoomableImageProps {
   className?: string;
 }
 
-export function ZoomableImage({ src, alt, width, height, className }: ZoomableImageProps) {
+export function ZoomableImage({
+  src,
+  alt,
+  width,
+  height,
+  className,
+}: ZoomableImageProps) {
   const [isZoomed, setIsZoomed] = useState(false);
 
   return (
     <>
-      <div 
+      <div
         className={`cursor-zoom-in ${className}`}
         onClick={() => setIsZoomed(true)}
       >
@@ -26,29 +32,29 @@ export function ZoomableImage({ src, alt, width, height, className }: ZoomableIm
           alt={alt}
           width={width}
           height={height}
-          className="object-contain max-h-full max-w-full"
+          className="max-h-full max-w-full object-contain"
         />
       </div>
 
       {isZoomed && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={() => setIsZoomed(false)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute top-4 right-4 text-white transition-colors hover:text-gray-300"
             onClick={() => setIsZoomed(false)}
             aria-label="Close"
           >
             <X size={32} />
           </button>
-          <div className="relative max-w-7xl max-h-full cursor-zoom-out">
+          <div className="relative max-h-full max-w-7xl cursor-zoom-out">
             <Image
               src={src}
               alt={alt}
               width={1200}
               height={1600}
-              className="object-contain max-h-[90vh] w-auto"
+              className="max-h-[90vh] w-auto object-contain"
               quality={100}
             />
           </div>
