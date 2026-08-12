@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PDFViewer } from "@/components/pdf-viewer";
 import { ChevronRight, Home } from "lucide-react";
+import LinkDiv from "@/components/links";
 
 export default function ResourcesPage() {
   return (
@@ -71,17 +72,29 @@ export default function ResourcesPage() {
                   </div>
                 </div>
 
-                <div className="rounded-lg bg-slate-950/50 p-6 backdrop-blur-xl">
-                  <h4 className="mb-3 font-semibold">Quick Access</h4>
-                  <div className="space-y-2">
-                    <a
-                      href="/resources/cumsa_freshers_tea_2026.pdf"
-                      className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      → Freshers&apos; Tea Slides
-                    </a>
-                  </div>
-                </div>
+                <LinkDiv
+                  title="Quick Access"
+                  links={[
+                    {
+                      href: "/resources/cumsa_freshers_tea_2026.pdf",
+                      title: "Freshers' Tea 2026 Slides",
+                    },
+                  ]}
+                />
+
+                <LinkDiv
+                  title="Archives"
+                  links={[
+                    {
+                      href: "/resources/cumsa_freshers_guide_2025.pdf",
+                      title: "Freshers' Guide 2025",
+                    },
+                    {
+                      href: "/resources/cumsa_freshers_tea_2025.pdf",
+                      title: "Freshers' Tea 2025 Slides",
+                    },
+                  ]}
+                />
               </div>
             </div>
           </section>
