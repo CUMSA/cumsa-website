@@ -65,7 +65,7 @@ export default function ResourcesPage() {
             Resources
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground font-medium">
-              Past Publications
+              Our Publications
             </span>
           </nav>
         </div>
@@ -75,7 +75,7 @@ export default function ResourcesPage() {
         <div className="mx-auto max-w-6xl">
           <section className="mb-12">
             <h2 className="mb-8 text-center text-3xl font-bold">
-              Past Publications
+              Our Publications
             </h2>
             <div className="flex flex-wrap justify-center gap-5">
               {publicationsData.map((publication) => (
