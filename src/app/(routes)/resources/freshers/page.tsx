@@ -75,7 +75,7 @@ export default function ResourcesPage() {
                   <h4 className="mb-3 font-semibold">Quick Access</h4>
                   <div className="space-y-2">
                     <a
-                      href="/resources/cumsa_freshers_tea_2025.pdf"
+                      href="/resources/cumsa_freshers_tea_2026.pdf"
                       className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     >
                       → Freshers&apos; Tea Slides
