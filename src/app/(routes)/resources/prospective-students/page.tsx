@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PDFViewer } from "@/components/pdf-viewer";
 import { AdmissionGraphs } from "@/components/admission-graphs";
 import { ChevronRight, Home } from "lucide-react";
+import LinkDiv from "@/components/links";
 
 export default function ResourcesPage() {
   return (
@@ -82,6 +83,16 @@ export default function ResourcesPage() {
                     </p>
                   </div>
                 </div>
+
+                <LinkDiv
+                  title="Archives"
+                  links={[
+                    {
+                      href: "/resources/cumsa_admission_guide_2025.pdf",
+                      title: "Application Guide 2025",
+                    },
+                  ]}
+                />
               </div>
             </div>
           </section>

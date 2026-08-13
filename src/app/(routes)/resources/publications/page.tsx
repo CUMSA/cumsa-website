@@ -8,20 +8,20 @@ import {
 // Publications data
 const publicationsData: Publication[] = [
   {
-    id: "cumsa-causeway-2020",
-    title: "CUMSA Causeway 2020",
-    description: "Read our 2020 publication",
-    pdfUrl: "/resources/cumsa_causeway_2020.pdf",
-    cover: "/resources/cumsa_causeway_2020.png",
-    publishedDate: "2020",
+    id: "cumsa-causeway-2025",
+    title: "CUMSA Causeway 2025",
+    description: "Read our 2025 publication",
+    pdfUrl: "/resources/cumsa_causeway_2025.pdf",
+    cover: "/resources/cumsa_causeway_2025.png",
+    publishedDate: "2025",
   },
   {
-    id: "cumsa-causeway-2021",
-    title: "CUMSA Causeway 2021",
-    description: "Read our 2021 publication",
-    pdfUrl: "/resources/cumsa_causeway_2021.pdf",
-    cover: "/resources/cumsa_causeway_2021.png",
-    publishedDate: "2021",
+    id: "cumsa-causeway-2024",
+    title: "CUMSA Causeway 2024",
+    description: "Read our 2024 publication",
+    pdfUrl: "/resources/cumsa_causeway_2024.pdf",
+    cover: "/resources/cumsa_causeway_2024.png",
+    publishedDate: "2024",
   },
   {
     id: "cumsa-causeway-2022",
@@ -32,12 +32,20 @@ const publicationsData: Publication[] = [
     publishedDate: "2022",
   },
   {
-    id: "cumsa-causeway-2024",
-    title: "CUMSA Causeway 2024",
-    description: "Read our 2024 publication",
-    pdfUrl: "/resources/cumsa_causeway_2024.pdf",
-    cover: "/resources/cumsa_causeway_2024.png",
-    publishedDate: "2024",
+    id: "cumsa-causeway-2021",
+    title: "CUMSA Causeway 2021",
+    description: "Read our 2021 publication",
+    pdfUrl: "/resources/cumsa_causeway_2021.pdf",
+    cover: "/resources/cumsa_causeway_2021.png",
+    publishedDate: "2021",
+  },
+  {
+    id: "cumsa-causeway-2020",
+    title: "CUMSA Causeway 2020",
+    description: "Read our 2020 publication",
+    pdfUrl: "/resources/cumsa_causeway_2020.pdf",
+    cover: "/resources/cumsa_causeway_2020.png",
+    publishedDate: "2020",
   },
 ];
 
@@ -57,7 +65,7 @@ export default function ResourcesPage() {
             Resources
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground font-medium">
-              Past Publications
+              Our Publications
             </span>
           </nav>
         </div>
@@ -67,7 +75,7 @@ export default function ResourcesPage() {
         <div className="mx-auto max-w-6xl">
           <section className="mb-12">
             <h2 className="mb-8 text-center text-3xl font-bold">
-              Past Publications
+              Our Publications
             </h2>
             <div className="flex flex-wrap justify-center gap-5">
               {publicationsData.map((publication) => (

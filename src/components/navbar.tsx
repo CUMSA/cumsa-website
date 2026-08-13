@@ -75,9 +75,9 @@ export default function Navbar() {
                   </ListItem>
                   <ListItem
                     href="/resources/publications"
-                    title="Past Publications"
+                    title="Our Publications"
                   >
-                    Read our annual publications here
+                    Read our annual publications here!
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
