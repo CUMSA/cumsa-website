@@ -9,7 +9,7 @@
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,json,css}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,json,css}\" --cache",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint --fix .",
     "preview": "next build && next start",
     "start": "next start",
