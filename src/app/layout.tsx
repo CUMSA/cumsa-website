@@ -8,7 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "CUMSA - Cambridge University Singapore and Malaysia Society",
-  description: "Official website of the Cambridge University Singapore and Malaysia Society (CUMSA)",
+  description:
+    "Official website of the Cambridge University Singapore and Malaysia Society (CUMSA)",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -39,10 +40,13 @@ export default function RootLayout({
           <Navbar />
 
           {/* Blurred background */}
-          <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden blur-[90px]" aria-hidden="true">
-            <span className="mesh-drift absolute -left-[12vw] -top-[18vw] h-[57vw] w-[57vw] rounded-full bg-blue-300 dark:bg-blue-900" />
-            <span className="mesh-drift absolute -right-[12vw] -top-[18vw] h-[57vw] w-[57vw] rounded-full bg-rose-300 dark:bg-rose-950" />
-            <span className="mesh-drift absolute left-[25vw] top-[40vh] h-[50vw] w-[50vw] rounded-full bg-purple-300 dark:bg-purple-950" />
+          <div
+            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden blur-[90px]"
+            aria-hidden="true"
+          >
+            <span className="mesh-drift absolute -top-[18vw] -left-[12vw] h-[57vw] w-[57vw] rounded-full bg-blue-300 dark:bg-blue-900" />
+            <span className="mesh-drift absolute -top-[18vw] -right-[12vw] h-[57vw] w-[57vw] rounded-full bg-rose-300 dark:bg-rose-950" />
+            <span className="mesh-drift absolute top-[40vh] left-[25vw] h-[50vw] w-[50vw] rounded-full bg-purple-300 dark:bg-purple-950" />
           </div>
 
           <main>{children}</main>

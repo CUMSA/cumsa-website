@@ -5,30 +5,36 @@ import { ChevronRight, Home } from "lucide-react";
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen text-foreground">
-      <div className="backdrop-blur-xl bg-slate-950/60 border-b border-border">
+    <div className="text-foreground min-h-screen">
+      <div className="border-border border-b bg-slate-950/60 backdrop-blur-xl">
         <div className="container mx-auto px-4 py-8">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="flex items-center hover:text-foreground transition-colors">
+          <nav className="text-muted-foreground flex items-center space-x-2 text-sm">
+            <Link
+              href="/"
+              className="hover:text-foreground flex items-center transition-colors"
+            >
               <Home className="h-4 w-4" />
             </Link>
             <ChevronRight className="h-4 w-4" />
             Resources
             <ChevronRight className="h-4 w-4" />
-            <span className="text-foreground font-medium">Prospective Applicants</span>
+            <span className="text-foreground font-medium">
+              Prospective Applicants
+            </span>
           </nav>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
-
+        <div className="mx-auto max-w-6xl">
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6">Prospective Applicants</h2>
+            <h2 className="mb-6 text-3xl font-bold">Prospective Applicants</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              For pre-university students who are intending on applying to Cambridge for entry in 2027, CUMSA offers application workshops and assistance such as:
+              For pre-university students who are intending on applying to
+              Cambridge for entry in 2027, CUMSA offers application workshops
+              and assistance such as:
             </p>
-            <ul className="text-muted-foreground mb-4 leading-relaxed list-disc list-inside space-y-2">
+            <ul className="text-muted-foreground mb-4 list-inside list-disc space-y-2 leading-relaxed">
               <li>Personal statement and supercurriculars workshops</li>
               <li>Admissions tests workshops</li>
               <li>Mock interviews</li>
@@ -36,10 +42,18 @@ export default function ResourcesPage() {
               <li>Mentorship programs</li>
             </ul>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Follow us on <a href="https://www.instagram.com/cumsa_" className="color-link" target="_blank">Instagram</a> for sign-up details!
+              Follow us on{" "}
+              <a
+                href="https://www.instagram.com/cumsa_"
+                className="color-link"
+                target="_blank"
+              >
+                Instagram
+              </a>{" "}
+              for sign-up details!
             </p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
               <div className="h-fit">
                 <PDFViewer
                   src="/resources/cumsa_admission_guide_2026.pdf"
@@ -50,13 +64,21 @@ export default function ResourcesPage() {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-2xl font-bold mb-4">Application Guide</h3>
-                  <div className="space-y-4 text-muted-foreground">
+                  <h3 className="mb-4 text-2xl font-bold">Application Guide</h3>
+                  <div className="text-muted-foreground space-y-4">
                     <p>
-                      <strong>Navigate your Cambridge application!</strong> The Application Guide provides detailed information about the application process for Cambridge, including step-by-step advice for each subject and insights into the requirements and culture of different colleges.
+                      <strong>Navigate your Cambridge application!</strong> The
+                      Application Guide provides detailed information about the
+                      application process for Cambridge, including step-by-step
+                      advice for each subject and insights into the requirements
+                      and culture of different colleges.
                     </p>
                     <p>
-                      Find tips on preparing your personal statement, choosing a college, understanding admissions tests, and what to expect in interviews. The guide also includes advice from current students and alumni to help you make informed decisions and present your best self in your application.
+                      Find tips on preparing your personal statement, choosing a
+                      college, understanding admissions tests, and what to
+                      expect in interviews. The guide also includes advice from
+                      current students and alumni to help you make informed
+                      decisions and present your best self in your application.
                     </p>
                   </div>
                 </div>
@@ -66,10 +88,11 @@ export default function ResourcesPage() {
 
           {/* Application Statistics */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">Application Statistics</h2>
+            <h2 className="mb-8 text-center text-3xl font-bold">
+              Application Statistics
+            </h2>
             <AdmissionGraphs />
           </section>
-
         </div>
       </div>
     </div>

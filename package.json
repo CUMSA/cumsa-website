@@ -7,13 +7,14 @@
     "build": "next build",
     "check": "eslint . && tsc --noEmit",
     "dev": "next dev --turbo",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,json,css}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,json,css}\" --cache",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
@@ -41,6 +42,9 @@
     "@types/react-dom": "19.2.3",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.2.11",
+    "eslint-config-prettier": "10.1.5",
+    "husky": "9.1.7",
+    "lint-staged": "17.0.8",
     "postcss": "8.5.17",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11",
@@ -48,6 +52,15 @@
     "tw-animate-css": "1.3.6",
     "typescript": "5.8.2",
     "typescript-eslint": "8.63.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix --cache",
+      "prettier --write"
+    ],
+    "*.{css,html}": [
+      "prettier --write"
+    ]
   },
   "ct3aMetadata": {
     "initVersion": "7.39.3"

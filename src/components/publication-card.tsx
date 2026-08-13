@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -17,9 +23,9 @@ interface PublicationCardProps {
 
 export function PublicationCard({ publication }: PublicationCardProps) {
   return (
-    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+    <Card className="h-full transition-shadow duration-300 hover:shadow-lg">
       <div className="relative h-100 overflow-hidden p-4">
-        <div className="relative h-full w-full rounded-lg rounded-lg overflow-hidden shadow-md bg-white py-2">
+        <div className="relative h-full w-full overflow-hidden rounded-lg bg-white py-2 shadow-md">
           <Image
             src={publication.cover}
             alt={`${publication.title} cover`}
@@ -30,13 +36,15 @@ export function PublicationCard({ publication }: PublicationCardProps) {
       </div>
       <CardHeader>
         <CardTitle className="text-xl">{publication.title}</CardTitle>
-        <CardDescription>
-          {publication.description}
-        </CardDescription>
+        <CardDescription>{publication.description}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col">
+      <CardContent className="flex flex-1 flex-col">
         <Button className="w-full" size="sm" asChild>
-          <a href={publication.pdfUrl} target="_blank" rel="noopener noreferrer">
+          <a
+            href={publication.pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View Publication
           </a>
         </Button>

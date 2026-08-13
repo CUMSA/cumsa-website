@@ -1,10 +1,13 @@
-export type StatType = 'applications' | 'offers' | 'acceptances';
+export type StatType = "applications" | "offers" | "acceptances";
 
-export type YearlyStats = Record<number, {
-  applications: number;
-  offers: number;
-  acceptances: number;
-}>;
+export type YearlyStats = Record<
+  number,
+  {
+    applications: number;
+    offers: number;
+    acceptances: number;
+  }
+>;
 
 export type CollegeStats = Record<string, YearlyStats>;
 
@@ -37,7 +40,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 50, offers: 16, acceptances: 15 },
     2024: { applications: 39, offers: 11, acceptances: 11 },
   },
-  "Churchill": {
+  Churchill: {
     2015: { applications: 18, offers: 5, acceptances: 5 },
     2016: { applications: 10, offers: 5, acceptances: 5 },
     2017: { applications: 14, offers: 5, acceptances: 5 },
@@ -49,7 +52,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 34, offers: 5, acceptances: 5 },
     2024: { applications: 23, offers: 5, acceptances: 5 },
   },
-  "Clare": {
+  Clare: {
     2015: { applications: 18, offers: 5, acceptances: 5 },
     2016: { applications: 9, offers: 5, acceptances: 5 },
     2017: { applications: 8, offers: 0, acceptances: 0 },
@@ -73,7 +76,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 12, offers: 5, acceptances: 0 },
     2024: { applications: 12, offers: 5, acceptances: 5 },
   },
-  "Downing": {
+  Downing: {
     2015: { applications: 19, offers: 5, acceptances: 5 },
     2016: { applications: 21, offers: 5, acceptances: 5 },
     2017: { applications: 21, offers: 5, acceptances: 5 },
@@ -85,7 +88,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 30, offers: 5, acceptances: 5 },
     2024: { applications: 37, offers: 7, acceptances: 6 },
   },
-  "Emmanuel": {
+  Emmanuel: {
     2015: { applications: 25, offers: 5, acceptances: 5 },
     2016: { applications: 23, offers: 5, acceptances: 5 },
     2017: { applications: 15, offers: 5, acceptances: 5 },
@@ -97,7 +100,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 26, offers: 5, acceptances: 5 },
     2024: { applications: 16, offers: 5, acceptances: 5 },
   },
-  "Fitzwilliam": {
+  Fitzwilliam: {
     2015: { applications: 34, offers: 6, acceptances: 5 },
     2016: { applications: 28, offers: 5, acceptances: 5 },
     2017: { applications: 18, offers: 6, acceptances: 6 },
@@ -109,7 +112,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 16, offers: 5, acceptances: 5 },
     2024: { applications: 11, offers: 5, acceptances: 5 },
   },
-  "Girton": {
+  Girton: {
     2015: { applications: 5, offers: 5, acceptances: 5 },
     2016: { applications: 7, offers: 5, acceptances: 5 },
     2017: { applications: 11, offers: 5, acceptances: 5 },
@@ -133,7 +136,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 11, offers: 5, acceptances: 5 },
     2024: { applications: 22, offers: 5, acceptances: 0 },
   },
-  "Homerton": {
+  Homerton: {
     2015: { applications: 7, offers: 5, acceptances: 5 },
     2016: { applications: 11, offers: 5, acceptances: 5 },
     2017: { applications: 14, offers: 6, acceptances: 5 },
@@ -157,7 +160,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 19, offers: 11, acceptances: 10 },
     2024: { applications: 34, offers: 22, acceptances: 20 },
   },
-  "Jesus": {
+  Jesus: {
     2015: { applications: 6, offers: 5, acceptances: 0 },
     2016: { applications: 13, offers: 5, acceptances: 5 },
     2017: { applications: 12, offers: 5, acceptances: 5 },
@@ -193,7 +196,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 7, offers: 8, acceptances: 7 },
     2024: { applications: 20, offers: 7, acceptances: 6 },
   },
-  "Magdalene": {
+  Magdalene: {
     2015: { applications: 32, offers: 7, acceptances: 5 },
     2016: { applications: 22, offers: 8, acceptances: 6 },
     2017: { applications: 25, offers: 5, acceptances: 5 },
@@ -217,7 +220,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 5, offers: 5, acceptances: 5 },
     2024: { applications: 5, offers: 0, acceptances: 0 },
   },
-  "Newnham": {
+  Newnham: {
     2015: { applications: 10, offers: 8, acceptances: 5 },
     2016: { applications: 9, offers: 5, acceptances: 5 },
     2017: { applications: 9, offers: 5, acceptances: 5 },
@@ -229,7 +232,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 17, offers: 5, acceptances: 5 },
     2024: { applications: 10, offers: 5, acceptances: 5 },
   },
-  "Open": {
+  Open: {
     2015: { applications: 0, offers: 0, acceptances: 0 },
     2016: { applications: 0, offers: 0, acceptances: 0 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -241,7 +244,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 5, offers: 0, acceptances: 0 },
   },
-  "Pembroke": {
+  Pembroke: {
     2015: { applications: 11, offers: 5, acceptances: 5 },
     2016: { applications: 11, offers: 5, acceptances: 5 },
     2017: { applications: 19, offers: 7, acceptances: 6 },
@@ -253,7 +256,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 22, offers: 5, acceptances: 5 },
     2024: { applications: 18, offers: 0, acceptances: 0 },
   },
-  "Peterhouse": {
+  Peterhouse: {
     2015: { applications: 11, offers: 5, acceptances: 5 },
     2016: { applications: 18, offers: 5, acceptances: 5 },
     2017: { applications: 20, offers: 7, acceptances: 6 },
@@ -277,7 +280,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 27, offers: 9, acceptances: 6 },
     2024: { applications: 21, offers: 8, acceptances: 6 },
   },
-  "Robinson": {
+  Robinson: {
     2015: { applications: 6, offers: 5, acceptances: 5 },
     2016: { applications: 7, offers: 5, acceptances: 0 },
     2017: { applications: 5, offers: 5, acceptances: 5 },
@@ -289,7 +292,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 9, offers: 5, acceptances: 5 },
     2024: { applications: 13, offers: 5, acceptances: 5 },
   },
-  "Selwyn": {
+  Selwyn: {
     2015: { applications: 8, offers: 5, acceptances: 5 },
     2016: { applications: 15, offers: 5, acceptances: 5 },
     2017: { applications: 8, offers: 5, acceptances: 5 },
@@ -349,7 +352,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 25, offers: 7, acceptances: 6 },
     2024: { applications: 27, offers: 8, acceptances: 8 },
   },
-  "Trinity": {
+  Trinity: {
     2015: { applications: 26, offers: 5, acceptances: 5 },
     2016: { applications: 43, offers: 7, acceptances: 7 },
     2017: { applications: 37, offers: 5, acceptances: 5 },
@@ -373,7 +376,7 @@ export const collegeStats: CollegeStats = {
     2023: { applications: 16, offers: 5, acceptances: 5 },
     2024: { applications: 9, offers: 5, acceptances: 5 },
   },
-  "Wolfson": {
+  Wolfson: {
     2015: { applications: 21, offers: 16, acceptances: 14 },
     2016: { applications: 23, offers: 8, acceptances: 6 },
     2017: { applications: 18, offers: 13, acceptances: 13 },
@@ -400,7 +403,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Archaeology": {
+  Archaeology: {
     2015: { applications: 0, offers: 0, acceptances: 0 },
     2016: { applications: 0, offers: 0, acceptances: 0 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -412,7 +415,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Architecture": {
+  Architecture: {
     2015: { applications: 5, offers: 5, acceptances: 5 },
     2016: { applications: 9, offers: 0, acceptances: 0 },
     2017: { applications: 5, offers: 0, acceptances: 0 },
@@ -436,7 +439,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 5, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Classics": {
+  Classics: {
     2015: { applications: 0, offers: 0, acceptances: 0 },
     2016: { applications: 0, offers: 0, acceptances: 0 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -460,7 +463,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Design": {
+  Design: {
     2015: { applications: 0, offers: 0, acceptances: 0 },
     2016: { applications: 0, offers: 0, acceptances: 0 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -472,7 +475,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Economics": {
+  Economics: {
     2015: { applications: 65, offers: 15, acceptances: 11 },
     2016: { applications: 60, offers: 9, acceptances: 8 },
     2017: { applications: 50, offers: 7, acceptances: 6 },
@@ -484,7 +487,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 68, offers: 15, acceptances: 12 },
     2024: { applications: 80, offers: 18, acceptances: 17 },
   },
-  "Education": {
+  Education: {
     2015: { applications: 5, offers: 0, acceptances: 0 },
     2016: { applications: 5, offers: 5, acceptances: 5 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -496,7 +499,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 5, offers: 5, acceptances: 5 },
     2024: { applications: 5, offers: 5, acceptances: 5 },
   },
-  "English": {
+  English: {
     2015: { applications: 6, offers: 5, acceptances: 5 },
     2016: { applications: 15, offers: 5, acceptances: 5 },
     2017: { applications: 8, offers: 5, acceptances: 5 },
@@ -508,7 +511,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 5, offers: 0, acceptances: 0 },
     2024: { applications: 5, offers: 5, acceptances: 5 },
   },
-  "Geography": {
+  Geography: {
     2015: { applications: 13, offers: 6, acceptances: 5 },
     2016: { applications: 5, offers: 5, acceptances: 5 },
     2017: { applications: 5, offers: 0, acceptances: 0 },
@@ -520,7 +523,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 9, offers: 0, acceptances: 0 },
     2024: { applications: 6, offers: 5, acceptances: 5 },
   },
-  "History": {
+  History: {
     2015: { applications: 5, offers: 5, acceptances: 0 },
     2016: { applications: 6, offers: 5, acceptances: 5 },
     2017: { applications: 5, offers: 5, acceptances: 5 },
@@ -592,7 +595,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 18, offers: 5, acceptances: 5 },
     2024: { applications: 14, offers: 5, acceptances: 5 },
   },
-  "Law": {
+  Law: {
     2015: { applications: 91, offers: 25, acceptances: 23 },
     2016: { applications: 79, offers: 20, acceptances: 18 },
     2017: { applications: 85, offers: 28, acceptances: 26 },
@@ -604,7 +607,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 91, offers: 33, acceptances: 29 },
     2024: { applications: 91, offers: 36, acceptances: 35 },
   },
-  "Linguistics": {
+  Linguistics: {
     2015: { applications: 5, offers: 5, acceptances: 5 },
     2016: { applications: 5, offers: 0, acceptances: 0 },
     2017: { applications: 5, offers: 5, acceptances: 5 },
@@ -628,7 +631,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Music": {
+  Music: {
     2015: { applications: 5, offers: 5, acceptances: 5 },
     2016: { applications: 5, offers: 0, acceptances: 0 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -640,7 +643,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 0, offers: 0, acceptances: 0 },
     2024: { applications: 0, offers: 0, acceptances: 0 },
   },
-  "Philosophy": {
+  Philosophy: {
     2015: { applications: 5, offers: 0, acceptances: 0 },
     2016: { applications: 5, offers: 5, acceptances: 5 },
     2017: { applications: 0, offers: 0, acceptances: 0 },
@@ -688,7 +691,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 63, offers: 10, acceptances: 8 },
     2024: { applications: 57, offers: 13, acceptances: 12 },
   },
-  "Engineering": {
+  Engineering: {
     2015: { applications: 49, offers: 13, acceptances: 12 },
     2016: { applications: 62, offers: 10, acceptances: 6 },
     2017: { applications: 56, offers: 13, acceptances: 9 },
@@ -700,7 +703,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 65, offers: 17, acceptances: 13 },
     2024: { applications: 71, offers: 19, acceptances: 16 },
   },
-  "Mathematics": {
+  Mathematics: {
     2015: { applications: 13, offers: 5, acceptances: 5 },
     2016: { applications: 13, offers: 8, acceptances: 5 },
     2017: { applications: 17, offers: 5, acceptances: 5 },
@@ -712,7 +715,7 @@ export const courseStats: CourseStats = {
     2023: { applications: 23, offers: 14, acceptances: 7 },
     2024: { applications: 28, offers: 13, acceptances: 10 },
   },
-  "Medicine": {
+  Medicine: {
     2015: { applications: 58, offers: 11, acceptances: 9 },
     2016: { applications: 64, offers: 5, acceptances: 5 },
     2017: { applications: 60, offers: 12, acceptances: 11 },

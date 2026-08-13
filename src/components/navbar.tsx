@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -28,8 +28,8 @@ import { Menu } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur-xl bg-slate-950/50">
-      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full bg-slate-950/50 backdrop-blur-xl">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-2">
@@ -67,10 +67,16 @@ export default function Navbar() {
                   <ListItem href="/resources/freshers" title="Freshers">
                     Resources and information for incoming students
                   </ListItem>
-                  <ListItem href="/resources/prospective-students" title="Prospective Applicants">
+                  <ListItem
+                    href="/resources/prospective-students"
+                    title="Prospective Applicants"
+                  >
                     Information for prospective applicants
                   </ListItem>
-                  <ListItem href="/resources/publications" title="Past Publications">
+                  <ListItem
+                    href="/resources/publications"
+                    title="Past Publications"
+                  >
                     Read our annual publications here
                   </ListItem>
                 </ul>
@@ -93,7 +99,10 @@ export default function Navbar() {
 
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/committee" className={navigationMenuTriggerStyle()}>
+                <Link
+                  href="/committee"
+                  className={navigationMenuTriggerStyle()}
+                >
                   Committee
                 </Link>
               </NavigationMenuLink>
@@ -105,9 +114,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <Button variant="default" className="hidden sm:inline-flex">
-            <Link href="https://membership.cumsa.org/">
-              Membership
-            </Link>
+            <Link href="https://membership.cumsa.org/">Membership</Link>
           </Button>
 
           {/* Mobile Menu */}
@@ -119,7 +126,9 @@ export default function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-64">
-              <DropdownMenuLabel className="font-semibold">Navigation</DropdownMenuLabel>
+              <DropdownMenuLabel className="font-semibold">
+                Navigation
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
 
               {/* About submenu */}
@@ -153,12 +162,18 @@ export default function Navbar() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/resources/prospective-students" className="cursor-pointer">
+                    <Link
+                      href="/resources/prospective-students"
+                      className="cursor-pointer"
+                    >
                       Prospective Applicants
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/resources/publications" className="cursor-pointer">
+                    <Link
+                      href="/resources/publications"
+                      className="cursor-pointer"
+                    >
                       Past Publications
                     </Link>
                   </DropdownMenuItem>
@@ -193,7 +208,10 @@ export default function Navbar() {
 
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild className="sm:hidden">
-                <Link href="https://membership.cumsa.org/" className="cursor-pointer font-medium">
+                <Link
+                  href="https://membership.cumsa.org/"
+                  className="cursor-pointer font-medium"
+                >
                   Membership
                 </Link>
               </DropdownMenuItem>
@@ -222,9 +240,8 @@ function ListItem({
         </Link>
       </NavigationMenuLink>
     </li>
-  )
+  );
 }
-
 
 function navigationMenuTriggerStyle() {
   return cn(
