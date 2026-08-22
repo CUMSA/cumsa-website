@@ -6,10 +6,10 @@ import type { CommitteeMember } from "@/data/committee-fmt";
 
 interface CommitteeCardProps {
   member: CommitteeMember;
-  includeEmail: boolean;
+  current: boolean;
 }
 
-export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
+export function CommitteeCard({ member, current }: CommitteeCardProps) {
   return (
     <Card className="h-full text-center transition-shadow duration-300 hover:shadow-lg">
       <CardHeader>
@@ -24,7 +24,7 @@ export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
         </div>
         <CardTitle className="text-xl">{member.name}</CardTitle>
         <Badge variant="secondary" className="mx-auto">
-          {member.position}
+          {current ? member.position : "Previous " + member.position}
         </Badge>
       </CardHeader>
       <CardContent>
@@ -35,7 +35,7 @@ export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
           <br />
           Year: {member.year}
         </p>
-        {includeEmail && (
+        {current && (
           <LinkButton
             variant="outline"
             size="sm"

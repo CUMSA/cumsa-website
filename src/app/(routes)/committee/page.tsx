@@ -29,10 +29,7 @@ async function Committee(year: number) {
       <div className="flex flex-wrap justify-center gap-6">
         {members.map((member) => (
           <div key={member.id} className="w-full max-w-xs">
-            <CommitteeCard
-              member={member}
-              includeEmail={year === currentYear}
-            />
+            <CommitteeCard member={member} current={year === currentYear} />
           </div>
         ))}
       </div>
