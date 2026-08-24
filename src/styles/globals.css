@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --background-image-page: var(--page-background);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -45,6 +46,10 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
+  --page-background:
+    radial-gradient(ellipse at 15% 20%, rgb(0 189 182 / 14%), transparent 55%),
+    radial-gradient(ellipse at 78% 66%, rgb(255 186 75 / 14%), transparent 52%),
+    linear-gradient(115deg, #d0e9e4 0%, #f5e7db 30%, #f2d5a4 68%);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -83,6 +88,10 @@
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
+  --page-background:
+    radial-gradient(ellipse at 15% 20%, rgb(0 189 182 / 12%), transparent 55%),
+    radial-gradient(ellipse at 78% 66%, rgb(149 35 37 / 20%), transparent 52%),
+    linear-gradient(115deg, #0f3f4b 0%, #233d4c 30%, #45283f 68%);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
@@ -124,8 +133,12 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    @apply bg-background bg-page bg-fixed;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
 
