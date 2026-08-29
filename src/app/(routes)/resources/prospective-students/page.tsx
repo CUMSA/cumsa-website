@@ -64,7 +64,7 @@ export default function ResourcesPage() {
               </div>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-purple-500 pl-6">
+                <div className="border-brand-red dark:border-brand-amber border-l-4 pl-6">
                   <h3 className="mb-4 text-2xl font-bold">Application Guide</h3>
                   <div className="text-muted-foreground space-y-4">
                     <p>

@@ -50,7 +50,7 @@ export default function ResourcesPage() {
 
               {/* Freshers' Guide Text Content */}
               <div className="space-y-6">
-                <div className="border-l-4 border-blue-300 pl-6">
+                <div className="border-brand-teal border-l-4 pl-6">
                   <h3 className="mb-4 text-2xl font-bold">
                     Freshers&apos; Guide
                   </h3>
@@ -102,7 +102,7 @@ export default function ResourcesPage() {
           <section className="mb-16">
             <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
               <div className="space-y-6">
-                <div className="border-l-4 border-blue-300 pl-6">
+                <div className="border-brand-teal border-l-4 pl-6">
                   <h3 className="mb-4 text-2xl font-bold">Leisure Guide</h3>
                   <div className="text-muted-foreground space-y-4">
                     <p>

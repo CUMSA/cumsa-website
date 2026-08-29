@@ -12,9 +12,8 @@ import { cn } from "@/lib/utils";
 const sponsorVariants = cva("rounded-full px-3 py-1 text-sm font-medium", {
   variants: {
     tier: {
-      Platinum:
-        "bg-purple-300 text-purple-900 dark:bg-purple-700 dark:text-purple-200",
-      Gold: "bg-yellow-200 text-black/95 dark:bg-yellow-400",
+      Platinum: "bg-brand-teal text-brand-deep",
+      Gold: "bg-brand-amber text-brand-deep",
       Silver: "bg-muted",
     },
   },
@@ -82,7 +81,7 @@ export default async function SponsorPage({
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                        className="color-link block text-sm"
                       >
                         → {link.title}
                       </Link>
@@ -158,7 +157,7 @@ export default async function SponsorPage({
                   href={sponsor.videoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                  className="color-link block"
                 >
                   Corporate Video
                 </Link>

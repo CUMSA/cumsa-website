@@ -18,21 +18,23 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="to-background dark:to-background relative flex min-h-[60vh] items-center justify-center bg-gradient-to-b from-blue-50 dark:from-blue-950">
+      <section className="bg-hero relative flex min-h-[60vh] items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/banner.jpg"
             alt="CUMSA Group Photo"
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-[0.18]"
             priority
           />
         </div>
         <div className="relative z-10 container mx-auto px-4 py-16 text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-blue-500 sm:text-6xl">
+          <h1 className="text-brand-red dark:text-brand-cream mb-6 text-4xl font-bold tracking-tight sm:text-6xl">
             Cambridge University Malaysia
             <br />
-            <span className="text-red-600">and Singapore Association</span>
+            <span className="text-brand-deep dark:text-brand-amber">
+              and Singapore Association
+            </span>
           </h1>
           <p className="text-foreground mx-auto mb-8 max-w-2xl text-lg">
             Welcome to the Cambridge University Malaysia and Singapore
@@ -78,7 +80,7 @@ export default function HomePage() {
             <Link href="/about">
               <Card className="flex h-[26rem] cursor-pointer flex-col transition-transform hover:scale-105 hover:shadow-lg">
                 <CardHeader className="flex-shrink-0">
-                  <div className="relative mb-4 h-64 w-full overflow-hidden rounded-lg bg-orange-100">
+                  <div className="bg-muted relative mb-4 h-64 w-full overflow-hidden rounded-lg">
                     <Image
                       src="/dinner.jpg" // Replace with actual image
                       alt="About us"
@@ -99,7 +101,7 @@ export default function HomePage() {
             <Link href="/resources/freshers">
               <Card className="flex h-[26rem] cursor-pointer flex-col transition-transform hover:scale-105 hover:shadow-lg">
                 <CardHeader className="flex-shrink-0">
-                  <div className="relative mb-4 h-64 w-full overflow-hidden rounded-lg bg-amber-100">
+                  <div className="bg-muted relative mb-4 h-64 w-full overflow-hidden rounded-lg">
                     <Image
                       src="/resources.png" // Replace with actual image
                       alt="Resources"
@@ -121,7 +123,7 @@ export default function HomePage() {
             <Link href="/sponsors">
               <Card className="flex h-[26rem] cursor-pointer flex-col transition-transform hover:scale-105 hover:shadow-lg">
                 <CardHeader className="flex-shrink-0">
-                  <div className="relative mb-4 h-64 w-full overflow-hidden rounded-lg bg-yellow-100">
+                  <div className="bg-muted relative mb-4 h-64 w-full overflow-hidden rounded-lg">
                     <Image
                       src="/sponsors.jpg" // Replace with actual image
                       alt="Sponsors"
