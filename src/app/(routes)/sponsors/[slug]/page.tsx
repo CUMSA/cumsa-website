@@ -1,10 +1,24 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { getSponsorBySlug } from "@/data/sponsors";
-import type { FooterLink } from "@/data/sponsors";
+import { slugMap } from "@/data/sponsors";
+import { type Ref } from "@/components/links";
 import { ZoomableImage } from "@/components/zoomable-image";
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const sponsorVariants = cva("rounded-full px-3 py-1 text-sm font-medium", {
+  variants: {
+    tier: {
+      Platinum:
+        "bg-purple-300 text-purple-900 dark:bg-purple-700 dark:text-purple-200",
+      Gold: "bg-yellow-200 text-black/95 dark:bg-yellow-400",
+      Silver: "bg-muted",
+    },
+  },
+});
 
 export default async function SponsorPage({
   params,
@@ -12,7 +26,7 @@ export default async function SponsorPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const sponsor = getSponsorBySlug(slug);
+  const sponsor = slugMap[slug];
 
   if (!sponsor) {
     notFound();
@@ -20,7 +34,7 @@ export default async function SponsorPage({
 
   return (
     <div className="min-h-screen">
-      <div className="bg-muted border-border border-b py-4">
+      <div className="border-border border-b bg-slate-950/60 py-4 backdrop-blur-xl">
         <div className="container mx-auto px-4">
           <div className="text-muted-foreground flex items-center text-sm">
             <Link href="/sponsors" className="hover:text-foreground">
@@ -36,15 +50,7 @@ export default async function SponsorPage({
         <div className="mx-auto max-w-4xl">
           <div className="mb-6">
             <div className="inline-block">
-              <span
-                className={`rounded-full px-3 py-1 text-sm font-medium ${
-                  sponsor.tier === "platinum"
-                    ? "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-                    : sponsor.tier === "gold"
-                      ? "bg-yellow-200 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-200"
-                      : "bg-muted text-muted-foreground"
-                }`}
-              >
+              <span className={cn(sponsorVariants({ tier: sponsor.tier }))}>
                 {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)}{" "}
                 Sponsors
               </span>
@@ -66,30 +72,28 @@ export default async function SponsorPage({
                 ))}
               </div>
 
-              {sponsor.footerLinks && sponsor.footerLinks.length > 0 && (
-                <div className="bg-muted rounded-lg p-6">
+              {sponsor.links && sponsor.links.length > 0 && (
+                <div className="mt-16 rounded-lg bg-slate-950/50 p-6 backdrop-blur-xl">
                   <h4 className="mb-3 font-semibold">Links</h4>
                   <div className="space-y-2">
-                    {sponsor.footerLinks.map(
-                      (link: FooterLink, index: number) => (
-                        <Link
-                          key={index}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                        >
-                          → {link.title}
-                        </Link>
-                      ),
-                    )}
+                    {sponsor.links.map((link: Ref, index: number) => (
+                      <Link
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                      >
+                        → {link.title}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-card border-border sticky top-6 rounded-lg border p-6">
+              <div className="sticky top-6 rounded-lg bg-slate-950/50 p-6 backdrop-blur-xl">
                 <div className="mb-6 flex h-32 w-full items-center justify-center rounded-lg bg-white">
                   <Image
                     src={sponsor.picture}
@@ -133,9 +137,13 @@ export default async function SponsorPage({
                 <div>
                   <h4 className="mb-3 font-semibold">Connect</h4>
                   {sponsor.website && (
-                    <Button variant="outline" className="mb-3 w-full" size="sm">
+                    <Badge
+                      asChild
+                      variant="outline"
+                      className="mb-3 w-full py-1.5 text-sm"
+                    >
                       <Link href={sponsor.website}>Visit Website</Link>
-                    </Button>
+                    </Badge>
                   )}
                 </div>
               </div>
@@ -144,8 +152,8 @@ export default async function SponsorPage({
 
           {/* Video Section */}
           {sponsor.videoUrl && (
-            <div className="my-8">
-              <h3 className="mb-4 text-xl font-semibold">
+            <div className="my-8 rounded-lg bg-slate-950/50 p-2 backdrop-blur-xl sm:p-8">
+              <h3 className="mb-2 text-xl font-semibold sm:mb-4">
                 <Link
                   href={sponsor.videoUrl}
                   target="_blank"
@@ -167,17 +175,14 @@ export default async function SponsorPage({
           )}
 
           {sponsor.images && (
-            <div className="my-8">
-              <h3 className="mb-4 text-xl font-semibold">Corporate Brochure</h3>
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-transparent">
-                <ZoomableImage
-                  src={sponsor.images}
-                  alt={`${sponsor.name} Corporate Brochure`}
-                  width={400}
-                  height={800}
-                  className="h-full w-full"
-                />
-              </div>
+            <div className="my-8 rounded-lg bg-slate-950/50 p-2 backdrop-blur-xl sm:p-8">
+              <h3 className="mb-2 text-xl font-semibold sm:mb-4">
+                Corporate Brochure
+              </h3>
+              <ZoomableImage
+                src={sponsor.images}
+                alt={`${sponsor.name} Corporate Brochure`}
+              />
             </div>
           )}
         </div>
