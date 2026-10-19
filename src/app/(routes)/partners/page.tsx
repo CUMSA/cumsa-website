@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
@@ -6,7 +9,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export default function PartnersPage() {
+  const [selectedCuisine, setSelectedCuisine] = useState("All");
   const allPartners = getAllPartners();
+  const cuisines = [
+    ...new Set(allPartners.map((partner) => partner.cuisine)),
+  ].sort();
+  const partners =
+    selectedCuisine === "All"
+      ? allPartners
+      : allPartners.filter((partner) => partner.cuisine === selectedCuisine);
 
   return (
     <div className="min-h-screen">
@@ -58,9 +69,28 @@ export default function PartnersPage() {
             </div>
           </div>
 
+          <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+            <span className="text-muted-foreground text-sm">Filter:</span>
+            {["All", ...cuisines].map((cuisine) => (
+              <Badge
+                key={cuisine}
+                variant={selectedCuisine === cuisine ? "default" : "secondary"}
+                className="cursor-pointer px-3 py-1.5 text-sm transition-opacity hover:opacity-80 sm:px-3"
+                asChild
+              >
+                <button
+                  type="button"
+                  onClick={() => setSelectedCuisine(cuisine)}
+                >
+                  {cuisine}
+                </button>
+              </Badge>
+            ))}
+          </div>
+
           {/* Partners Grid */}
           <div className="flex flex-wrap justify-center gap-8">
-            {allPartners.map((partner) => (
+            {partners.map((partner) => (
               <Link
                 key={partner.id}
                 href={partner.mapsUrl ?? "#"}
