@@ -1,6 +1,7 @@
 export interface Partner {
   id: string;
   name: string;
+  cuisine: string;
   discount: string;
   picture: string;
   location?: string;
@@ -13,6 +14,7 @@ export const partnersData: Partner[] = [
   {
     id: "seven-days",
     name: "Seven Days",
+    cuisine: "Chinese",
     discount: "10% off",
     picture: "/partners/seven-days.jpg",
     location: "Regent Street",
@@ -21,6 +23,7 @@ export const partnersData: Partner[] = [
   {
     id: "hk-fusion",
     name: "HK Fusion",
+    cuisine: "Chinese",
     discount: "10% off",
     picture: "/partners/hk-fusion.jpg",
     location: "St John's Street",
@@ -30,6 +33,7 @@ export const partnersData: Partner[] = [
   {
     id: "chinese-canteen",
     name: "Chinese Canteen",
+    cuisine: "Chinese",
     discount: "20% off",
     picture: "/partners/chinese-canteen.jpg",
     location: "Bridge Street",
@@ -39,6 +43,7 @@ export const partnersData: Partner[] = [
   {
     id: "1-1-rgm",
     name: "1-1 Rougamo",
+    cuisine: "Chinese",
     discount: "20% off",
     picture: "/partners/1-1-rgm.jpg",
     location: "Regent Street",
@@ -48,6 +53,7 @@ export const partnersData: Partner[] = [
   {
     id: "mr-wang",
     name: "Mr Wang",
+    cuisine: "Chinese",
     discount: "20% off",
     picture: "/partners/mr-wang.jpg",
     location: "Regent Street",
@@ -57,6 +63,7 @@ export const partnersData: Partner[] = [
   {
     id: "jiamart-regent-street",
     name: "Jiamart (Regent St)",
+    cuisine: "Supermarket",
     discount: "10% off",
     picture: "/partners/jiamart.jpg",
     description: "In-store orders only",
@@ -65,6 +72,7 @@ export const partnersData: Partner[] = [
   {
     id: "jiamart-burleigh-street",
     name: "Jiamart (Burleigh St)",
+    cuisine: "Supermarket",
     discount: "10% off",
     picture: "/partners/jiamart.jpg",
     description: "In-store orders only",
@@ -73,6 +81,7 @@ export const partnersData: Partner[] = [
   {
     id: "jiamart-hills-road",
     name: "Jiamart (Hills Rd)",
+    cuisine: "Supermarket",
     discount: "10% off",
     picture: "/partners/jiamart.jpg",
     description: "In-store orders only",
@@ -81,6 +90,7 @@ export const partnersData: Partner[] = [
   {
     id: "tiffin-truck",
     name: "Tiffin Truck",
+    cuisine: "Indian",
     discount: "15% off",
     picture: "/partners/tiffin-truck.jpg",
     location: "Regent Street",
@@ -89,6 +99,7 @@ export const partnersData: Partner[] = [
   {
     id: "bridges",
     name: "Bridges",
+    cuisine: "Café",
     discount: "10% off",
     picture: "/partners/bridges.jpg",
     location: "Bridge Street",
@@ -97,6 +108,7 @@ export const partnersData: Partner[] = [
   {
     id: "crepeaffaire",
     name: "Crepeaffaire",
+    cuisine: "Dessert",
     discount: "15% off",
     picture: "/partners/crepeaffaire.jpg",
     location: "Bridge Street",
@@ -106,6 +118,7 @@ export const partnersData: Partner[] = [
   {
     id: "crepes",
     name: "Crepes",
+    cuisine: "Dessert",
     discount: "£2 off",
     picture: "/partners/crepes.jpg",
     location: "Sidney Street",
@@ -115,6 +128,7 @@ export const partnersData: Partner[] = [
   {
     id: "the-redbull",
     name: "The Redbull",
+    cuisine: "Pub",
     discount: "10% off",
     picture: "/partners/the-redbull.jpg",
     location: "Barton Road",
@@ -124,6 +138,7 @@ export const partnersData: Partner[] = [
   {
     id: "Moana-Poke",
     name: "Moana Poke",
+    cuisine: "Poké",
     discount: "15% off",
     picture: "/partners/moana-poke.jpg",
     location: "St Andrew's Street",
@@ -133,6 +148,7 @@ export const partnersData: Partner[] = [
   {
     id: "tripots",
     name: "Tripots",
+    cuisine: "Chinese",
     discount: "Free bubble tea",
     picture: "/partners/tripots.jpg",
     location: "Quayside",
@@ -142,6 +158,7 @@ export const partnersData: Partner[] = [
   {
     id: "al-casbah",
     name: "Al Casbah",
+    cuisine: "North African",
     discount: "15% off",
     picture: "/partners/al-casbah.jpg",
     location: "Mill Road",
@@ -151,6 +168,7 @@ export const partnersData: Partner[] = [
   {
     id: "golpo-restaurant",
     name: "Golpo Restaurant",
+    cuisine: "Bengali",
     discount: "10% off",
     picture: "/partners/golpo-restaurant.jpg",
     location: "Hills Road",
@@ -160,6 +178,7 @@ export const partnersData: Partner[] = [
   {
     id: "masala-lab",
     name: "Masala Lab",
+    cuisine: "Indian",
     discount: "15% off",
     picture: "/partners/masala-lab.jpg",
     location: "Dover Street",
@@ -168,6 +187,7 @@ export const partnersData: Partner[] = [
   {
     id: "hot-numbers-gwydir-street",
     name: "Hot Numbers (Gwydir St)",
+    cuisine: "Café",
     discount: "10% off",
     picture: "/partners/hot-numbers-gwydir-street.jpg",
     description: "Online purchases only",
@@ -177,6 +197,7 @@ export const partnersData: Partner[] = [
   {
     id: "hot-numbers-trumpington-street",
     name: "Hot Numbers (Trumpington St)",
+    cuisine: "Café",
     discount: "10% off",
     picture: "/partners/hot-numbers-trumpington-street.jpg",
     description: "Online purchases only",
@@ -186,6 +207,7 @@ export const partnersData: Partner[] = [
   {
     id: "poke-stop",
     name: "Poke Stop",
+    cuisine: "Poké",
     discount: "15% off",
     picture: "/partners/poke-stop.jpg",
     location: "Hills Road",
@@ -194,6 +216,7 @@ export const partnersData: Partner[] = [
   {
     id: "cafe-au-chocolat",
     name: "Café au Chocolat",
+    cuisine: "Dessert",
     discount: "15% off",
     picture: "/partners/cafe-au-chocolat.jpg",
     location: "Green Street",
@@ -203,6 +226,7 @@ export const partnersData: Partner[] = [
   {
     id: "noshe",
     name: "Noshe",
+    cuisine: "Afghan",
     discount: "15% off",
     picture: "/partners/noshe.jpg",
     location: "Mill Road",
@@ -211,6 +235,7 @@ export const partnersData: Partner[] = [
   {
     id: "benets-cafe",
     name: "Benets Café",
+    cuisine: "Dessert",
     discount: "10% off",
     picture: "/partners/benets-cafe.jpg",
     location: "King’s Parade",
@@ -219,6 +244,7 @@ export const partnersData: Partner[] = [
   {
     id: "manacambs",
     name: "ManaCambs",
+    cuisine: "Venezuelan",
     discount: "10% off",
     picture: "/partners/manacambs.jpg",
     location: "Market Square",
@@ -227,6 +253,7 @@ export const partnersData: Partner[] = [
   {
     id: "bubble-bliss",
     name: "Bubble Bliss",
+    cuisine: "Drinks",
     discount: "12% off",
     picture: "/partners/bubble-bliss.png",
     location: "Market Square",
@@ -235,6 +262,7 @@ export const partnersData: Partner[] = [
   {
     id: "the-anchor",
     name: "The Anchor",
+    cuisine: "Pub",
     discount: "20% off",
     picture: "/partners/the-anchor.jpg",
     location: "Silver Street",
@@ -243,6 +271,7 @@ export const partnersData: Partner[] = [
   {
     id: "the-lab",
     name: "The LAB",
+    cuisine: "Pub",
     discount: "15% off drinks",
     picture: "/partners/the-lab.png",
     location: "Regent Street",
@@ -251,6 +280,7 @@ export const partnersData: Partner[] = [
   {
     id: "chai-walla",
     name: "Chai Walla",
+    cuisine: "Indian",
     discount: "10% off",
     picture: "/partners/chai-walla.jpg",
     location: "Christ's Lane",

@@ -3,9 +3,10 @@ import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function PartnersPage() {
-  const partners = getAllPartners();
+  const allPartners = getAllPartners();
 
   return (
     <div className="min-h-screen">
@@ -59,7 +60,7 @@ export default function PartnersPage() {
 
           {/* Partners Grid */}
           <div className="flex flex-wrap justify-center gap-8">
-            {partners.map((partner) => (
+            {allPartners.map((partner) => (
               <Link
                 key={partner.id}
                 href={partner.mapsUrl ?? "#"}
@@ -85,6 +86,10 @@ export default function PartnersPage() {
                       <h3 className="mb-2 text-xl font-bold tracking-wide">
                         {partner.name}
                       </h3>
+
+                      <Badge variant="default" className="mx-auto mb-3">
+                        {partner.cuisine}
+                      </Badge>
 
                       {partner.location && (
                         <p className="text-muted-foreground mb-2 text-sm">
