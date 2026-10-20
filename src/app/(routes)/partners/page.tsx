@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function PartnersPage() {
   const partners = getAllPartners();
@@ -66,15 +67,16 @@ export default function PartnersPage() {
                 rel="noopener noreferrer"
                 className="block w-full max-w-xs sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)]"
               >
-                <Card className="h-[360px] cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <Card className="h-full min-h-[360px] cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   <CardContent className="p-0">
                     <div className="flex h-full flex-col items-center justify-between p-6 text-center">
                       {/* Partner Image */}
-                      <div className="border-border relative mb-4 h-32 w-32 overflow-hidden rounded-full border-4">
+                      <div className="border-border relative mb-4 h-32 w-32 shrink-0 overflow-hidden rounded-full border-4">
                         <Image
                           src={partner.picture}
                           alt={partner.name}
                           fill
+                          sizes="128px"
                           className="object-cover"
                         />
                       </div>
@@ -84,15 +86,39 @@ export default function PartnersPage() {
                         {partner.name}
                       </h3>
 
+                      {partner.location && (
+                        <p className="text-muted-foreground mb-2 text-sm">
+                          {partner.location}
+                        </p>
+                      )}
+
                       {/* Discount */}
                       <p className="text-primary text-2xl font-bold">
                         {partner.discount}
                       </p>
 
                       {partner.description && (
-                        <p className="text-muted-foreground mt-2 line-clamp-2 text-sm">
+                        <p className="text-muted-foreground mt-2 text-sm">
                           {partner.description}
                         </p>
+                      )}
+
+                      {/* Href */}
+                      {partner.href && (
+                        <Button
+                          className="my-2"
+                          variant="outline"
+                          size="sm"
+                          asChild
+                        >
+                          <a
+                            href={partner.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Website
+                          </a>
+                        </Button>
                       )}
                     </div>
                   </CardContent>
