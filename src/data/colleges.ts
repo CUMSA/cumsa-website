@@ -4,6 +4,8 @@ export interface College {
   longitude: number;
 }
 
+type Coordinates = Pick<College, "latitude" | "longitude">;
+
 // https://www.cam.ac.uk/colleges-and-departments/college-a-z
 export const colleges: College[] = [
   {
@@ -162,3 +164,16 @@ export const colleges: College[] = [
     longitude: 0.10081,
   },
 ];
+
+export function getDistanceInKm(from: Coordinates, to: Coordinates) {
+  const radians = Math.PI / 180;
+  const latitudeDifference = (from.latitude - to.latitude) * radians;
+  const longitudeDifference = (from.longitude - to.longitude) * radians;
+  const a =
+    Math.sin(latitudeDifference / 2) ** 2 +
+    Math.cos(from.latitude * radians) *
+      Math.cos(to.latitude * radians) *
+      Math.sin(longitudeDifference / 2) ** 2;
+
+  return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
