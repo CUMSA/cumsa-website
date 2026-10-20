@@ -1,11 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
+import { colleges, getDistanceInKm } from "@/data/colleges";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function PartnersPage() {
-  const partners = getAllPartners();
+  const [selectedCuisine, setSelectedCuisine] = useState("All");
+  const [selectedCollege, setSelectedCollege] = useState("default");
+  const college = colleges.find((college) => college.name === selectedCollege);
+  const allPartners = getAllPartners();
+  const cuisines = [
+    ...new Set(allPartners.map((partner) => partner.cuisine)),
+  ].sort();
+  const partners = (
+    selectedCuisine === "All"
+      ? allPartners
+      : allPartners.filter((partner) => partner.cuisine === selectedCuisine)
+  )
+    .map((partner) => ({
+      ...partner,
+      distanceKm: college ? getDistanceInKm(partner, college) : 0,
+    }))
+    .sort((a, b) => a.distanceKm - b.distanceKm);
 
   return (
     <div className="min-h-screen">
@@ -57,6 +86,51 @@ export default function PartnersPage() {
             </div>
           </div>
 
+          <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+            <span className="text-muted-foreground text-sm">Filter:</span>
+            {["All", ...cuisines].map((cuisine) => (
+              <Badge
+                key={cuisine}
+                variant={selectedCuisine === cuisine ? "default" : "secondary"}
+                className="cursor-pointer px-3 py-1.5 text-sm transition-opacity hover:opacity-80 sm:px-3"
+                asChild
+              >
+                <button
+                  type="button"
+                  onClick={() => setSelectedCuisine(cuisine)}
+                >
+                  {cuisine}
+                </button>
+              </Badge>
+            ))}
+          </div>
+
+          <div className="mb-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
+            <label
+              htmlFor="college-distance"
+              className="text-muted-foreground text-sm font-medium"
+            >
+              Sort by distance from college:
+            </label>
+            <Select value={selectedCollege} onValueChange={setSelectedCollege}>
+              <SelectTrigger
+                id="college-distance"
+                className="w-full max-w-xs cursor-pointer sm:w-72"
+              >
+                <SelectValue placeholder="Select a college" />
+              </SelectTrigger>
+              <SelectContent className="max-h-72">
+                <SelectItem value="default">Default order</SelectItem>
+                <SelectSeparator />
+                {colleges.map((college) => (
+                  <SelectItem key={college.name} value={college.name}>
+                    {college.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
           {/* Partners Grid */}
           <div className="flex flex-wrap justify-center gap-8">
             {partners.map((partner) => (
@@ -86,9 +160,22 @@ export default function PartnersPage() {
                         {partner.name}
                       </h3>
 
+                      <Badge variant="default" className="mx-auto mb-3">
+                        {partner.cuisine}
+                      </Badge>
+
                       {partner.location && (
                         <p className="text-muted-foreground mb-2 text-sm">
                           {partner.location}
+                        </p>
+                      )}
+
+                      {college && (
+                        <p className="text-muted-foreground mb-2 text-xs">
+                          {partner.distanceKm < 1
+                            ? `${Math.round(partner.distanceKm * 1000)} m`
+                            : `${partner.distanceKm.toFixed(1)} km`}{" "}
+                          away
                         </p>
                       )}
 
