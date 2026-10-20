@@ -6,6 +6,7 @@ export interface Partner {
   location?: string;
   description?: string;
   mapsUrl?: string;
+  href?: string;
 }
 
 export const partnersData: Partner[] = [
@@ -171,6 +172,7 @@ export const partnersData: Partner[] = [
     picture: "/partners/hot-numbers-gwydir-street.jpg",
     description: "Online purchases only",
     mapsUrl: "https://maps.app.goo.gl/99b6rTUHu5ZvWmzh6",
+    href: "https://hotnumberscoffee.co.uk/gwydir-st",
   },
   {
     id: "hot-numbers-trumpington-street",
@@ -179,6 +181,7 @@ export const partnersData: Partner[] = [
     picture: "/partners/hot-numbers-trumpington-street.jpg",
     description: "Online purchases only",
     mapsUrl: "https://maps.app.goo.gl/171tYtgHMon7qfTB7",
+    href: "https://hotnumberscoffee.co.uk/trumpington-st",
   },
   {
     id: "poke-stop",

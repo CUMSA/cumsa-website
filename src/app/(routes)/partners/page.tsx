@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function PartnersPage() {
   const partners = getAllPartners();
@@ -100,6 +101,24 @@ export default function PartnersPage() {
                         <p className="text-muted-foreground mt-2 text-sm">
                           {partner.description}
                         </p>
+                      )}
+
+                      {/* Href */}
+                      {partner.href && (
+                        <Button
+                          className="my-2"
+                          variant="outline"
+                          size="sm"
+                          asChild
+                        >
+                          <a
+                            href={partner.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Website
+                          </a>
+                        </Button>
                       )}
                     </div>
                   </CardContent>
