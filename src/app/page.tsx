@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { env } from "@/env";
-import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 import {
   Card,
   CardContent,
@@ -39,9 +39,9 @@ export default function HomePage() {
             Association (CUMSA).
           </p>
           <div className="flex justify-center gap-4">
-            <Button size="lg">
-              <Link href="https://membership.cumsa.org/">Join Us</Link>
-            </Button>
+            <LinkButton size="lg" href="https://membership.cumsa.org/">
+              Join Us
+            </LinkButton>
           </div>
         </div>
       </section>

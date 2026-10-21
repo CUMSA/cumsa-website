@@ -1,7 +1,7 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 
 interface PDFViewerProps {
   src: string | [string, string];
@@ -20,10 +20,6 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
     srcFull = src;
   }
 
-  const openInNewTab = () => {
-    window.open(srcFull, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <div className="rounded-lg bg-slate-950/50 p-4 shadow-lg backdrop-blur-xl">
       <div className="mb-4 flex items-start justify-between">
@@ -33,15 +29,17 @@ export function PDFViewer({ src, title, height = "600px" }: PDFViewerProps) {
           </div>
         )}
 
-        <Button
-          onClick={openInNewTab}
+        <LinkButton
+          href={srcFull}
+          target="_blank"
+          rel="noopener noreferrer"
           variant="outline"
           size="sm"
           className="flex items-center gap-2"
         >
           <ExternalLink className="h-4 w-4" />
           {doubleLinks ? "Open Full PDF" : "Open PDF"}
-        </Button>
+        </LinkButton>
       </div>
 
       <iframe

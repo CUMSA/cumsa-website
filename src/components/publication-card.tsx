@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 import Image from "next/image";
 
 export interface Publication {
@@ -39,15 +39,15 @@ export function PublicationCard({ publication }: PublicationCardProps) {
         <CardDescription>{publication.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col">
-        <Button className="w-full" size="sm" asChild>
-          <a
-            href={publication.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Publication
-          </a>
-        </Button>
+        <LinkButton
+          className="w-full"
+          size="sm"
+          href={publication.pdfUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Publication
+        </LinkButton>
       </CardContent>
     </Card>
   );

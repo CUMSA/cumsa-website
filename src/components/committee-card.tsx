@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import type { CommitteeMember } from "@/data/committee-fmt";
@@ -36,9 +36,13 @@ export function CommitteeCard({ member, includeEmail }: CommitteeCardProps) {
           Year: {member.year}
         </p>
         {includeEmail && (
-          <Button variant="outline" size="sm" asChild>
-            <a href={`mailto:${member.email}`}>Contact</a>
-          </Button>
+          <LinkButton
+            variant="outline"
+            size="sm"
+            href={member.email ? `mailto:${member.email}` : undefined}
+          >
+            Contact
+          </LinkButton>
         )}
       </CardContent>
     </Card>

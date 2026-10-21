@@ -7,6 +7,7 @@ import { getAllPartners } from "@/data/partners";
 import { colleges, getDistanceInKm } from "@/data/colleges";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
@@ -56,15 +57,14 @@ export default function PartnersPage() {
 
           {/* Google Maps */}
           <div className="mb-4 flex flex-wrap justify-center gap-2">
-            <Button variant="destructive" asChild>
-              <a
-                href={googleMapsListUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Add list to Google Maps
-              </a>
-            </Button>
+            <LinkButton
+              variant="destructive"
+              href={googleMapsListUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add list to Google Maps
+            </LinkButton>
             <Button variant="destructive" disabled>
               Add list to Apple Maps
             </Button>
@@ -207,20 +207,16 @@ export default function PartnersPage() {
 
                       {/* Href */}
                       {partner.href && (
-                        <Button
+                        <LinkButton
                           className="my-2"
                           variant="outline"
                           size="sm"
-                          asChild
+                          href={partner.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <a
-                            href={partner.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Website
-                          </a>
-                        </Button>
+                          Website
+                        </LinkButton>
                       )}
                     </div>
                   </CardContent>
