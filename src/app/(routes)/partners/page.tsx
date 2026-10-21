@@ -52,38 +52,50 @@ export default function PartnersPage() {
           </div>
 
           {/* Google Maps */}
-          <div className="mb-12">
-            <p className="text-muted-foreground mb-4 text-center">
-              Subscribe to our{" "}
+          <div className="mb-4 flex flex-wrap justify-center gap-2">
+            <Button variant="destructive" asChild>
               <a
-                href="https://www.google.com/maps/d/u/0/viewer?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI"
-                className="color-link"
+                href="https://maps.app.goo.gl/34td2W3PHpTVJjEj6"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                Google Maps
-              </a>{" "}
-              to view CUMSA discounts on your own device! FAQ/help{" "}
-              <a
-                href="https://drive.google.com/file/d/1IL1KYgPo8ZyPgvx9UU7tBOnoRzx5Ez_t/view"
-                className="color-link"
-                target="_blank"
-              >
-                here
+                Add list to Google Maps
               </a>
-              .
-            </p>
-            <div
-              className="fill-container rounded-3xl"
-              style={{ height: "600px" }}
+            </Button>
+            <Button variant="destructive" disabled>
+              Add list to Apple Maps
+            </Button>
+          </div>
+          <p className="text-muted-foreground mb-4 text-center">
+            <a
+              href="https://www.google.com/maps/d/u/0/viewer?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI"
+              className="color-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI&ehbc=2E312F&noprof=1"
-                height="650px"
-                className="fill-iframe"
-                style={{ marginTop: "-50px" }}
-                loading="lazy"
-              ></iframe>
-            </div>
+              Legacy Google Maps
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://drive.google.com/file/d/1IL1KYgPo8ZyPgvx9UU7tBOnoRzx5Ez_t/view"
+              className="color-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              FAQ/help
+            </a>
+          </p>
+          <div
+            className="fill-container mb-12 rounded-3xl"
+            style={{ height: "600px" }}
+          >
+            <iframe
+              src="https://www.google.com/maps/d/u/0/embed?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI&ehbc=2E312F&noprof=1"
+              height="650px"
+              className="fill-iframe"
+              style={{ marginTop: "-50px" }}
+              loading="lazy"
+            ></iframe>
           </div>
 
           <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
