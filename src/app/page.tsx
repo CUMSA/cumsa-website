@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { env } from "@/env";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +11,10 @@ import {
 } from "@/components/ui/card";
 
 export default function HomePage() {
+  const mapPreviewUrl = new URL(env.PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL);
+  mapPreviewUrl.searchParams.set("ll", "52.205,0.124");
+  mapPreviewUrl.searchParams.set("z", "14");
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -139,7 +144,7 @@ export default function HomePage() {
                 <CardHeader className="flex-shrink-0">
                   <div className="relative mb-4 h-64 w-full overflow-hidden rounded-lg">
                     <iframe
-                      src="https://www.google.com/maps/d/u/0/embed?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI&ehbc=2E312F&noprof=1&ll=52.205,0.124&z=14"
+                      src={mapPreviewUrl.toString()}
                       title="CUMSA Partner Discounts"
                       className="pointer-events-none border-0"
                       style={{

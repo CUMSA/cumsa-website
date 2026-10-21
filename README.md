@@ -31,3 +31,10 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 - [Vercel](https://create.t3.gg/en/deployment/vercel)
 - [Netlify](https://create.t3.gg/en/deployment/netlify)
 - [Docker](https://create.t3.gg/en/deployment/docker)
+
+### Environment variables
+
+```shell
+cp .env.example .env
+vi .env
+```
