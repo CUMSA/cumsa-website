@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -113,9 +114,13 @@ export default function Navbar() {
         {/* Right side actions */}
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button variant="default" className="hidden sm:inline-flex">
-            <Link href="https://membership.cumsa.org/">Membership</Link>
-          </Button>
+          <LinkButton
+            variant="default"
+            className="hidden sm:inline-flex"
+            href="https://membership.cumsa.org/"
+          >
+            Membership
+          </LinkButton>
 
           {/* Mobile Menu */}
           <DropdownMenu>

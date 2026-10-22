@@ -6,7 +6,7 @@ import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
 import { colleges, getDistanceInKm } from "@/data/colleges";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { LinkButton } from "@/components/ui/link-button";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
@@ -18,6 +18,10 @@ import {
 } from "@/components/ui/select";
 
 export default function PartnersPage() {
+  const googleMapsListUrl = process.env.PUBLIC_PARTNERS_GOOGLE_MAPS_LIST_URL;
+  const appleMapsListUrl = process.env.PUBLIC_PARTNERS_APPLE_MAPS_LIST_URL;
+  const googleMapsEmbedUrl = process.env.PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL;
+  const mapsFaqUrl = process.env.PUBLIC_PARTNERS_MAPS_FAQ_URL;
   const [selectedCuisine, setSelectedCuisine] = useState("All");
   const [selectedCollege, setSelectedCollege] = useState("default");
   const college = colleges.find((college) => college.name === selectedCollege);
@@ -52,38 +56,54 @@ export default function PartnersPage() {
           </div>
 
           {/* Google Maps */}
-          <div className="mb-12">
-            <p className="text-muted-foreground mb-4 text-center">
-              Subscribe to our{" "}
-              <a
-                href="https://www.google.com/maps/d/u/0/viewer?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI"
-                className="color-link"
-                target="_blank"
-              >
-                Google Maps
-              </a>{" "}
-              to view CUMSA discounts on your own device! FAQ/help{" "}
-              <a
-                href="https://drive.google.com/file/d/1IL1KYgPo8ZyPgvx9UU7tBOnoRzx5Ez_t/view"
-                className="color-link"
-                target="_blank"
-              >
-                here
-              </a>
-              .
-            </p>
-            <div
-              className="fill-container rounded-3xl"
-              style={{ height: "600px" }}
+          <div className="mb-4 flex flex-wrap justify-center gap-2">
+            <LinkButton
+              variant="destructive"
+              href={googleMapsListUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=1VITmrpaENcB6tL_43do1ZlXM7q2UhkI&ehbc=2E312F&noprof=1"
-                height="650px"
-                className="fill-iframe"
-                style={{ marginTop: "-50px" }}
-                loading="lazy"
-              ></iframe>
-            </div>
+              Add list to Google Maps
+            </LinkButton>
+            <LinkButton
+              variant="destructive"
+              href={appleMapsListUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add list to Apple Maps
+            </LinkButton>
+          </div>
+          <p className="text-muted-foreground mb-4 text-center">
+            <a
+              href={googleMapsEmbedUrl}
+              className="color-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Legacy Google Maps
+            </a>{" "}
+            ·{" "}
+            <a
+              href={mapsFaqUrl}
+              className="color-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              FAQ/help
+            </a>
+          </p>
+          <div
+            className="fill-container mb-12 rounded-3xl"
+            style={{ height: "600px" }}
+          >
+            <iframe
+              src={googleMapsEmbedUrl}
+              height="650px"
+              className="fill-iframe"
+              style={{ marginTop: "-50px" }}
+              loading="lazy"
+            ></iframe>
           </div>
 
           <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
@@ -192,20 +212,16 @@ export default function PartnersPage() {
 
                       {/* Href */}
                       {partner.href && (
-                        <Button
+                        <LinkButton
                           className="my-2"
                           variant="outline"
                           size="sm"
-                          asChild
+                          href={partner.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <a
-                            href={partner.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Website
-                          </a>
-                        </Button>
+                          Website
+                        </LinkButton>
                       )}
                     </div>
                   </CardContent>

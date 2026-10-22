@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { env } from "@/env";
+import { LinkButton } from "@/components/ui/link-button";
 import {
   Card,
   CardContent,
@@ -10,6 +11,10 @@ import {
 } from "@/components/ui/card";
 
 export default function HomePage() {
+  const mapPreviewUrl = new URL(env.PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL);
+  mapPreviewUrl.searchParams.set("ll", "52.205,0.124");
+  mapPreviewUrl.searchParams.set("z", "14");
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -34,9 +39,9 @@ export default function HomePage() {
             Association (CUMSA).
           </p>
           <div className="flex justify-center gap-4">
-            <Button size="lg">
-              <Link href="https://membership.cumsa.org/">Join Us</Link>
-            </Button>
+            <LinkButton size="lg" href="https://membership.cumsa.org/">
+              Join Us
+            </LinkButton>
           </div>
         </div>
       </section>
@@ -69,7 +74,7 @@ export default function HomePage() {
             Find out more
           </h2>
           {/* Feature Cards */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Link href="/about">
               <Card className="flex h-[26rem] cursor-pointer flex-col transition-transform hover:scale-105 hover:shadow-lg">
                 <CardHeader className="flex-shrink-0">
@@ -129,6 +134,36 @@ export default function HomePage() {
                 <CardContent className="flex flex-grow flex-col">
                   <CardDescription className="mb-4">
                     Find out about our sponsors which make our events possible.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="/partners">
+              <Card className="flex h-[26rem] cursor-pointer flex-col transition-transform hover:scale-105 hover:shadow-lg">
+                <CardHeader className="flex-shrink-0">
+                  <div className="relative mb-4 h-64 w-full overflow-hidden rounded-lg">
+                    <iframe
+                      src={mapPreviewUrl.toString()}
+                      title="CUMSA Partner Discounts"
+                      className="pointer-events-none border-0"
+                      style={{
+                        width: "calc(100% + 160px)",
+                        height: "calc(100% + 210px)",
+                        // Hide Google Maps interactive elements
+                        marginLeft: "-80px",
+                        marginTop: "-130px",
+                      }}
+                      loading="lazy"
+                      tabIndex={-1}
+                    />
+                  </div>
+                  <CardTitle>Partners</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-grow flex-col">
+                  <CardDescription className="mb-4">
+                    Enjoy discounts around Cambridge, a CUMSA membership
+                    exclusive!
                   </CardDescription>
                 </CardContent>
               </Card>
