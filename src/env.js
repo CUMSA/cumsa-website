@@ -9,6 +9,7 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
     PUBLIC_PARTNERS_GOOGLE_MAPS_LIST_URL: z.string().url().optional(),
+    PUBLIC_PARTNERS_APPLE_MAPS_LIST_URL: z.string().url().optional(),
     PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL: z.string().url(),
     PUBLIC_PARTNERS_MAPS_FAQ_URL: z.string().url(),
   },
@@ -30,6 +31,8 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     PUBLIC_PARTNERS_GOOGLE_MAPS_LIST_URL:
       process.env.PUBLIC_PARTNERS_GOOGLE_MAPS_LIST_URL,
+    PUBLIC_PARTNERS_APPLE_MAPS_LIST_URL:
+      process.env.PUBLIC_PARTNERS_APPLE_MAPS_LIST_URL,
     PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL:
       process.env.PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL,
     PUBLIC_PARTNERS_MAPS_FAQ_URL: process.env.PUBLIC_PARTNERS_MAPS_FAQ_URL,

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { getAllPartners } from "@/data/partners";
 import { colleges, getDistanceInKm } from "@/data/colleges";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { LinkButton } from "@/components/ui/link-button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -20,6 +19,7 @@ import {
 
 export default function PartnersPage() {
   const googleMapsListUrl = process.env.PUBLIC_PARTNERS_GOOGLE_MAPS_LIST_URL;
+  const appleMapsListUrl = process.env.PUBLIC_PARTNERS_APPLE_MAPS_LIST_URL;
   const googleMapsEmbedUrl = process.env.PUBLIC_PARTNERS_GOOGLE_MAPS_EMBED_URL;
   const mapsFaqUrl = process.env.PUBLIC_PARTNERS_MAPS_FAQ_URL;
   const [selectedCuisine, setSelectedCuisine] = useState("All");
@@ -65,9 +65,14 @@ export default function PartnersPage() {
             >
               Add list to Google Maps
             </LinkButton>
-            <Button variant="destructive" disabled>
+            <LinkButton
+              variant="destructive"
+              href={appleMapsListUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Add list to Apple Maps
-            </Button>
+            </LinkButton>
           </div>
           <p className="text-muted-foreground mb-4 text-center">
             <a
