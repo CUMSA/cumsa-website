@@ -27,21 +27,21 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "1.23.0",
-    "next": "16.2.11",
+    "next": "16.4.2",
     "next-themes": "0.4.6",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "recharts": "2.15.4",
     "tailwind-merge": "3.6.0",
     "zod": "3.24.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.0.15",
-    "@types/node": "20.14.10",
-    "@types/react": "19.2.17",
-    "@types/react-dom": "19.2.3",
+    "@types/node": "24.13.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.2.11",
+    "eslint-config-next": "16.4.2",
     "eslint-config-prettier": "10.1.5",
     "husky": "9.1.7",
     "lint-staged": "17.0.8",
@@ -65,9 +65,12 @@
   "ct3aMetadata": {
     "initVersion": "7.39.3"
   },
-  "packageManager": "npm@12.0.1",
+  "engines": {
+    "node": "^24.22.1"
+  },
+  "packageManager": "npm@12.1.0",
   "allowScripts": {
-    "sharp@0.34.5": true,
+    "sharp@0.35.5": true,
     "unrs-resolver@1.12.2": true
   }
 }
