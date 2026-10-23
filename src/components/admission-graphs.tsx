@@ -168,7 +168,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
                 tickFormatter={(value: number) => value.toString()}
               />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <ChartLegend content={<ChartLegendContent />} />
+              <ChartLegend itemSorter={null} content={<ChartLegendContent />} />
               <Bar
                 dataKey="applications"
                 fill="var(--color-applications)"
