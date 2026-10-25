@@ -164,7 +164,7 @@ export function AdmissionGraphs({ className }: AdmissionGraphsProps) {
                 )}
                 axisLine={false}
                 tickLine={false}
-                tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
+                tick={{ fill: "var(--muted-foreground)", fontSize: 12 }}
                 tickFormatter={(value: number) => value.toString()}
               />
               <ChartTooltip content={<ChartTooltipContent />} />

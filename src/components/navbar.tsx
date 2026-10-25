@@ -29,17 +29,24 @@ import { Menu } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-slate-950/50 backdrop-blur-xl">
+    <nav className="bg-card/80 sticky top-0 z-50 w-full backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-2">
             <Image
-              src="/favicon.ico"
+              src="/logo.svg"
               alt="CUMSA Logo"
               width={40}
               height={40}
-              className="rounded"
+              className="h-10 w-10 object-contain dark:hidden"
+            />
+            <Image
+              src="/logo-dark.svg"
+              alt="CUMSA Logo"
+              width={40}
+              height={40}
+              className="hidden h-10 w-10 object-contain dark:block"
             />
           </div>
         </Link>

@@ -7,21 +7,23 @@ export default function Footer() {
   return (
     <>
       <SponsorCarousel />
-      <footer className="bg-slate-950/70 px-[5%] pb-6 text-white backdrop-blur-xl">
+      <footer className="text-foreground bg-slate-950/70 px-[5%] py-6 backdrop-blur-xl">
         <div className="bar">
           <span className="left flex items-center">
-            <div className="min-w-[20px]">
-              <Image
-                src="/favicon.ico"
-                alt="CUMSA Logo"
-                width={40}
-                height={40}
-              />
-            </div>
-
-            <div className="text-foreground mx-1 max-w-[22ch] min-w-[17ch] text-sm">
-              Cambridge University Malaysia and Singapore Association
-            </div>
+            <Image
+              src="/logo-footer.svg"
+              alt="Cambridge University Malaysia and Singapore Association"
+              width={208}
+              height={55}
+              className="h-auto w-52 max-w-full dark:hidden"
+            />
+            <Image
+              src="/logo-footer-dark.svg"
+              alt="Cambridge University Malaysia and Singapore Association"
+              width={208}
+              height={55}
+              className="hidden h-auto w-52 max-w-full dark:block"
+            />
           </span>
 
           <div className="middle flex flex-wrap items-center justify-center gap-2">
@@ -39,7 +41,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <span className="right text-muted-foreground min-w-[13ch] text-right text-sm text-gray-400">
+          <span className="right text-muted-foreground min-w-[13ch] text-right text-sm">
             © 2026 CUMSA <br />
             All rights reserved
           </span>
