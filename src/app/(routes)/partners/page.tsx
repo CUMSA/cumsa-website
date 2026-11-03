@@ -205,7 +205,10 @@ export default function PartnersPage() {
                       </p>
 
                       {partner.description && (
-                        <p className="text-muted-foreground mt-2 text-sm">
+                        <p
+                          className="text-muted-foreground mt-2 text-sm"
+                          style={{ whiteSpace: "pre-line" }}
+                        >
                           {partner.description}
                         </p>
                       )}

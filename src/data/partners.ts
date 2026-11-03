@@ -58,7 +58,7 @@ export const partnersData: Partner[] = [
     discount: "20% off",
     picture: "/partners/1-1-rgm.jpg",
     location: "Regent Street",
-    description: "10% off card payments, 20% off for cash payments",
+    description: "10% off card payments\n20% off for cash payments",
     mapsUrl: "https://maps.app.goo.gl/MdHqApDRjJJsm4u16",
   },
   {
@@ -149,7 +149,7 @@ export const partnersData: Partner[] = [
     discount: "£2 off",
     picture: "/partners/crepes.jpg",
     location: "Sidney Street",
-    description: "£2 off each crepe; 50p off each hot drink",
+    description: "£2 off each crepe\n50p off each hot drink",
     mapsUrl: "https://maps.app.goo.gl/gQhzDwpUHGXafMSY9",
   },
   {
@@ -185,7 +185,7 @@ export const partnersData: Partner[] = [
     discount: "Free bubble tea",
     picture: "/partners/tripots.jpg",
     location: "Quayside",
-    description: "Per person: Min. 2 pax before 6pm; Min. 4 pax after 6pm",
+    description: "Per person:\nMin. 2 pax before 6pm\nMin. 4 pax after 6pm",
     mapsUrl: "https://maps.app.goo.gl/QtyViiuU5YJvWrbbA",
   },
   {
@@ -358,7 +358,7 @@ export const partnersData: Partner[] = [
     picture: "/partners/japas-sushi.jpg",
     location: "Saxon Street",
     description:
-      "Except: Friday after 5:30pm, Saturday after 5pm, Bank Holidays & Special Occasions (eg. Valentine's)",
+      "Except:\nFridays after 5:30pm\nSaturdays after 5pm\nBank Holidays\nSpecial Occasions (eg. Valentine's)",
     mapsUrl: "https://maps.app.goo.gl/6LcKLwmFCcGxrzbx7",
   },
   {
