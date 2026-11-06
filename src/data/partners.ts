@@ -58,7 +58,7 @@ export const partnersData: Partner[] = [
     discount: "20% off",
     picture: "/partners/1-1-rgm.jpg",
     location: "Regent Street",
-    description: "10% off card payments, 20% off for cash payments",
+    description: "10% off card payments\n20% off for cash payments",
     mapsUrl: "https://maps.app.goo.gl/MdHqApDRjJJsm4u16",
   },
   {
@@ -144,12 +144,12 @@ export const partnersData: Partner[] = [
     id: "crepes",
     latitude: 52.2059209,
     longitude: 0.1207212,
-    name: "Crepes",
+    name: "Cambridge Crepes",
     cuisine: "Dessert",
     discount: "£2 off",
     picture: "/partners/crepes.jpg",
     location: "Sidney Street",
-    description: "£2 off each crepe; 50p off each hot drink",
+    description: "£2 off each crepe\n50p off each hot drink",
     mapsUrl: "https://maps.app.goo.gl/gQhzDwpUHGXafMSY9",
   },
   {
@@ -185,7 +185,7 @@ export const partnersData: Partner[] = [
     discount: "Free bubble tea",
     picture: "/partners/tripots.jpg",
     location: "Quayside",
-    description: "Per person before 6pm; after 6pm, tables of 4+ only",
+    description: "Per person:\nMin. 2 pax before 6pm\nMin. 4 pax after 6pm",
     mapsUrl: "https://maps.app.goo.gl/QtyViiuU5YJvWrbbA",
   },
   {
@@ -347,6 +347,30 @@ export const partnersData: Partner[] = [
     location: "Christ's Lane",
     description: "Except Saturdays",
     mapsUrl: "https://maps.app.goo.gl/bHXukJSJks69gRLM9",
+  },
+  {
+    id: "japas-sushi",
+    latitude: 52.1977708,
+    longitude: 0.1228128,
+    name: "Japas Sushi",
+    cuisine: "Japanese",
+    discount: "10% off",
+    picture: "/partners/japas-sushi.jpg",
+    location: "Saxon Street",
+    description:
+      "Except:\nFridays after 5:30pm\nSaturdays after 5pm\nBank Holidays\nSpecial Occasions (eg. Valentine's)",
+    mapsUrl: "https://maps.app.goo.gl/6LcKLwmFCcGxrzbx7",
+  },
+  {
+    id: "tokoko",
+    latitude: 52.205619,
+    longitude: 0.1332188,
+    name: "ToKoKo",
+    cuisine: "Japanese",
+    discount: "10% off",
+    picture: "/partners/tokoko.jpg",
+    location: "Burleigh Street",
+    mapsUrl: "https://maps.app.goo.gl/YzEUr736Sk34n4ru9",
   },
 ];
 
